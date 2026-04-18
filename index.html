@@ -1,195 +1,906 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>WiseSprouts | Rooted in Care. Growing with Wisdom.</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Science informed parenting support for modern families. Blending child development, real life parenting, and thoughtful tools.">
-  <meta name="robots" content="index, follow">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WiseSprouts — Science-Informed Parenting by Akanksha</title>
+  <meta name="description" content="Personalised child development guidance for modern Indian families. 1-on-1 WhatsApp consultations, guides, and tools by Akanksha, certified child development expert." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #faf7f2;
-      --card: #ffffff;
-      --text: #4a463f;
-      --muted: #7a746a;
-      --accent: #e8cfa8;
-      --border: #f0e6d8;
+      --gd: #1A5C2A; --gm: #2E7D44; --gl: #E8F5EC; --gp: #F2FAF4;
+      --cream: #FFFBF5; --cream2: #FFF6EA; --cream3: #FDF8F0;
+      --amber: #F59E0B; --amberl: #FEF3C7;
+      --td: #1C1208; --tm: #4A3B22; --tmu: #7A6548; --tf: #B8A888;
+      --border: #EAD9B8; --white: #fff;
+      --navy: #0F1A2E; --navym: #1E3048;
+      --serif: 'Lora', Georgia, serif;
+      --sans: 'Nunito', system-ui, sans-serif;
+      --r: 14px;
     }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--cream); color: var(--td); -webkit-font-smoothing: antialiased; }
 
-    * {
-      box-sizing: border-box;
+    /* ── NAV ── */
+    nav { position: sticky; top: 0; z-index: 200; background: rgba(255,251,245,0.95); backdrop-filter: blur(16px); border-bottom: 0.5px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 40px; height: 64px; }
+    .nav-logo { font-family: var(--serif); font-size: 17px; font-weight: 700; color: var(--gd); text-decoration: none; display: flex; align-items: center; gap: 9px; }
+    .nav-mark { width: 28px; height: 28px; border-radius: 8px; background: var(--gd); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .nav-links { display: flex; align-items: center; gap: 2px; }
+    .nav-link { font-size: 12px; font-weight: 600; color: var(--tmu); text-decoration: none; padding: 6px 12px; border-radius: 8px; transition: color .2s, background .2s; white-space: nowrap; }
+    .nav-link:hover { color: var(--gd); background: var(--gl); }
+    .nav-cta { background: var(--gd); color: var(--white); border: none; border-radius: 10px; padding: 9px 18px; font-family: var(--sans); font-size: 13px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 7px; transition: background .2s, transform .15s; white-space: nowrap; }
+    .nav-cta:hover { background: var(--gm); transform: translateY(-1px); }
+
+    /* ── HERO / FOUNDER ── */
+    .founder-section { background: var(--navy); min-height: 90vh; display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; overflow: hidden; }
+    .founder-photo-side { position: relative; min-height: 500px; overflow: hidden; }
+    .founder-photo-placeholder {
+      width: 100%; height: 100%; min-height: 500px;
+      background: linear-gradient(160deg, #1E3A2A 0%, #0F2418 40%, #162C20 100%);
+      display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+      padding-bottom: 0; position: relative;
     }
-
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+    .founder-photo-placeholder::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 80% at 50% 30%, rgba(168,213,194,0.08) 0%, transparent 70%);
     }
-
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 40px 20px;
+    .photo-guide {
+      width: 200px; height: 260px;
+      border-radius: 50% 50% 0 0;
+      background: rgba(255,255,255,0.06);
+      border: 1.5px dashed rgba(168,213,194,0.3);
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+      margin-bottom: 0; position: relative; z-index: 1;
     }
+    .photo-guide-icon { font-size: 36px; opacity: 0.5; }
+    .photo-guide-text { font-size: 12px; color: rgba(255,255,255,0.35); text-align: center; line-height: 1.5; font-weight: 600; letter-spacing: 0.04em; padding: 0 20px; }
+    /* When you have a real photo: replace .founder-photo-placeholder with an <img> that is position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position: top center; */
+    .founder-overlay { position: absolute; bottom: 0; left: 0; right: 0; height: 200px; background: linear-gradient(to top, rgba(15,26,46,0.95) 0%, transparent 100%); z-index: 2; }
+    .founder-name-tag { position: absolute; bottom: 28px; left: 32px; z-index: 3; }
+    .founder-name { font-family: var(--serif); font-size: 28px; font-weight: 700; color: var(--white); line-height: 1.1; margin-bottom: 6px; }
+    .founder-creds { display: flex; flex-direction: column; gap: 4px; }
+    .cred-pill { display: inline-flex; align-items: center; gap: 5px; background: rgba(168,213,194,0.15); border: 0.5px solid rgba(168,213,194,0.3); border-radius: 20px; padding: 4px 10px; font-size: 11px; color: #A8D5C2; font-weight: 700; letter-spacing: 0.04em; width: fit-content; }
 
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 36px 28px;
-      margin-bottom: 48px;
-      text-align: center;
+    .founder-content { padding: 64px 56px; display: flex; flex-direction: column; justify-content: center; }
+    .founder-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #A8D5C2; margin-bottom: 20px; }
+    .founder-h1 { font-family: var(--serif); font-size: 44px; line-height: 1.1; font-weight: 700; color: var(--white); letter-spacing: -0.02em; margin-bottom: 24px; }
+    .founder-h1 em { color: #A8D5C2; font-style: italic; font-weight: 400; }
+    .founder-story { font-size: 15px; color: rgba(255,255,255,0.65); line-height: 1.85; margin-bottom: 36px; max-width: 440px; }
+    .founder-story strong { color: rgba(255,255,255,0.9); font-weight: 600; }
+    .founder-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 44px; }
+    .btn-wa { background: #25D366; color: var(--white); padding: 13px 24px; border-radius: 11px; border: none; font-family: var(--sans); font-size: 14px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 18px rgba(37,211,102,.3); transition: opacity .2s, transform .15s; }
+    .btn-wa:hover { opacity: .9; transform: translateY(-2px); }
+    .btn-ghost { background: transparent; color: rgba(255,255,255,0.7); padding: 13px 20px; border-radius: 11px; border: 1px solid rgba(255,255,255,0.2); cursor: pointer; font-family: var(--sans); font-size: 13px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: border-color .2s, color .2s, background .2s; }
+    .btn-ghost:hover { border-color: rgba(168,213,194,.5); color: #A8D5C2; }
+    .founder-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 0.5px solid rgba(255,255,255,0.1); border-radius: 14px; overflow: hidden; background: rgba(255,255,255,0.04); }
+    .f-stat { padding: 18px 20px; border-right: 0.5px solid rgba(255,255,255,0.08); }
+    .f-stat:last-child { border-right: none; }
+    .f-stat-num { font-family: var(--serif); font-size: 22px; font-weight: 600; color: #A8D5C2; margin-bottom: 3px; }
+    .f-stat-label { font-size: 11px; color: rgba(255,255,255,0.35); font-weight: 600; letter-spacing: 0.03em; }
+
+    /* ── ABOUT STRIP ── */
+    .about-strip { background: var(--cream3); border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); }
+    .about-inner { max-width: 900px; margin: 0 auto; padding: 56px 40px; display: grid; grid-template-columns: 1fr 2fr; gap: 48px; align-items: center; }
+    .about-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gm); margin-bottom: 14px; }
+    .about-pull { font-family: var(--serif); font-size: 28px; font-weight: 600; color: var(--td); line-height: 1.3; font-style: italic; }
+    .about-pull em { color: var(--gd); font-style: normal; }
+    .about-text { font-size: 15px; color: var(--tmu); line-height: 1.85; }
+    .about-text p { margin-bottom: 14px; }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-text strong { color: var(--tm); font-weight: 700; }
+
+    /* ── SECTION SHARED ── */
+    .sec { max-width: 1200px; margin: 0 auto; padding: 80px 40px; }
+    .sec-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 48px; }
+    .sec-eye { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gm); }
+    .sec-title { font-family: var(--serif); font-size: 30px; font-weight: 600; color: var(--td); }
+    .sec-line { flex: 1; height: 0.5px; background: var(--border); }
+
+    /* ── PRODUCT STORE ── */
+    .store-bg { background: var(--navy); }
+    .store-inner { max-width: 1100px; margin: 0 auto; padding: 80px 40px; }
+    .store-head { margin-bottom: 48px; }
+    .store-eye { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #A8D5C2; margin-bottom: 8px; }
+    .store-title { font-family: var(--serif); font-size: 32px; font-weight: 700; color: var(--white); margin-bottom: 10px; }
+    .store-title em { color: #A8D5C2; font-style: italic; font-weight: 400; }
+    .store-sub { font-size: 15px; color: rgba(255,255,255,0.45); }
+    .store-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .product-card { background: rgba(255,255,255,0.04); border: 0.5px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 28px; transition: border-color .25s, background .25s, transform .25s; position: relative; overflow: hidden; }
+    .product-card:hover { border-color: rgba(168,213,194,0.3); background: rgba(255,255,255,0.07); transform: translateY(-4px); }
+    .product-card.featured { border-color: rgba(168,213,194,0.4); background: rgba(168,213,194,0.06); }
+    .product-card.featured::before { content: 'Most popular'; position: absolute; top: 18px; right: 18px; background: #A8D5C2; color: var(--navy); font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; }
+    .product-badge { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; margin-bottom: 18px; }
+    .badge-free { background: rgba(37,211,102,0.15); color: #25D366; }
+    .badge-guide { background: rgba(245,158,11,0.15); color: #F59E0B; }
+    .badge-bundle { background: rgba(168,213,194,0.15); color: #A8D5C2; }
+    .badge-premium { background: rgba(139,92,246,0.15); color: #C4B5FD; }
+    .product-top { display: flex; gap: 18px; margin-bottom: 18px; }
+    .product-thumb { width: 72px; height: 72px; border-radius: 12px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .product-info { flex: 1; }
+    .product-name { font-family: var(--serif); font-size: 19px; font-weight: 600; color: var(--white); margin-bottom: 6px; line-height: 1.3; }
+    .product-desc { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.65; }
+    .product-price-row { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+    .price-main { font-family: var(--serif); font-size: 26px; font-weight: 700; color: var(--white); }
+    .price-usd { font-size: 13px; color: rgba(255,255,255,0.35); font-weight: 600; }
+    .price-original { font-size: 15px; color: rgba(255,255,255,0.25); text-decoration: line-through; font-weight: 600; }
+    .price-saving { font-size: 11px; font-weight: 700; background: rgba(37,211,102,0.15); color: #25D366; padding: 3px 8px; border-radius: 20px; }
+    .stars { display: flex; align-items: center; gap: 4px; margin-bottom: 20px; }
+    .stars-icons { color: #F59E0B; font-size: 13px; letter-spacing: 1px; }
+    .stars-label { font-size: 12px; color: rgba(255,255,255,0.35); font-weight: 600; }
+    .product-includes { margin-bottom: 22px; }
+    .product-includes-title { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 10px; }
+    .include-item { font-size: 13px; color: rgba(255,255,255,0.6); display: flex; align-items: flex-start; gap: 8px; margin-bottom: 6px; line-height: 1.5; }
+    .include-item::before { content: '✓'; color: #A8D5C2; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .product-btn { width: 100%; padding: 14px; border-radius: 11px; border: none; font-family: var(--sans); font-size: 14px; font-weight: 700; cursor: pointer; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; transition: opacity .2s, transform .15s; }
+    .product-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+    .product-btn.free { background: rgba(255,255,255,0.1); color: var(--white); border: 0.5px solid rgba(255,255,255,0.2); }
+    .product-btn.green { background: #25D366; color: var(--white); box-shadow: 0 4px 16px rgba(37,211,102,.25); }
+    .product-btn.teal { background: #A8D5C2; color: var(--navy); box-shadow: 0 4px 16px rgba(168,213,194,.2); }
+    .product-btn.purple { background: #8B5CF6; color: var(--white); box-shadow: 0 4px 16px rgba(139,92,246,.25); }
+
+    /* ── HOW IT WORKS ── */
+    .how-bg { background: var(--gp); }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; position: relative; }
+    .steps::before { content: ''; position: absolute; top: 36px; left: calc(16.6% + 24px); right: calc(16.6% + 24px); height: 1px; background: repeating-linear-gradient(90deg, var(--gm) 0, var(--gm) 6px, transparent 6px, transparent 14px); }
+    .step { padding: 0 32px 32px; text-align: center; }
+    .step-circle { width: 52px; height: 52px; border-radius: 50%; background: var(--gd); color: var(--white); font-family: var(--serif); font-size: 20px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; position: relative; z-index: 1; box-shadow: 0 0 0 6px var(--gp), 0 0 0 7px rgba(26,92,42,.15); }
+    .step-title { font-family: var(--serif); font-size: 18px; font-weight: 600; color: var(--td); margin-bottom: 10px; }
+    .step-text { font-size: 13px; color: var(--tmu); line-height: 1.7; }
+    .step-tag { display: inline-block; margin-top: 14px; background: var(--gl); color: var(--gd); font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; }
+    .how-cta { text-align: center; margin-top: 40px; }
+    .how-cta p { font-size: 14px; color: var(--tmu); margin-bottom: 16px; font-style: italic; }
+    .btn-p { background: var(--gd); color: var(--white); padding: 13px 24px; border-radius: 11px; border: none; font-family: var(--sans); font-size: 14px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 16px rgba(26,92,42,.25); transition: background .2s, transform .15s, box-shadow .2s; }
+    .btn-p:hover { background: var(--gm); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,92,42,.3); }
+    .btn-s { background: transparent; color: var(--tmu); padding: 13px 20px; border-radius: 11px; border: 1px solid var(--border); cursor: pointer; font-family: var(--sans); font-size: 13px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: border-color .2s, color .2s, background .2s; }
+    .btn-s:hover { border-color: var(--gm); color: var(--gd); background: var(--gp); }
+
+    /* ── TESTIMONIALS ── */
+    .testi-bg { background: var(--cream3); }
+    .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .testi-card { background: var(--white); border: 0.5px solid var(--border); border-radius: 18px; padding: 26px 24px; position: relative; }
+    .testi-quote { font-family: var(--serif); font-size: 15px; color: var(--tm); line-height: 1.75; margin-bottom: 20px; font-style: italic; }
+    .testi-quote::before { content: '\201C'; font-size: 48px; color: var(--gl); font-family: var(--serif); line-height: 0.6; display: block; margin-bottom: 12px; }
+    .testi-author { display: flex; align-items: center; gap: 12px; }
+    .testi-avatar { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; flex-shrink: 0; }
+    .testi-name { font-size: 13px; font-weight: 700; color: var(--td); margin-bottom: 2px; }
+    .testi-meta { font-size: 11px; color: var(--tf); font-weight: 600; }
+    .testi-stars { color: var(--amber); font-size: 12px; margin-bottom: 14px; }
+
+    /* ── TOPIC SELECTOR ── */
+    .topics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .topic-card { background: var(--white); border: 0.5px solid var(--border); border-radius: var(--r); padding: 22px 20px; cursor: pointer; transition: border-color .2s, box-shadow .2s, transform .2s; position: relative; }
+    .topic-card:hover, .topic-card.selected { border-color: var(--gd); box-shadow: 0 4px 20px rgba(26,92,42,.1); transform: translateY(-3px); }
+    .topic-card.selected { background: var(--gl); }
+    .topic-card.selected .topic-check { opacity: 1; transform: scale(1); }
+    .topic-icon { font-size: 26px; margin-bottom: 10px; }
+    .topic-name { font-size: 14px; font-weight: 700; color: var(--td); margin-bottom: 5px; }
+    .topic-desc { font-size: 12px; color: var(--tmu); line-height: 1.55; }
+    .topic-check { position: absolute; top: 14px; right: 14px; width: 20px; height: 20px; border-radius: 50%; background: var(--gd); display: flex; align-items: center; justify-content: center; opacity: 0; transform: scale(.6); transition: opacity .2s, transform .2s; }
+    .topic-check::after { content: '✓'; color: white; font-size: 11px; font-weight: 700; }
+    .topic-cta { margin-top: 28px; padding: 22px 24px; background: var(--white); border: 0.5px solid var(--border); border-radius: var(--r); display: flex; align-items: center; justify-content: space-between; gap: 20px; transition: opacity .3s; }
+    .topic-cta.hidden { opacity: 0; pointer-events: none; }
+    .topic-cta-text { font-size: 15px; font-weight: 600; color: var(--td); }
+    .topic-cta-sub { font-size: 13px; color: var(--tmu); margin-top: 3px; }
+
+    /* ── QUIZ ── */
+    .quiz-bg { background: var(--cream2); }
+    .quiz-wrap { background: var(--white); border: 0.5px solid var(--border); border-radius: 20px; padding: 40px; max-width: 720px; margin: 0 auto; }
+    .quiz-progress-bar { height: 3px; background: var(--border); border-radius: 3px; margin-bottom: 36px; overflow: hidden; }
+    .quiz-progress-fill { height: 100%; background: var(--gd); border-radius: 3px; transition: width .4s ease; }
+    .quiz-step { display: none; }
+    .quiz-step.active { display: block; }
+    .quiz-q { font-family: var(--serif); font-size: 22px; font-weight: 600; color: var(--td); margin-bottom: 8px; line-height: 1.3; }
+    .quiz-hint { font-size: 13px; color: var(--tmu); margin-bottom: 28px; }
+    .quiz-opts { display: flex; flex-direction: column; gap: 10px; }
+    .quiz-opt { padding: 14px 18px; border: 0.5px solid var(--border); border-radius: 11px; cursor: pointer; font-size: 14px; font-weight: 600; color: var(--tm); transition: all .18s; display: flex; align-items: center; gap: 12px; background: var(--white); }
+    .quiz-opt:hover { border-color: var(--gd); color: var(--gd); background: var(--gl); }
+    .quiz-opt.chosen { border-color: var(--gd); background: var(--gl); color: var(--gd); }
+    .quiz-opt-icon { font-size: 18px; flex-shrink: 0; }
+    .quiz-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 28px; }
+    .quiz-back { background: none; border: none; color: var(--tf); font-family: var(--sans); font-size: 13px; font-weight: 600; cursor: pointer; padding: 8px 0; }
+    .quiz-back:hover { color: var(--tmu); }
+    .quiz-result { display: none; text-align: center; padding: 10px 0; }
+    .quiz-result.active { display: block; }
+    .result-emoji { font-size: 48px; margin-bottom: 16px; }
+    .result-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gm); margin-bottom: 8px; }
+    .result-title { font-family: var(--serif); font-size: 26px; font-weight: 600; color: var(--td); margin-bottom: 14px; }
+    .result-text { font-size: 15px; color: var(--tmu); line-height: 1.8; max-width: 480px; margin: 0 auto 28px; }
+    .result-recs { display: flex; flex-direction: column; gap: 10px; text-align: left; margin-bottom: 28px; }
+    .rec-item { background: var(--gl); border-radius: 10px; padding: 14px 16px; font-size: 13px; color: var(--gd); font-weight: 600; display: flex; align-items: center; gap: 10px; }
+    .result-reset { background: none; border: none; color: var(--tf); font-family: var(--sans); font-size: 13px; cursor: pointer; text-decoration: underline; margin-top: 12px; }
+
+    /* ── PARENTING STYLE ── */
+    .style-wrap { background: var(--white); border: 0.5px solid var(--border); border-radius: 20px; padding: 40px; max-width: 760px; margin: 0 auto; }
+    .style-q { font-family: var(--serif); font-size: 20px; font-weight: 600; color: var(--td); margin-bottom: 6px; line-height: 1.4; }
+    .style-scenario { font-size: 13px; color: var(--tmu); margin-bottom: 22px; font-style: italic; background: var(--cream2); padding: 12px 16px; border-radius: 9px; border-left: 3px solid var(--amber); }
+    .style-opts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .style-opt { padding: 14px 16px; border: 0.5px solid var(--border); border-radius: 11px; cursor: pointer; font-size: 13px; font-weight: 600; color: var(--tm); line-height: 1.5; transition: all .18s; background: var(--white); }
+    .style-opt:hover { border-color: var(--gd); color: var(--gd); background: var(--gl); }
+    .style-opt.chosen { border-color: var(--gd); background: var(--gl); color: var(--gd); }
+    .style-progress { font-size: 12px; color: var(--tf); font-weight: 600; margin-bottom: 20px; }
+    .style-result { display: none; }
+    .style-result.active { display: block; }
+    .style-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 28px; }
+    .style-card { border-radius: 14px; padding: 20px 18px; border: 2px solid transparent; }
+    .style-card.winner { border-color: var(--gd); }
+    .style-card-label { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 8px; }
+    .style-card-name { font-family: var(--serif); font-size: 17px; font-weight: 600; margin-bottom: 8px; }
+    .style-card-pct { font-size: 12px; line-height: 1.6; }
+    .style-bar-wrap { margin-bottom: 8px; }
+    .style-bar-label { font-size: 12px; color: var(--tmu); font-weight: 600; margin-bottom: 5px; display: flex; justify-content: space-between; }
+    .style-bar { height: 6px; background: var(--border); border-radius: 6px; overflow: hidden; }
+    .style-bar-fill { height: 100%; border-radius: 6px; transition: width .6s ease; }
+
+    /* ── PILLARS ── */
+    .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .pillar { background: var(--white); border: 0.5px solid var(--border); border-radius: 18px; padding: 28px 24px; position: relative; overflow: hidden; transition: box-shadow .25s, transform .25s, border-color .25s; }
+    .pillar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+    .pillar:nth-child(1)::before { background: var(--gm); }
+    .pillar:nth-child(2)::before { background: var(--amber); }
+    .pillar:nth-child(3)::before { background: #8B5CF6; }
+    .pillar:hover { box-shadow: 0 8px 30px rgba(0,0,0,.07); transform: translateY(-4px); border-color: rgba(26,92,42,.2); }
+    .pillar-num { font-size: 11px; font-weight: 700; letter-spacing: .1em; color: var(--tf); margin-bottom: 18px; }
+    .pillar-title { font-family: var(--serif); font-size: 18px; font-weight: 600; color: var(--td); line-height: 1.3; margin-bottom: 10px; }
+    .pillar-text { font-size: 13px; color: var(--tmu); line-height: 1.7; }
+    .pillar-tag { display: inline-block; margin-top: 16px; font-size: 11px; font-weight: 700; border-radius: 6px; padding: 3px 10px; }
+
+    /* ── VALUES ── */
+    .val-bg { background: var(--gp); padding: 80px 0; }
+    .val-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+    .val-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .val-item { padding: 32px 28px; border-right: 0.5px solid rgba(26,92,42,.12); }
+    .val-item:last-child { border-right: none; }
+    .val-vs { font-size: 11px; font-weight: 700; color: var(--tf); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 10px; }
+    .val-want { font-family: var(--serif); font-size: 22px; font-weight: 600; color: var(--gd); margin-bottom: 6px; font-style: italic; }
+    .val-not { font-size: 13px; color: var(--tmu); }
+
+    /* ── FINAL CTA ── */
+    .cta-sec { background: var(--navy); padding: 80px 40px; }
+    .cta-inner { max-width: 1000px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .cta-badge { display: inline-flex; align-items: center; gap: 7px; background: rgba(168,213,194,.1); border: 0.5px solid rgba(168,213,194,.25); border-radius: 20px; padding: 5px 13px; font-size: 11px; color: #A8D5C2; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 14px; }
+    .cta-title { font-family: var(--serif); font-size: 34px; font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 10px; }
+    .cta-title em { color: #A8D5C2; font-style: italic; font-weight: 400; }
+    .cta-sub { font-size: 14px; color: rgba(255,255,255,.5); }
+    .cta-right { display: flex; flex-direction: column; gap: 12px; align-items: flex-end; flex-shrink: 0; }
+    .cta-note { font-size: 12px; color: rgba(255,255,255,.3); text-align: right; }
+    footer { background: #070E1A; padding: 26px 40px; display: flex; align-items: center; justify-content: space-between; }
+    .foot-logo { font-family: var(--serif); font-size: 15px; font-weight: 700; color: rgba(255,255,255,.4); }
+    .foot-links { display: flex; gap: 20px; }
+    .foot-link { font-size: 12px; color: rgba(255,255,255,.22); text-decoration: none; }
+    .foot-link:hover { color: rgba(255,255,255,.45); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
+    .fu { animation: fadeUp .6s ease both; }
+    .d1{animation-delay:.1s} .d2{animation-delay:.22s} .d3{animation-delay:.36s} .d4{animation-delay:.52s}
+
+    /* ── WA ICON ── */
+    .wa-icon { width: 16px; height: 16px; flex-shrink: 0; }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:1024px) {
+      .founder-section { grid-template-columns: 1fr; min-height: auto; }
+      .founder-photo-side { min-height: 360px; }
+      .founder-content { padding: 48px 32px; }
+      .founder-h1 { font-size: 34px; }
+      .store-grid { grid-template-columns: 1fr; }
     }
-
-    h1 {
-      font-size: 36px;
-      margin: 0 0 8px;
-      letter-spacing: -0.5px;
+    @media(max-width:900px) {
+      nav { padding: 0 20px; }
+      .nav-links .nav-link { display: none; }
+      .steps { grid-template-columns: 1fr; }
+      .steps::before { display: none; }
+      .topics-grid { grid-template-columns: 1fr 1fr; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .style-opts { grid-template-columns: 1fr; }
+      .pillars, .style-cards { grid-template-columns: 1fr; }
+      .val-grid { grid-template-columns: 1fr; }
+      .val-item { border-right: none; border-bottom: 0.5px solid rgba(26,92,42,.12); }
+      .val-item:last-child { border-bottom: none; }
+      .cta-inner { flex-direction: column; align-items: flex-start; }
+      .cta-right { align-items: flex-start; }
+      .cta-title { font-size: 26px; }
+      .about-inner { grid-template-columns: 1fr; gap: 24px; }
+      .sec { padding: 60px 20px; }
+      .store-inner { padding: 60px 20px; }
+      .val-inner { padding: 0 20px; }
+      footer { flex-direction: column; gap: 12px; text-align: center; }
+      .foot-links { flex-wrap: wrap; justify-content: center; }
     }
-
-    h2 {
-      font-size: 26px;
-      margin-bottom: 16px;
-    }
-
-    .tagline {
-      font-size: 12px;
-      letter-spacing: 2px;
-      color: var(--accent);
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-
-    p {
-      margin: 0 0 12px;
-      color: var(--muted);
-      font-size: 16px;
-    }
-
-    .divider {
-      width: 40px;
-      height: 2px;
-      background: var(--accent);
-      margin: 20px auto;
-      border-radius: 2px;
-    }
-
-    .cta {
-      display: inline-block;
-      margin-top: 24px;
-      padding: 12px 22px;
-      background: #f3e5c9;
-      color: #5a513f;
-      text-decoration: none;
-      border-radius: 10px;
-      font-size: 14px;
-      font-weight: 500;
-    }
-
-    .cta:hover {
-      background: #edd9b2;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 13px;
-      color: var(--muted);
-      padding-bottom: 40px;
-    }
-
-    footer p {
-      margin: 6px 0;
-    }
-
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 30px;
-      }
-      h2 {
-        font-size: 22px;
-      }
+    @media(max-width:600px) {
+      .topics-grid { grid-template-columns: 1fr; }
+      .quiz-wrap, .style-wrap { padding: 28px 20px; }
+      .cta-sec { padding: 60px 20px; }
+      .founder-stats { grid-template-columns: 1fr; }
+      .f-stat { border-right: none; border-bottom: 0.5px solid rgba(255,255,255,0.08); }
+      .f-stat:last-child { border-bottom: none; }
     }
   </style>
 </head>
-
 <body>
 
-  <div class="container">
-
-    <!-- HERO -->
-    <div class="card">
-      <h1>WiseSprouts</h1>
-      <div class="tagline">Rooted in care. Growing with wisdom.</div>
-
-      <div class="divider"></div>
-
-      <p>
-        Science informed parenting support for modern families.
-      </p>
-      <p>
-        Blending child development, real life parenting, and intelligent tools.
-      </p>
-
-      <a class="cta" href="#community">Explore WiseSprouts</a>
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-mark">
+      <svg width="16" height="16" viewBox="0 0 17 17" fill="none"><path d="M8.5 15C8.5 15 3 11 3 6.5C3 3.96 5.46 2 8.5 2s5.5 1.96 5.5 4.5C14 11 8.5 15 8.5 15Z" fill="white" opacity=".9"/><line x1="8.5" y1="2" x2="8.5" y2="15" stroke="rgba(26,92,42,.4)" stroke-width=".8" stroke-linecap="round"/><path d="M8.5 8C10 6 12 5.5 14 6.5" stroke="rgba(26,92,42,.35)" stroke-width=".8" stroke-linecap="round"/></svg>
     </div>
-
-    <!-- WHY -->
-    <div class="card">
-      <h2>Why WiseSprouts exists</h2>
-      <div class="divider"></div>
-
-      <p>Parenting advice is everywhere.</p>
-      <p>And yet support feels scattered.</p>
-      <p>Parents are expected to know everything, but are rarely given clarity.</p>
-
-      <br>
-
-      <p>WiseSprouts exists to simplify parenting decisions.</p>
-      <p>Without fear.</p>
-      <p>Without guilt.</p>
-      <p>Without extremes.</p>
-    </div>
-
-    <!-- WHAT -->
-    <div class="card">
-      <h2>What we are building</h2>
-      <div class="divider"></div>
-
-      <p>Thoughtful parenting content grounded in child development.</p>
-      <p>Practical guidance for everyday parenting moments.</p>
-      <p>Intelligent tools to support calm, informed decisions coming soon.</p>
-    </div>
-
-    <!-- FOR PARENTS -->
-    <div class="card">
-      <h2>For parents who want</h2>
-      <div class="divider"></div>
-
-      <p>Clarity over confusion.</p>
-      <p>Understanding over pressure.</p>
-      <p>Support that respects both the child and the parent.</p>
-    </div>
-
-    <!-- COMMUNITY -->
-    <div class="card" id="community">
-      <h2>Join the WiseSprouts community</h2>
-      <div class="divider"></div>
-
-      <p>Join us on WhatsApp.</p>
-      <p>Learn. Reflect. Grow together.</p>
-
-      <a class="cta" href="https://wa.me/91XXXXXXXXXX">Join on WhatsApp</a>
-    </div>
-
-    <footer>
-      <p>WiseSprouts is built by WiseLabs</p>
-      <p>© 2025 WiseSprouts</p>
-    </footer>
-
+    WiseSprouts
+  </a>
+  <div class="nav-links">
+    <a href="#about" class="nav-link">About</a>
+    <a href="#store" class="nav-link">Resources</a>
+    <a href="#how" class="nav-link">How it works</a>
+    <a href="#topics" class="nav-link">Topics</a>
+    <a href="#quiz" class="nav-link">Quiz</a>
+    <a class="nav-cta" href="https://wa.me/919949216571?text=Hi%20Akanksha%2C%20I%27d%20like%20to%20discuss%20my%20child%27s%20development." target="_blank">
+      <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Message Akanksha
+    </a>
   </div>
+</nav>
 
+<!-- FOUNDER HERO -->
+<section class="founder-section">
+  <div class="founder-photo-side">
+    <!--
+      HOW TO ADD YOUR PHOTO:
+      1. Remove the entire <div class="founder-photo-placeholder">...</div> below
+      2. Add this instead:
+         <img src="your-photo.jpg" alt="Akanksha, founder of WiseSprouts"
+              style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;" />
+      3. Keep the overlay and name-tag divs below as-is
+    -->
+    <img src="images/akanksha.jpg" 
+     alt="Akanksha, founder of WiseSprouts"
+     style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:top center;" />
+    <div class="founder-overlay"></div>
+    <div class="founder-name-tag">
+      <div class="founder-name">Akanksha Rajhans</div>
+      <div class="founder-creds">
+        <div class="cred-pill">🎓 Certified Child Development Specialist</div>
+        <div class="cred-pill">🌱 Founder, WiseSprouts</div>
+      </div>
+    </div>
+  </div>
+  <div class="founder-content">
+    <div class="founder-eyebrow fu">Science-informed · India-aware · 1-on-1</div>
+    <h1 class="founder-h1 fu d1">
+      Your child is not<br>a <em>problem</em> to fix.<br>They need to be <em>understood.</em>
+    </h1>
+    <p class="founder-story fu d2">
+      I built WiseSprouts after realising that most parenting advice online is either too generic, too Western, or too guilt-inducing for Indian families navigating real life.<br><br>
+      <strong>I'm Akanksha</strong> — a certified child development specialist and parent of two. I work with families 1-on-1 on WhatsApp to bring child development science into your everyday parenting moments. <strong>No group chats. No noise. Just clarity.</strong>
+    </p>
+    <div class="founder-btns fu d3">
+      <a href="https://wa.me/919949216571?text=Hi%20Akanksha%2C%20I%27d%20like%20to%20discuss%20my%20child%27s%20development." class="btn-wa" target="_blank">
+        <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Message me on WhatsApp
+      </a>
+      <a href="#store" class="btn-ghost">Explore resources →</a>
+    </div>
+    <div class="founder-stats fu d4">
+      <div class="f-stat"><div class="f-stat-num">0–12</div><div class="f-stat-label">Age range</div></div>
+      <div class="f-stat"><div class="f-stat-num">1-on-1</div><div class="f-stat-label">Direct access</div></div>
+      <div class="f-stat"><div class="f-stat-num">India-first</div><div class="f-stat-label">Always</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-strip" id="about">
+  <div class="about-inner">
+    <div>
+      <div class="about-label">Why WiseSprouts</div>
+      <div class="about-pull">Parenting advice is everywhere. <em>Support</em> is not.</div>
+    </div>
+    <div class="about-text">
+      <p>Most Indian parents are navigating parenting between two worlds — the values they grew up with, and the world their children are growing up in. Add joint families, academic pressure, screen time battles, and the endless scroll of conflicting advice online. It's exhausting.</p>
+      <p><strong>WiseSprouts exists to simplify this.</strong> Every insight I share is grounded in child development research and filtered through an India-aware lens. No guilt. No extremes. No one-size-fits-all answers.</p>
+      <p>When you work with me, you're not getting a chatbot or a generic programme. You're getting <strong>a real conversation about your real child</strong> — their age, their temperament, your family, your context.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT STORE -->
+<section class="store-bg" id="store">
+  <div class="store-inner">
+    <div class="store-head">
+      <div class="store-eye">Resources & guidance</div>
+      <div class="store-title">Start wherever feels <em>right.</em></div>
+      <div class="store-sub">From free guides to personalised 1-on-1 plans — choose what your child needs most right now.</div>
+    </div>
+    <div class="store-grid">
+
+      <!-- FREE GUIDE -->
+      <div class="product-card">
+        <div class="product-badge badge-free">Free resource</div>
+        <div class="product-top">
+          <div class="product-thumb" style="background:rgba(37,211,102,0.1);">🌱</div>
+          <div class="product-info">
+            <div class="product-name">The WiseSprouts Starter Guide</div>
+            <div class="product-desc">The 5 child development principles every Indian parent needs to know — before anything else.</div>
+          </div>
+        </div>
+        <div class="product-price-row">
+          <div class="price-main">Free</div>
+          <div class="price-saving">No signup needed</div>
+        </div>
+        <div class="product-includes">
+          <div class="product-includes-title">What's inside</div>
+          <div class="include-item">5 core child development principles explained simply</div>
+          <div class="include-item">Why Indian parenting context matters (and how to use it)</div>
+          <div class="include-item">The one question to ask before reacting to any behaviour</div>
+        </div>
+        <a href="https://wa.me/919949216571?text=Hi%20Akanksha%2C%20I%27d%20like%20the%20free%20WiseSprouts%20Starter%20Guide%20please." class="product-btn free" target="_blank">
+          <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Get the free guide
+        </a>
+      </div>
+
+      <!-- GUIDE 1 -->
+      <div class="product-card">
+        <div class="product-badge badge-guide">PDF guide</div>
+        <div class="product-top">
+          <div class="product-thumb" style="background:rgba(245,158,11,0.1);">😤</div>
+          <div class="product-info">
+            <div class="product-name">Calm in the Storm: Toddler Tantrums Guide</div>
+            <div class="product-desc">Why tantrums happen, what they're communicating, and exactly what to do — step by step.</div>
+          </div>
+        </div>
+        <div class="product-price-row">
+          <div class="price-main">₹499</div>
+          <div class="price-usd">≈ $6</div>
+          <div class="price-original">₹799</div>
+          <div class="price-saving">Save 38%</div>
+        </div>
+        <div class="stars"><span class="stars-icons">★★★★★</span><span class="stars-label">5.0 · 24 reviews</span></div>
+        <div class="product-includes">
+          <div class="product-includes-title">What's inside</div>
+          <div class="include-item">The neuroscience of tantrums in plain language</div>
+          <div class="include-item">A 3-step in-the-moment response framework</div>
+          <div class="include-item">How to prevent escalation before it starts</div>
+          <div class="include-item">Joint family–specific strategies</div>
+        </div>
+        <a href="https://wa.me/919949216571?text=Hi%20Akanksha%2C%20I%27d%20like%20to%20get%20the%20Calm%20in%20the%20Storm%20toddler%20tantrums%20guide." class="product-btn green" target="_blank">
+          <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Get this guide — ₹499
+        </a>
+      </div>
+
+      <!-- GUIDE 2 -->
+      <div class="product-card featured">
+        <div class="product-badge badge-bundle">Guide bundle</div>
+        <div class="product-top">
+          <div class="product-thumb" style="background:rgba(168,213,194,0.12);">📱</div>
+          <div class="product-info">
+            <div class="product-name">Screens Without War: The Indian Parent's Playbook</div>
+            <div class="product-desc">How to reduce screen time without battles — with an India-aware approach to rules and routines.</div>
+          </div>
+        </div>
+        <div class="product-price-row">
+          <div class="price-main">₹799</div>
+          <div class="price-usd">≈ $10</div>
+          <div class="price-original">₹1,299</div>
+          <div class="price-saving">Save 38%</div>
+        </div>
+        <div class="stars"><span class="stars-icons">★★★★★</span><span class="stars-label">5.0 · 18 reviews</span></div>
+        <div class="product-includes">
+          <div class="product-includes-title">What's inside</div>
+          <div class="include-item">Age-by-age screen time guidelines (0–12 years)</div>
+          <div class="include-item">How to set rules that actually hold</div>
+          <div class="include-item">Managing screens in joint families with multiple devices</div>
+          <div class="include-item">What to do when rules break down — without punishment</div>
+        </div>
+        <a href="https://wa.me/919949216571?text=Hi%20Akanksha%2C%20I%27d%20like%20to%20get%20the%20Screens%20Without%20War%20guide." class="product-btn teal" target="_blank">
+          <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Get this guide — ₹799
+        </a>
+      </div>
+
+      <!-- PERSONALISED PLAN -->
+      <div class="product-card">
+        <div class="product-badge badge-premium">1-on-1 · Premium</div>
+        <div class="product-top">
+          <div class="product-thumb" style="background:rgba(139,92,246,0.1);">🎯</div>
+          <div class="product-info">
+            <div class="product-name">Your Child's Personalised Development Plan</div>
+            <div class="product-desc">A complete, bespoke plan built around your child's age, temperament, challenges, and your family's unique context.</div>
+          </div>
+        </div>
+        <div class="product-price-row">
+          <div class="price-main">₹4,999</div>
+          <div class="price-usd">≈ $60</div>
+          <div class="price-saving">Topic-based pricing</div>
+        </div>
+        <div class="stars"><span class="stars-icons">★★★★★</span><span class="stars-label">5.0 · All sessions</span></div>
+        <div class="product-includes">
+          <div class="product-includes-title">What's included</div>
+          <div class="include-item">Free initial WhatsApp chat to understand your child's context</div>
+          <div class="include-item">A bespoke, written child development plan</div>
+          <div class="include-item">Practical daily guidance tailored to your family</div>
+          <div class="include-item">Follow-up check-in to track progress</div>
+          <div class="include-item">Price varies by topic complexity — discussed in free chat</div>
+        </div>
+        <a href="https://wa.me/919949216571?text=Hi%20Akanksha%2C%20I%27d%20like%20to%20know%20more%20about%20a%20personalised%20child%20development%20plan%20for%20my%20child." class="product-btn purple" target="_blank">
+          <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Start with a free chat →
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-bg" id="how">
+  <div class="sec">
+    <div class="sec-head">
+      <div><div class="sec-eye">The process</div><div class="sec-title">How WiseSprouts works</div></div>
+      <div class="sec-line"></div>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-circle">1</div>
+        <div class="step-title">Message Akanksha</div>
+        <div class="step-text">Send a WhatsApp message about what you're navigating — a behaviour challenge, a milestone worry, a school problem. No forms, no waiting rooms, no AI chatbots.</div>
+        <div class="step-tag">Always free to start</div>
+      </div>
+      <div class="step">
+        <div class="step-circle">2</div>
+        <div class="step-title">Free initial chat</div>
+        <div class="step-text">Akanksha understands your child's full context — age, temperament, family dynamics, what you've already tried. You get real clarity on what's going on before anything is paid.</div>
+        <div class="step-tag">No commitment</div>
+      </div>
+      <div class="step">
+        <div class="step-circle">3</div>
+        <div class="step-title">Your child's plan</div>
+        <div class="step-text">A tailored development plan built specifically for your child — with practical guidance, follow-up support, and resources. Priced by topic and complexity, discussed upfront.</div>
+        <div class="step-tag">Paid · Transparent pricing</div>
+      </div>
+    </div>
+    <div class="how-cta">
+      <p>It costs nothing to start the conversation.</p>
+      <a href="https://wa.me/919949216571?text=Hi%20Akanksha%2C%20I%27d%20like%20to%20discuss%20my%20child%27s%20development." class="btn-p" target="_blank" style="display:inline-flex;">
+        <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Start free chat
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi-bg">
+  <div class="sec">
+    <div class="sec-head">
+      <div><div class="sec-eye">Parent stories</div><div class="sec-title">What families are saying</div></div>
+      <div class="sec-line"></div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-quote">Within one week of following Akanksha's advice, my 3-year-old's bedtime meltdowns reduced dramatically. She understood my son in a way Google never could — she accounted for my in-laws being involved and that made all the difference.</div>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#E8F5EC;color:#1A5C2A;">P</div>
+          <div><div class="testi-name">Priya M.</div><div class="testi-meta">Mother of a 3-year-old · Delhi</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-quote">I was skeptical about a WhatsApp consultation but she gave me more clarity in 20 minutes than I got from 3 months of parenting reels. The personalised plan she created for my daughter's school anxiety was incredibly specific and it worked.</div>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#FEF3C7;color:#92400E;">R</div>
+          <div><div class="testi-name">Radhika S.</div><div class="testi-meta">Mother of a 7-year-old · Pune</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-quote">As a father who felt completely lost with my toddler's tantrums, Akanksha's approach changed how I see my child entirely. Not as a difficult child — but as a child with big feelings and no words yet. That reframe changed everything.</div>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#EDE9FE;color:#5B21B6;">A</div>
+          <div><div class="testi-name">Arjun K.</div><div class="testi-meta">Father of a 2-year-old · Bangalore</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOPIC SELECTOR -->
+<section class="sec" id="topics">
+  <div class="sec-head">
+    <div><div class="sec-eye">What's on your mind?</div><div class="sec-title">Choose your concern</div></div>
+    <div class="sec-line"></div>
+  </div>
+  <p style="font-size:15px;color:var(--tmu);margin-bottom:28px;margin-top:-28px;">Select what you're navigating — we'll open a pre-filled WhatsApp so you don't have to start from scratch.</p>
+  <div class="topics-grid">
+    <div class="topic-card" data-topic="Toddler tantrums and big emotions" onclick="selectTopic(this)"><div class="topic-check"></div><div class="topic-icon">😤</div><div class="topic-name">Toddler tantrums</div><div class="topic-desc">Meltdowns, big emotions, hitting, biting — understanding what's really happening.</div></div>
+    <div class="topic-card" data-topic="Screen time and technology habits" onclick="selectTopic(this)"><div class="topic-check"></div><div class="topic-icon">📱</div><div class="topic-name">Screen time &amp; tech habits</div><div class="topic-desc">Setting healthy limits without daily battles. What's age-appropriate and what isn't.</div></div>
+    <div class="topic-card" data-topic="Sleep challenges and bedtime routines" onclick="selectTopic(this)"><div class="topic-check"></div><div class="topic-icon">🌙</div><div class="topic-name">Sleep challenges</div><div class="topic-desc">Bedtime resistance, night waking, co-sleeping transitions.</div></div>
+    <div class="topic-card" data-topic="School anxiety and academic pressure" onclick="selectTopic(this)"><div class="topic-check"></div><div class="topic-icon">🏫</div><div class="topic-name">School anxiety &amp; pressure</div><div class="topic-desc">Fear of school, exam stress, performance anxiety — Indian academic context included.</div></div>
+    <div class="topic-card" data-topic="Sibling rivalry and conflict" onclick="selectTopic(this)"><div class="topic-check"></div><div class="topic-icon">👫</div><div class="topic-name">Sibling rivalry</div><div class="topic-desc">Constant fighting, jealousy, fairness struggles — building bonds that last.</div></div>
+    <div class="topic-card" data-topic="Child confidence, self-esteem and identity" onclick="selectTopic(this)"><div class="topic-check"></div><div class="topic-icon">✨</div><div class="topic-name">Confidence &amp; self-esteem</div><div class="topic-desc">Building your child's sense of self without pressure or comparison.</div></div>
+    <div class="topic-card" data-topic="Parenting in a joint family setup" onclick="selectTopic(this)"><div class="topic-check"></div><div class="topic-icon">🏠</div><div class="topic-name">Joint family dynamics</div><div class="topic-desc">Conflicting styles at home, grandparent boundaries, consistent discipline.</div></div>
+    <div class="topic-card" data-topic="Picky eating and food struggles" onclick="selectTopic(this)"><div class="topic-check"></div><div class="topic-icon">🥗</div><div class="topic-name">Picky eating &amp; food</div><div class="topic-desc">Refusal, extreme preferences, mealtime stress — without force or fear.</div></div>
+    <div class="topic-card" data-topic="Developmental milestones and concerns" onclick="selectTopic(this)"><div class="topic-check"></div><div class="topic-icon">🌱</div><div class="topic-name">Developmental milestones</div><div class="topic-desc">Speech delays, motor development, social skills — what to watch for.</div></div>
+  </div>
+  <div class="topic-cta hidden" id="topicCta">
+    <div>
+      <div class="topic-cta-text" id="topicCtaText">Open WhatsApp about this topic</div>
+      <div class="topic-cta-sub">Akanksha will respond with initial guidance</div>
+    </div>
+    <a id="topicCtaBtn" href="#" class="btn-p" target="_blank">
+      <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Message about this →
+    </a>
+  </div>
+</section>
+
+<!-- AGE/STAGE QUIZ -->
+<section class="quiz-bg" id="quiz">
+  <div class="sec">
+    <div class="sec-head">
+      <div><div class="sec-eye">Personalised for you</div><div class="sec-title">Find your child's guidance</div></div>
+      <div class="sec-line"></div>
+    </div>
+    <div class="quiz-wrap">
+      <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="qProgress" style="width:0%"></div></div>
+      <div class="quiz-step active" id="qs1">
+        <div class="quiz-q">How old is your child?</div>
+        <div class="quiz-hint">This helps match guidance to the right developmental stage.</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt" onclick="quizChoose(1,'0–1 year (infant)','👶')"><span class="quiz-opt-icon">👶</span> 0–1 year (infant)</div>
+          <div class="quiz-opt" onclick="quizChoose(1,'1–3 years (toddler)','🧒')"><span class="quiz-opt-icon">🧒</span> 1–3 years (toddler)</div>
+          <div class="quiz-opt" onclick="quizChoose(1,'3–6 years (preschool)','🎨')"><span class="quiz-opt-icon">🎨</span> 3–6 years (preschool)</div>
+          <div class="quiz-opt" onclick="quizChoose(1,'6–10 years (school age)','📚')"><span class="quiz-opt-icon">📚</span> 6–10 years (school age)</div>
+          <div class="quiz-opt" onclick="quizChoose(1,'10–12 years (preteen)','🌟')"><span class="quiz-opt-icon">🌟</span> 10–12 years (preteen)</div>
+        </div>
+      </div>
+      <div class="quiz-step" id="qs2">
+        <div class="quiz-q">What feels most challenging right now?</div>
+        <div class="quiz-hint">Pick the one taking the most mental energy.</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt" onclick="quizChoose(2,'behaviour and emotional regulation','😤')"><span class="quiz-opt-icon">😤</span> Behaviour and emotional regulation</div>
+          <div class="quiz-opt" onclick="quizChoose(2,'learning, focus or school performance','📖')"><span class="quiz-opt-icon">📖</span> Learning, focus, or school performance</div>
+          <div class="quiz-opt" onclick="quizChoose(2,'sleep, eating or daily routines','🌙')"><span class="quiz-opt-icon">🌙</span> Sleep, eating, or daily routines</div>
+          <div class="quiz-opt" onclick="quizChoose(2,'social skills and friendships','🤝')"><span class="quiz-opt-icon">🤝</span> Social skills and friendships</div>
+          <div class="quiz-opt" onclick="quizChoose(2,'developmental concerns or milestones','🌱')"><span class="quiz-opt-icon">🌱</span> Developmental concerns or milestones</div>
+        </div>
+        <div class="quiz-nav"><button class="quiz-back" onclick="quizBack(1)">← Back</button></div>
+      </div>
+      <div class="quiz-step" id="qs3">
+        <div class="quiz-q">How do you handle tough parenting moments?</div>
+        <div class="quiz-hint">No right answer — this personalises your result.</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt" onclick="quizChoose(3,'going with instinct','💡')"><span class="quiz-opt-icon">💡</span> I go with my instinct and figure it out</div>
+          <div class="quiz-opt" onclick="quizChoose(3,'researching before responding','🔍')"><span class="quiz-opt-icon">🔍</span> I look it up and research before responding</div>
+          <div class="quiz-opt" onclick="quizChoose(3,'talking to family or other parents','💬')"><span class="quiz-opt-icon">💬</span> I talk to family or other parents first</div>
+          <div class="quiz-opt" onclick="quizChoose(3,'feeling unsure and second-guessing','🤔')"><span class="quiz-opt-icon">🤔</span> I often feel unsure and second-guess myself</div>
+        </div>
+        <div class="quiz-nav"><button class="quiz-back" onclick="quizBack(2)">← Back</button></div>
+      </div>
+      <div class="quiz-result" id="qResult">
+        <div class="result-emoji" id="rEmoji">🌱</div>
+        <div class="result-label">Your child's stage</div>
+        <div class="result-title" id="rTitle"></div>
+        <div class="result-text" id="rText"></div>
+        <div class="result-recs" id="rRecs"></div>
+        <a id="rWaBtn" href="#" class="btn-p" target="_blank" style="display:inline-flex;margin:0 auto;">
+          <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Discuss this with Akanksha
+        </a><br>
+        <button class="result-reset" onclick="resetQuiz()">Start again</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARENTING STYLE -->
+<section class="sec" id="style">
+  <div class="sec-head">
+    <div><div class="sec-eye">Know yourself</div><div class="sec-title">What's your parenting style?</div></div>
+    <div class="sec-line"></div>
+  </div>
+  <p style="font-size:15px;color:var(--tmu);margin-bottom:28px;margin-top:-28px;">5 quick scenarios. No right answers. Discover your natural approach and how to build on its strengths.</p>
+  <div class="style-wrap">
+    <div id="styleQuiz">
+      <div class="style-progress" id="styleProgress">Question 1 of 5</div>
+      <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="sProgress" style="width:20%"></div></div>
+      <div id="styleQWrap"></div>
+      <div class="quiz-nav" style="margin-top:24px;">
+        <button class="quiz-back" id="styleBackBtn" onclick="styleBack()" style="visibility:hidden;">← Back</button>
+        <span></span>
+      </div>
+    </div>
+    <div class="style-result" id="styleResult">
+      <div style="text-align:center;margin-bottom:32px;">
+        <div class="result-label">Your parenting style</div>
+        <div class="result-title" id="sResTitle" style="margin-bottom:12px;"></div>
+        <div class="result-text" id="sResText" style="margin-bottom:0;max-width:540px;margin:0 auto;"></div>
+      </div>
+      <div class="style-cards" id="sCards"></div>
+      <div style="margin-bottom:28px;" id="sBars"></div>
+      <div style="text-align:center;">
+        <p style="font-size:14px;color:var(--tmu);margin-bottom:16px;font-style:italic;">Knowing your style is the starting point. Akanksha can show you how to channel it intentionally.</p>
+        <a id="sWaBtn" href="#" class="btn-p" target="_blank" style="display:inline-flex;margin:0 auto;">
+          <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Talk to Akanksha about my style
+        </a><br>
+        <button class="result-reset" onclick="resetStyle()">Retake assessment</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="val-bg">
+  <div class="val-inner">
+    <div class="sec-head"><div><div class="sec-eye">Our belief</div><div class="sec-title">For parents who want</div></div><div class="sec-line"></div></div>
+    <div class="val-grid">
+      <div class="val-item"><div class="val-vs">Instead of confusion</div><div class="val-want">Clarity</div><div class="val-not">Advice that makes sense for your family's real life — not someone else's.</div></div>
+      <div class="val-item"><div class="val-vs">Instead of pressure</div><div class="val-want">Understanding</div><div class="val-not">Support that sees you as a whole parent, not just a problem to fix.</div></div>
+      <div class="val-item"><div class="val-vs">Instead of extremes</div><div class="val-want">Balance</div><div class="val-not">Guidance that respects both the child and the parent. No guilt. No fear.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-sec">
+  <div class="cta-inner">
+    <div>
+      <div class="cta-badge"><span style="width:5px;height:5px;border-radius:50%;background:#A8D5C2;display:inline-block;"></span> 1-on-1 · Free to start · No commitment</div>
+      <div class="cta-title">Your child deserves<br><em>personalised</em> guidance.</div>
+      <div class="cta-sub">Message Akanksha today. No forms, no waiting rooms. Just a real conversation about your real child.</div>
+    </div>
+    <div class="cta-right">
+      <a href="https://wa.me/919949216571?text=Hi%20Akanksha%2C%20I%27d%20like%20to%20discuss%20my%20child%27s%20development." class="btn-wa" target="_blank">
+        <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Message Akanksha on WhatsApp
+      </a>
+      <div class="cta-note">Free initial chat · Transparent pricing discussed upfront</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-logo">WiseSprouts</div>
+  <div class="foot-links">
+    <a href="#" class="foot-link">Privacy Policy</a>
+    <a href="#about" class="foot-link">About</a>
+    <a href="#store" class="foot-link">Resources</a>
+    <a href="https://instagram.com/wisesprouts.in" class="foot-link" target="_blank">Instagram</a>
+  </div>
+  <div class="foot-logo" style="font-family:var(--sans);font-size:12px;">Built by WiseLabs</div>
+</footer>
+
+<script>
+// TOPIC SELECTOR
+function selectTopic(el) {
+  document.querySelectorAll('.topic-card').forEach(function(c){c.classList.remove('selected');});
+  el.classList.add('selected');
+  var topic = el.dataset.topic;
+  var cta = document.getElementById('topicCta');
+  cta.classList.remove('hidden');
+  document.getElementById('topicCtaText').textContent = 'Ask about: ' + topic;
+  var msg = encodeURIComponent('Hi Akanksha, I need guidance on: ' + topic + '. My child is [age]. Can we chat?');
+  document.getElementById('topicCtaBtn').href = 'https://wa.me/919949216571?text=' + msg;
+}
+
+// AGE/STAGE QUIZ
+var qAnswers = {};
+function quizChoose(step, val, emoji) {
+  qAnswers[step] = { val: val, emoji: emoji };
+  var cur = document.getElementById('qs' + step);
+  cur.querySelectorAll('.quiz-opt').forEach(function(o){o.classList.remove('chosen');});
+  event.currentTarget.classList.add('chosen');
+  setTimeout(function() {
+    cur.classList.remove('active');
+    if (step < 3) {
+      document.getElementById('qs' + (step+1)).classList.add('active');
+      document.getElementById('qProgress').style.width = (step/3*100) + '%';
+    } else {
+      document.getElementById('qProgress').style.width = '100%';
+      showQuizResult();
+    }
+  }, 320);
+}
+function quizBack(to) {
+  document.getElementById('qs'+(to+1)).classList.remove('active');
+  document.getElementById('qs'+to).classList.add('active');
+  document.getElementById('qProgress').style.width = ((to-1)/3*100) + '%';
+}
+function showQuizResult() {
+  document.getElementById('qs3').classList.remove('active');
+  document.getElementById('qResult').classList.add('active');
+  var age = qAnswers[1].val, challenge = qAnswers[2].val;
+  var stageMap = {
+    '0–1 year (infant)':      { emoji:'👶', title:'The Wonder Year',        text:'Your infant is building the very foundation of trust and attachment. Every interaction — the eye contact, the soothing, the play — is development happening in real time.',                                           recs:['Understanding infant sleep without cry-it-out','Building secure attachment from day one','Reading your baby\'s cues accurately'] },
+    '1–3 years (toddler)':    { emoji:'🧒', title:'The Autonomy Stage',     text:'Your toddler is discovering they\'re a separate person — and testing every boundary to prove it. This is healthy. It just needs the right response from you.',                                                        recs:['Managing tantrums without losing yourself','Setting limits that actually work','Language development through daily connection'] },
+    '3–6 years (preschool)':  { emoji:'🎨', title:'The Imagination Years',  text:'Your preschooler is making sense of the world through play, stories, and big emotions. This is the golden window for emotional intelligence and curiosity.',                                                         recs:['Building emotional vocabulary early','Encouraging play-based learning','Navigating the "why" phase with patience'] },
+    '6–10 years (school age)':{ emoji:'📚', title:'The Competence Stage',   text:'Your child wants to feel capable and belong. School, friendships, and comparison are all live now. This is when your relationship either deepens or starts to strain.',                                             recs:['Supporting learning without pressure','Building intrinsic motivation, not just marks','Staying connected as school takes over'] },
+    '10–12 years (preteen)':  { emoji:'🌟', title:'The Identity Threshold', text:'Your preteen is right at the edge of adolescence — testing independence, forming identity, and needing you steady and available even when they push back.',                                                         recs:['Keeping the door open during withdrawal','Navigating peer influence calmly','Preparing for the teenage years together'] }
+  };
+  var stage = stageMap[age] || stageMap['1–3 years (toddler)'];
+  document.getElementById('rEmoji').textContent = stage.emoji;
+  document.getElementById('rTitle').textContent = stage.title + ' (' + age + ')';
+  document.getElementById('rText').textContent = stage.text;
+  document.getElementById('rRecs').innerHTML = stage.recs.map(function(r){return '<div class="rec-item">🌱 '+r+'</div>';}).join('');
+  var waMsg = encodeURIComponent('Hi Akanksha, my child is '+age+' and I\'m navigating '+challenge+'. I\'d love to discuss a personalised plan.');
+  document.getElementById('rWaBtn').href = 'https://wa.me/919949216571?text=' + waMsg;
+}
+function resetQuiz() {
+  qAnswers = {};
+  document.getElementById('qResult').classList.remove('active');
+  ['qs1','qs2','qs3'].forEach(function(id){document.getElementById(id).classList.remove('active');});
+  document.getElementById('qs1').classList.add('active');
+  document.getElementById('qProgress').style.width = '0%';
+  document.querySelectorAll('#quiz .quiz-opt').forEach(function(o){o.classList.remove('chosen');});
+}
+
+// PARENTING STYLE
+var styleQs = [
+  { q:'Your 4-year-old throws a big tantrum in a shop because you won\'t buy a toy.', scenario:'People are watching. Your child is on the floor, crying loudly.', opts:['I stay calm, acknowledge the feeling, and hold firm on the boundary','I try to distract them with something else quickly','I give in this once to avoid the scene','I firmly say no and walk away, expecting them to follow'], scores:[0,1,2,0] },
+  { q:'Your child refuses to do homework every single evening.', scenario:'It\'s become a nightly battle. You\'re exhausted and out of patience.', opts:['I try to understand what\'s making it hard for them first','I set a firm rule — homework before anything else, no exceptions','I sit with them and make it a fun activity together','I let them do it in their own time and check later'], scores:[0,2,1,0] },
+  { q:'Your child hits another child on the playground.', scenario:'You saw it happen. The other parent is watching and waiting.', opts:['I calmly separate them, address feelings, then explain consequences','I apologise to the other parent immediately and punish my child','I check if my child was provoked first, then address it','I feel embarrassed and unsure what to do'], scores:[0,2,1,2] },
+  { q:'Your child is scared of the dark and calls out every night.', scenario:'It\'s been weeks. You\'re sleep-deprived and they\'re anxious by bedtime.', opts:['I stay with them until they feel safe, even if it takes a while','I give them a torch and explain there\'s nothing to fear','I set a rule — two call-outs max, then lights off','I go in every time because I don\'t want them to feel alone'], scores:[0,1,2,0] },
+  { q:'Your child gets a disappointing school result.', scenario:'They\'re upset. You\'re disappointed too but trying not to show it.', opts:['I focus on effort and discuss what can be done differently','I review what went wrong and make a strict study plan','I reassure them it\'s okay and give them space','I share my disappointment and push them to aim higher'], scores:[0,2,1,2] }
+];
+var sIdx=0, sScores=[0,0,0];
+function renderStyleQ(){
+  var q=styleQs[sIdx];
+  document.getElementById('styleProgress').textContent='Question '+(sIdx+1)+' of '+styleQs.length;
+  document.getElementById('sProgress').style.width=((sIdx+1)/styleQs.length*100)+'%';
+  document.getElementById('styleBackBtn').style.visibility=sIdx>0?'visible':'hidden';
+  document.getElementById('styleQWrap').innerHTML=
+    '<div class="style-q">'+q.q+'</div>'+
+    '<div class="style-scenario">'+q.scenario+'</div>'+
+    '<div class="style-opts">'+
+    q.opts.map(function(o,i){return '<div class="style-opt" onclick="styleChoose('+i+')">'+o+'</div>';}).join('')+
+    '</div>';
+}
+function styleChoose(i){
+  var sc=styleQs[sIdx].scores[i];
+  if(sc===0) sScores[0]++; else if(sc===1) sScores[2]++; else sScores[1]++;
+  document.querySelectorAll('.style-opt')[i].classList.add('chosen');
+  setTimeout(function(){ sIdx++; if(sIdx<styleQs.length){renderStyleQ();}else{showStyleResult();} },340);
+}
+function styleBack(){ if(sIdx>0){sIdx--;renderStyleQ();} }
+function showStyleResult(){
+  document.getElementById('styleQuiz').style.display='none';
+  document.getElementById('styleResult').classList.add('active');
+  var n=sScores[0],st=sScores[1],rx=sScores[2],total=(n+st+rx)||1;
+  var styles=[
+    {name:'Nurturing & Responsive',score:n, color:'#E8F5EC',tc:'#1A5C2A',bar:'#2E7D44',desc:'You prioritise your child\'s emotional experience. You\'re attuned, empathetic, quick to connect. Your growth edge: finding the balance between warmth and boundaries so your child builds independence.'},
+    {name:'Structured & Consistent',score:st,color:'#FEF3C7',tc:'#92400E',bar:'#F59E0B',desc:'You value routine, clear expectations, and follow-through. Your child feels safe in your structure. Your growth edge: softening when the child genuinely needs flexibility over rules.'},
+    {name:'Relaxed & Child-led',  score:rx,color:'#EDE9FE',tc:'#5B21B6',bar:'#8B5CF6',desc:'You give your child space to discover and lead. You trust the process deeply. Your growth edge: stepping in more clearly when boundaries are needed for security and safety.'}
+  ];
+  var dominant=styles.reduce(function(a,b){return a.score>=b.score?a:b;});
+  document.getElementById('sResTitle').textContent=dominant.name;
+  document.getElementById('sResText').textContent=dominant.desc;
+  document.getElementById('sCards').innerHTML=styles.map(function(s){
+    return '<div class="style-card '+(s.name===dominant.name?'winner':'')+'" style="background:'+s.color+';">'+
+      '<div class="style-card-label" style="color:'+s.tc+';opacity:.7;">'+(s.name===dominant.name?'★ Your style':'Also present')+'</div>'+
+      '<div class="style-card-name" style="color:'+s.tc+';">'+s.name.split(' & ')[0]+'</div>'+
+      '<div class="style-card-pct" style="color:'+s.tc+';opacity:.7;">'+Math.round(s.score/total*100)+'% of responses</div>'+
+      '</div>';
+  }).join('');
+  document.getElementById('sBars').innerHTML=styles.map(function(s){
+    return '<div class="style-bar-wrap"><div class="style-bar-label"><span>'+s.name+'</span><span>'+Math.round(s.score/total*100)+'%</span></div>'+
+      '<div class="style-bar"><div class="style-bar-fill" style="width:'+Math.round(s.score/total*100)+'%;background:'+s.bar+';"></div></div></div>';
+  }).join('');
+  var waMsg=encodeURIComponent('Hi Akanksha, I took the parenting style assessment. My dominant style is '+dominant.name+'. I\'d love to understand how to use this intentionally for my child.');
+  document.getElementById('sWaBtn').href='https://wa.me/919949216571?text='+waMsg;
+}
+function resetStyle(){
+  sIdx=0;sScores=[0,0,0];
+  document.getElementById('styleQuiz').style.display='block';
+  document.getElementById('styleResult').classList.remove('active');
+  renderStyleQ();
+}
+renderStyleQ();
+</script>
 </body>
 </html>
