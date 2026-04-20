@@ -1,248 +1,996 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Calm in the Storm — WiseSprouts</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calm in the Storm — WiseSprouts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --gd: #1A5C2A; --gm: #2E7D44; --gl: #E8F5EC; --gp: #F2FAF4;
+      --cream: #FFFBF5; --cream2: #FFF8EE; --cream3: #FDF5E8;
+      --amber: #D97706; --amberl: #FEF3C7; --amberb: #92400E;
+      --red: #DC2626; --redl: #FEF2F2;
+      --td: #1C1208; --tm: #3D2E14; --tmu: #7A6548; --tf: #C4A882;
+      --border: #E8D5B0; --white: #fff;
+      --serif: 'Lora', Georgia, serif;
+      --sans: 'Nunito', system-ui, sans-serif;
+    }
 
-<style>
-body {
-  font-family: system-ui, -apple-system, sans-serif;
-  margin: 0;
-  background: #FFFBF5;
-  color: #1C1208;
-  line-height: 1.7;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
-  /* PREMIUM READING CONSTRAINT */
-  max-width: 900px;
-  margin: auto;
-}
+    body {
+      font-family: var(--sans);
+      background: var(--cream);
+      color: var(--td);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
 
-.page {
-  padding: 60px 24px;
-  border-bottom: 1px solid #eee;
-}
+    /* ── COVER PAGE ── */
+    .cover {
+      min-height: 100vh;
+      background: #0D1F10;
+      display: flex; flex-direction: column;
+      position: relative; overflow: hidden;
+    }
+    .cover-texture {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 80%, rgba(46,125,68,0.22) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 20%, rgba(168,213,194,0.1) 0%, transparent 50%),
+        radial-gradient(ellipse 40% 60% at 50% 50%, rgba(26,92,42,0.15) 0%, transparent 70%);
+    }
+    .cover-top {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 32px 56px; position: relative; z-index: 1;
+    }
+    .cover-brand {
+      display: flex; align-items: center; gap: 10px;
+      font-family: var(--serif); font-size: 15px; font-weight: 700;
+      color: rgba(255,255,255,0.85); letter-spacing: 0.04em;
+    }
+    .cover-brand-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #A8D5C2;
+    }
+    .cover-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: #A8D5C2;
+      border: 0.5px solid rgba(168,213,194,0.5);
+      border-radius: 20px; padding: 5px 14px;
+    }
+    .cover-body {
+      flex: 1; display: flex; flex-direction: column;
+      align-items: flex-start; justify-content: center;
+      padding: 0 56px 40px; position: relative; z-index: 1;
+      max-width: 780px;
+    }
+    .cover-series {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.16em;
+      text-transform: uppercase; color: #A8D5C2;
+      margin-bottom: 24px;
+    }
+    .cover-line { width: 40px; height: 1.5px; background: #A8D5C2; display: inline-block; vertical-align: middle; margin-right: 12px; }
+    .cover-title {
+      font-family: var(--serif);
+      font-size: 72px; font-weight: 700;
+      line-height: 1.0; color: var(--white);
+      letter-spacing: -0.03em; margin-bottom: 16px;
+    }
+    .cover-title em { color: #A8D5C2; font-style: italic; font-weight: 400; }
+    .cover-subtitle {
+      font-family: var(--serif);
+      font-size: 20px; font-weight: 400; font-style: italic;
+      color: rgba(255,255,255,0.82); margin-bottom: 48px;
+      line-height: 1.5;
+    }
+    .cover-promise {
+      display: flex; flex-direction: column; gap: 10px; margin-bottom: 56px;
+    }
+    .cover-promise-item {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 14px; color: rgba(255,255,255,0.88); font-weight: 600;
+    }
+    .cover-promise-check {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: rgba(168,213,194,0.2);
+      border: 0.5px solid rgba(168,213,194,0.6);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 11px; color: #A8D5C2;
+    }
+    .cover-bottom {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      padding: 32px 56px; border-top: 0.5px solid rgba(255,255,255,0.06);
+      position: relative; z-index: 1;
+    }
+    .cover-author { }
+    .cover-author-label { font-size: 11px; color: rgba(255,255,255,0.55); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; }
+    .cover-author-name { font-family: var(--serif); font-size: 18px; font-weight: 600; color: rgba(255,255,255,0.95); }
+    .cover-author-cred { font-size: 12px; color: #A8D5C2; margin-top: 3px; }
+    .cover-edition { text-align: right; }
+    .cover-edition-text { font-size: 11px; color: rgba(255,255,255,0.45); }
 
-h1, h2 {
-  font-family: Georgia, serif;
-}
+    /* ── PAGE LAYOUT ── */
+    .page {
+      max-width: 860px; margin: 0 auto;
+      padding: 72px 64px;
+    }
+    .page + .page { border-top: 0.5px solid var(--border); }
 
-h1 {
-  font-size: 48px;
-  line-height: 1.1;
-}
+    /* ── TYPOGRAPHY ── */
+    .page-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--gm);
+      margin-bottom: 6px; display: flex; align-items: center; gap: 10px;
+    }
+    .page-label::after { content: ''; flex: 1; height: 0.5px; background: var(--border); }
 
-h2 {
-  font-size: 32px;
-}
+    h2 {
+      font-family: var(--serif); font-size: 38px; font-weight: 700;
+      line-height: 1.15; color: var(--td); margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+    h2 em { color: var(--gd); font-style: italic; font-weight: 400; }
 
-.lead {
-  font-size: 18px;
-  font-style: italic;
-  border-left: 4px solid #1A5C2A;
-  padding-left: 16px;
-  margin: 24px 0;
-}
+    h3 {
+      font-family: var(--serif); font-size: 22px; font-weight: 600;
+      color: var(--td); margin-bottom: 12px; line-height: 1.3;
+    }
 
-.pull {
-  background: #E8F5EC;
-  padding: 20px;
-  border-radius: 12px;
-  margin: 24px 0;
-  font-style: italic;
-}
+    .lead {
+      font-size: 18px; color: var(--tmu); line-height: 1.8;
+      margin-bottom: 32px; font-style: italic;
+      border-left: 3px solid var(--gd); padding-left: 20px;
+    }
 
-.cta {
-  background: #0D1F10;
-  color: white;
-  text-align: center;
-  padding: 80px 24px;
-}
+    p {
+      font-size: 15px; color: var(--tm); line-height: 1.85;
+      margin-bottom: 18px;
+    }
+    p:last-child { margin-bottom: 0; }
+    p strong { color: var(--td); font-weight: 700; }
 
-.btn {
-  background: #25D366;
-  color: white;
-  padding: 14px 24px;
-  display: inline-block;
-  border-radius: 8px;
-  text-decoration: none;
-  margin-top: 20px;
-  font-weight: bold;
-}
-</style>
+    /* ── EMPATHY BLOCK ── */
+    .empathy-block {
+      background: var(--cream2);
+      border-radius: 20px; padding: 40px 44px;
+      margin: 32px 0;
+    }
+    .empathy-block h3 { color: var(--td); margin-bottom: 20px; font-size: 20px; }
+    .empathy-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+    .empathy-item {
+      display: flex; align-items: flex-start; gap: 14px;
+      background: var(--white); border-radius: 12px;
+      padding: 14px 18px; border: 0.5px solid var(--border);
+    }
+    .empathy-emoji { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+    .empathy-text { font-size: 14px; color: var(--tm); line-height: 1.6; }
+    .empathy-text strong { color: var(--td); }
+
+    /* ── SCIENCE BLOCK ── */
+    .science-bg { background: #132A18; border-radius: 24px; padding: 44px 48px; margin: 32px 0; border: 1px solid rgba(168,213,194,0.15); }
+    .science-label { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #A8D5C2; margin-bottom: 20px; }
+    .science-title { font-family: var(--serif); font-size: 26px; font-weight: 600; color: #FFFFFF; margin-bottom: 16px; line-height: 1.3; }
+    .brain-diagram {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 28px 0;
+    }
+    .brain-card {
+      border-radius: 14px; padding: 20px 22px;
+    }
+    .brain-card.active { background: rgba(220,38,38,0.2); border: 1px solid rgba(220,38,38,0.4); }
+    .brain-card.offline { background: rgba(168,213,194,0.12); border: 1px solid rgba(168,213,194,0.3); }
+    .brain-card-label { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
+    .brain-card.active .brain-card-label { color: #FCA5A5; }
+    .brain-card.offline .brain-card-label { color: #A8D5C2; }
+    .brain-card-title { font-family: var(--serif); font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+    .brain-card.active .brain-card-title { color: #FFFFFF; }
+    .brain-card.offline .brain-card-title { color: #FFFFFF; }
+    .brain-card-text { font-size: 13px; line-height: 1.65; }
+    .brain-card.active .brain-card-text { color: rgba(255,255,255,0.82); }
+    .brain-card.offline .brain-card-text { color: rgba(255,255,255,0.75); }
+    .science-insight {
+      background: rgba(168,213,194,0.14); border: 1px solid rgba(168,213,194,0.35);
+      border-radius: 12px; padding: 18px 22px;
+      font-size: 14px; color: rgba(255,255,255,0.9); line-height: 1.75;
+    }
+    .science-insight strong { color: #C8EAD8; }
+
+    /* ── MISTAKE BLOCK ── */
+    .mistake-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 28px 0; }
+    .mistake-card {
+      background: var(--redl); border: 0.5px solid rgba(220,38,38,0.2);
+      border-radius: 14px; padding: 20px 22px;
+    }
+    .mistake-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .mistake-x {
+      width: 26px; height: 26px; border-radius: 50%;
+      background: rgba(220,38,38,0.15); display: flex; align-items: center; justify-content: center;
+      font-size: 13px; flex-shrink: 0; color: var(--red); font-weight: 700;
+    }
+    .mistake-label { font-size: 13px; font-weight: 700; color: var(--red); }
+    .mistake-quote {
+      font-family: var(--serif); font-style: italic;
+      font-size: 15px; color: var(--tm); margin-bottom: 10px; line-height: 1.5;
+    }
+    .mistake-why { font-size: 12px; color: var(--tmu); line-height: 1.6; }
+    .mistake-why strong { color: var(--tm); }
+
+    .india-block {
+      background: var(--amberl); border-radius: 16px; padding: 28px 32px;
+      border-left: 4px solid var(--amber); margin: 28px 0;
+    }
+    .india-flag { font-size: 20px; margin-bottom: 8px; }
+    .india-title { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--amberb); margin-bottom: 12px; }
+    .india-item { font-size: 14px; color: var(--tm); margin-bottom: 8px; display: flex; gap: 10px; line-height: 1.6; }
+    .india-item::before { content: '→'; color: var(--amber); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+
+    /* ── 3-STEP FRAMEWORK ── */
+    .framework-wrap { margin: 32px 0; }
+    .framework-step {
+      display: flex; gap: 28px; margin-bottom: 28px;
+      align-items: flex-start;
+    }
+    .framework-num {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: var(--gd); color: var(--white);
+      font-family: var(--serif); font-size: 22px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; box-shadow: 0 4px 16px rgba(26,92,42,0.25);
+    }
+    .framework-content { flex: 1; padding-top: 6px; }
+    .framework-title {
+      font-family: var(--serif); font-size: 20px; font-weight: 600;
+      color: var(--td); margin-bottom: 8px;
+    }
+    .framework-body { font-size: 14px; color: var(--tmu); line-height: 1.75; margin-bottom: 14px; }
+    .framework-micro {
+      background: var(--gl); border-radius: 12px; padding: 16px 20px;
+      border-left: 3px solid var(--gd);
+    }
+    .framework-micro-label { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gm); margin-bottom: 8px; }
+    .framework-say { font-size: 14px; color: var(--gd); font-weight: 600; font-style: italic; margin-bottom: 6px; line-height: 1.5; }
+    .framework-say::before { content: '"'; }
+    .framework-say::after { content: '"'; }
+    .framework-action { font-size: 12px; color: var(--tmu); }
+    .framework-connector {
+      width: 2px; height: 24px; background: var(--border);
+      margin: 0 0 0 25px;
+    }
+
+    /* ── SCRIPTS ── */
+    .scripts-wrap { display: flex; flex-direction: column; gap: 20px; margin: 28px 0; }
+    .script-card {
+      border-radius: 16px; overflow: hidden; border: 0.5px solid var(--border);
+    }
+    .script-situation {
+      background: var(--td); color: var(--white);
+      padding: 14px 22px; font-size: 12px; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .script-body { background: var(--white); padding: 22px; }
+    .script-line { margin-bottom: 14px; }
+    .script-line:last-child { margin-bottom: 0; }
+    .script-say {
+      background: var(--gl); border-radius: 10px; padding: 12px 16px;
+      font-size: 14px; color: var(--gd); font-weight: 600; font-style: italic;
+      line-height: 1.5; margin-bottom: 6px; border-left: 3px solid var(--gd);
+    }
+    .script-pause {
+      font-size: 11px; color: var(--tf); font-weight: 600;
+      letter-spacing: 0.06em; padding: 0 4px;
+    }
+    .script-then {
+      font-size: 12px; color: var(--tmu); padding: 0 4px;
+    }
+    .script-rule {
+      background: #FFF8EE; border: 0.5px solid #E8D5B0;
+      border-radius: 12px; padding: 16px 20px; margin-top: 16px;
+      display: flex; align-items: flex-start; gap: 12px;
+    }
+    .script-rule-icon { font-size: 18px; flex-shrink: 0; }
+    .script-rule-text { font-size: 13px; color: var(--tm); line-height: 1.6; }
+    .script-rule-text strong { color: var(--td); }
+
+    /* ── PREVENTION GRID ── */
+    .prevention-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 28px 0; }
+    .prev-card {
+      background: var(--white); border: 0.5px solid var(--border);
+      border-radius: 16px; padding: 24px 22px;
+      transition: box-shadow .2s;
+    }
+    .prev-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,.06); }
+    .prev-num {
+      font-family: var(--serif); font-size: 13px; font-weight: 600;
+      color: var(--tf); margin-bottom: 14px;
+    }
+    .prev-title { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--td); margin-bottom: 8px; }
+    .prev-body { font-size: 13px; color: var(--tmu); line-height: 1.7; margin-bottom: 14px; }
+    .prev-tip {
+      background: var(--gl); border-radius: 8px; padding: 10px 14px;
+      font-size: 12px; color: var(--gd); font-weight: 600; font-style: italic;
+    }
+    .prev-tip::before { content: 'Try: '; font-style: normal; }
+
+    /* ── INDIA SCENARIOS ── */
+    .india-scenario { margin-bottom: 28px; border-radius: 16px; overflow: hidden; border: 0.5px solid var(--border); }
+    .india-scenario-head {
+      background: var(--cream3); padding: 16px 24px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .india-scenario-emoji { font-size: 20px; }
+    .india-scenario-title { font-size: 14px; font-weight: 700; color: var(--tm); }
+    .india-scenario-body { background: var(--white); padding: 22px 24px; }
+    .india-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .india-avoid, .india-do {
+      border-radius: 12px; padding: 16px 18px;
+    }
+    .india-avoid { background: var(--redl); border: 0.5px solid rgba(220,38,38,0.15); }
+    .india-do { background: var(--gl); border: 0.5px solid rgba(46,125,68,0.2); }
+    .india-col-label { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
+    .india-avoid .india-col-label { color: var(--red); }
+    .india-do .india-col-label { color: var(--gd); }
+    .india-col-text { font-size: 13px; line-height: 1.65; }
+    .india-avoid .india-col-text { color: #7F1D1D; }
+    .india-do .india-col-text { color: #14532D; }
+
+    /* ── CHEAT SHEET ── */
+    .cheatsheet {
+      background: #1A5C2A; border-radius: 24px; padding: 44px 48px;
+      margin: 32px 0; border: 1px solid rgba(168,213,194,0.2);
+    }
+    .cheatsheet-title {
+      font-family: var(--serif); font-size: 28px; font-weight: 700;
+      color: #FFFFFF; margin-bottom: 6px;
+    }
+    .cheatsheet-sub { font-size: 13px; color: rgba(255,255,255,0.75); margin-bottom: 36px; }
+    .cheatsheet-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .cheatsheet-col-title {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .cheatsheet-col-title.do { color: #C8EAD8; }
+    .cheatsheet-col-title.avoid { color: #FECACA; }
+    .cheat-item {
+      display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px;
+      font-size: 14px; color: rgba(255,255,255,0.92); line-height: 1.55;
+    }
+    .cheat-icon { font-size: 14px; flex-shrink: 0; margin-top: 2px; }
+    .cheatsheet-divider { width: 0.5px; background: rgba(255,255,255,0.15); margin: 0 8px; }
+    .cheatsheet-reminder {
+      margin-top: 32px; padding-top: 28px;
+      border-top: 0.5px solid rgba(255,255,255,0.18);
+      text-align: center;
+    }
+    .cheatsheet-reminder-text {
+      font-family: var(--serif); font-size: 18px; font-style: italic;
+      color: rgba(255,255,255,0.88); line-height: 1.6;
+    }
+    .cheatsheet-reminder-text strong { color: #C8EAD8; font-style: normal; }
+
+    /* ── CTA FINAL ── */
+    .cta-page {
+      background: #0D1F10;
+      min-height: 60vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 80px 56px; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-page::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(46,125,68,0.15) 0%, transparent 70%);
+    }
+    .cta-inner-wrap { position: relative; z-index: 1; max-width: 600px; }
+    .cta-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      color: #A8D5C2; margin-bottom: 20px;
+    }
+    .cta-title {
+      font-family: var(--serif); font-size: 42px; font-weight: 700;
+      color: #FFFFFF; line-height: 1.15; margin-bottom: 16px; letter-spacing: -0.02em;
+    }
+    .cta-title em { color: #A8D5C2; font-style: italic; font-weight: 400; }
+    .cta-body { font-size: 16px; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 40px; }
+    .cta-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 40px; text-align: left; }
+    .cta-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 14px; padding: 20px;
+    }
+    .cta-card-emoji { font-size: 22px; margin-bottom: 10px; }
+    .cta-card-title { font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.95); margin-bottom: 5px; }
+    .cta-card-text { font-size: 12px; color: rgba(255,255,255,0.68); line-height: 1.6; }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #25D366; color: var(--white);
+      padding: 16px 32px; border-radius: 14px;
+      font-family: var(--sans); font-size: 15px; font-weight: 700;
+      text-decoration: none; box-shadow: 0 6px 24px rgba(37,211,102,.3);
+      transition: opacity .2s, transform .15s;
+    }
+    .cta-btn:hover { opacity: .9; transform: translateY(-2px); }
+    .cta-note { font-size: 12px; color: rgba(255,255,255,.5); margin-top: 16px; }
+    .cta-brand {
+      margin-top: 56px; font-family: var(--serif); font-size: 14px;
+      color: rgba(255,255,255,0.4); letter-spacing: 0.04em;
+    }
+
+    /* ── DIVIDER / PULL QUOTE ── */
+    .pull-quote {
+      border-left: 4px solid var(--gd); padding: 20px 28px;
+      margin: 32px 0; background: var(--gl); border-radius: 0 14px 14px 0;
+    }
+    .pull-quote-text {
+      font-family: var(--serif); font-size: 20px; font-style: italic;
+      color: var(--td); line-height: 1.5; margin-bottom: 8px;
+    }
+    .pull-quote-source { font-size: 12px; color: var(--gm); font-weight: 700; }
+
+    .page-divider {
+      display: flex; align-items: center; gap: 16px; margin: 40px 0;
+    }
+    .page-divider::before, .page-divider::after {
+      content: ''; flex: 1; height: 0.5px; background: var(--border);
+    }
+    .page-divider-leaf { font-size: 18px; }
+
+    .section-num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--gl); color: var(--gd);
+      font-family: var(--serif); font-size: 14px; font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    /* ── PRINT / RESPONSIVENESS ── */
+    @media (max-width: 700px) {
+      .cover-title { font-size: 48px; }
+      .cover-body, .cover-top, .cover-bottom { padding-left: 28px; padding-right: 28px; }
+      .page { padding: 48px 28px; }
+      .brain-diagram, .mistake-grid, .prevention-grid, .cheatsheet-cols, .cta-cards { grid-template-columns: 1fr; }
+      .india-col { grid-template-columns: 1fr; }
+      .framework-step { flex-direction: column; gap: 16px; }
+      .framework-num { width: 42px; height: 42px; font-size: 18px; }
+      .science-bg { padding: 28px 24px; }
+      .cheatsheet { padding: 32px 28px; }
+      .cta-page { padding: 56px 28px; }
+    }
+
+    @media print {
+      .cover { page-break-after: always; }
+      .page { page-break-inside: avoid; }
+      nav { display: none; }
+    }
+  </style>
 </head>
+<body>
 
-<body id="top">
-
-<!-- PREMIUM BANNER -->
-<div style="text-align:center; padding:12px; font-size:12px; background:#E8F5EC;">
-  WiseSprouts Premium Guide · For personal use only
-</div>
-
-<!-- STICKY NAV -->
-<div style="position:sticky; top:0; background:#fff; padding:10px; border-bottom:1px solid #eee; text-align:right;">
-  <a href="#top" style="text-decoration:none; font-size:13px;">⬆ Back to top</a>
-</div>
-
-<!-- COVER -->
-<div class="page">
-  <h1>Calm in the <em>Storm</em></h1>
-  <p class="lead">A science-backed tantrum response plan for Indian parents</p>
-
-  <p>✔ Why tantrums are neurological, not behavioural</p>
-  <p>✔ What to say in the hardest moments</p>
-  <p>✔ A 3-step system that actually works</p>
-</div>
-
-<!-- PAGE 1 -->
-<div class="page">
-  <h2>Your child is not misbehaving.</h2>
-  <p class="lead">They are overwhelmed.</p>
-
-  <p>
-  Most advice tells you to <strong>distract, scold, or ignore.</strong><br>
-  Short-term, it may stop the noise.<br>
-  Long-term, it <strong>doesn’t build regulation.</strong>
-  </p>
-
-  <p>
-  What you need is not more advice.<br>
-  You need to understand <strong>what is happening inside your child’s brain.</strong>
-  </p>
-</div>
-
-<!-- QUICK WIN -->
-<div class="page">
-  <h2>Try this today</h2>
-
-  <p><strong>Next tantrum:</strong></p>
-
-  <p>
-  • Don’t speak for 10 seconds<br>
-  • Sit near them<br>
-  • Slow your breathing
-  </p>
-
-  <div class="pull">
-    Most parents react immediately.<br>
-    Regulation begins when you pause.
+<!-- ══════════════════════════════════ COVER ══════════════════════════════════ -->
+<div class="cover">
+  <div class="cover-texture"></div>
+  <div class="cover-top">
+    <div class="cover-brand">
+      <div class="cover-brand-dot"></div>
+      WiseSprouts
+    </div>
+    <div class="cover-tag">Parent's Science Guide · Vol. 1</div>
+  </div>
+  <div class="cover-body">
+    <div class="cover-series">
+      <span class="cover-line"></span>
+      The WiseSprouts Parenting Series
+    </div>
+    <div class="cover-title">
+      Calm in<br>the <em>Storm</em>
+    </div>
+    <div class="cover-subtitle">
+      A Science-Backed Tantrum Response Plan<br>for Indian Parents
+    </div>
+    <div class="cover-promise">
+      <div class="cover-promise-item">
+        <div class="cover-promise-check">✓</div>
+        Why tantrums are neurological events, not bad behaviour
+      </div>
+      <div class="cover-promise-item">
+        <div class="cover-promise-check">✓</div>
+        The WiseSprouts 3-Step Response System — backed by Yale research
+      </div>
+      <div class="cover-promise-item">
+        <div class="cover-promise-check">✓</div>
+        Word-for-word scripts for the hardest moments
+      </div>
+      <div class="cover-promise-item">
+        <div class="cover-promise-check">✓</div>
+        Joint family and public tantrum strategies for Indian parents
+      </div>
+    </div>
+  </div>
+  <div class="cover-bottom">
+    <div class="cover-author">
+      <div class="cover-author-label">Written by</div>
+      <div class="cover-author-name">Akanksha Rajhans</div>
+      <div class="cover-author-cred">Child Development Specialist · WiseSprouts</div>
+    </div>
+    <div class="cover-edition">
+      <div class="cover-edition-text">wisesprouts.in · © 2025 WiseSprouts</div>
+    </div>
   </div>
 </div>
 
-<!-- SCIENCE -->
+<!-- ══════════════════════════════════ PAGE 1: HOOK ══════════════════════════════════ -->
 <div class="page">
-  <h2>What’s happening in their brain</h2>
+  <div class="page-label">You are not failing</div>
+  <div class="section-num">1</div>
+  <h2>Your child is not<br><em>misbehaving.</em><br>They are overwhelmed.</h2>
 
-  <p>
-  <strong>Emotional brain: ON</strong><br>
-  <strong>Thinking brain: OFF</strong>
-  </p>
+  <div class="lead">
+    What you do in those 3 minutes of a tantrum shapes your child's emotional wiring — for years.
+  </div>
 
-  <div class="pull">
-    You cannot reason with a child in a tantrum.<br>
-    First, you help them calm.
+  <p>If your child screams uncontrollably, hits, throws things, collapses on the floor, and refuses to listen no matter what you say — you are not doing something wrong. You are facing a developing brain that cannot regulate itself yet.</p>
+
+  <p>Most parenting advice tells you to distract, scold, or ignore. Social media gives you hacks. Relatives give you opinions. But very little of it explains <strong>what is actually happening inside your child's brain</strong> — and why your current approach, however well-intentioned, might be making it worse.</p>
+
+  <div class="empathy-block">
+    <h3>Does this sound familiar?</h3>
+    <div class="empathy-list">
+      <div class="empathy-item">
+        <div class="empathy-emoji">😤</div>
+        <div class="empathy-text">Your child collapses in the middle of a shop because you said no to a biscuit. <strong>People are watching.</strong></div>
+      </div>
+      <div class="empathy-item">
+        <div class="empathy-emoji">🥺</div>
+        <div class="empathy-text">Your toddler hits you — hard — and you don't know whether to hug them or walk away.</div>
+      </div>
+      <div class="empathy-item">
+        <div class="empathy-emoji">😔</div>
+        <div class="empathy-text">You lose your patience, raise your voice, and then feel guilty for hours. <strong>The cycle repeats tomorrow.</strong></div>
+      </div>
+      <div class="empathy-item">
+        <div class="empathy-emoji">🏠</div>
+        <div class="empathy-text">Your in-laws step in the moment your child cries, undoing everything you were trying to hold firm on.</div>
+      </div>
+    </div>
+    <p style="font-size:14px;color:var(--tmu);margin:0;">This guide is for you. Not the parent who has it figured out — the one in the middle of it, doing their best.</p>
+  </div>
+
+  <p>By the time you finish reading, you will understand exactly what is happening in your child's brain during a meltdown, why certain responses make it worse, and have a <strong>concrete, word-for-word framework</strong> to use the next time it happens.</p>
+</div>
+
+<!-- ══════════════════════════════════ PAGE 2: SCIENCE ══════════════════════════════════ -->
+<div class="page">
+  <div class="page-label">The neuroscience — simplified</div>
+  <div class="section-num">2</div>
+  <h2>What's actually<br>happening in their <em>brain</em></h2>
+
+  <p>Before you can respond differently, you need to understand something fundamental: <strong>tantrums are not behavioural problems. They are neurological events.</strong></p>
+
+  <div class="science-bg">
+    <div class="science-label">Inside a tantrum — what the brain is doing</div>
+    <div class="science-title">Your child's thinking brain goes offline. Completely.</div>
+    <div class="brain-diagram">
+      <div class="brain-card active">
+        <div class="brain-card-label">🔴 Activated</div>
+        <div class="brain-card-title">The Emotional Brain (Amygdala)</div>
+        <div class="brain-card-text">Detects threat. Floods the body with stress hormones — cortisol and adrenaline. This is the part screaming, hitting, and throwing. It does not understand logic.</div>
+      </div>
+      <div class="brain-card offline">
+        <div class="brain-card-label">⚫ Offline</div>
+        <div class="brain-card-title">The Thinking Brain (Prefrontal Cortex)</div>
+        <div class="brain-card-text">Responsible for reasoning, listening, decision-making, and impulse control. During a tantrum — this is not available. Words do not reach here right now.</div>
+      </div>
+    </div>
+    <div class="science-insight">
+      This is called a <strong>"bottom-up emotional surge"</strong> — aligned with approaches used at the Yale Parenting Center. Your child is not choosing to be difficult. Their brain has been overtaken by a flood they cannot control yet. The prefrontal cortex — the part that reasons — is not fully developed until age 25.
+    </div>
+  </div>
+
+  <div class="pull-quote">
+    <div class="pull-quote-text">"You cannot reason with a child in the middle of a tantrum any more than you can reason with someone who is drowning. First, you help them breathe."</div>
+    <div class="pull-quote-source">— WiseSprouts</div>
+  </div>
+
+  <p>This is not an excuse for the behaviour. It is the explanation that makes your response more effective. <strong>When you understand the mechanism, you stop fighting it — and start working with it.</strong></p>
+
+  <p>The goal during a tantrum is not to stop it immediately. The goal is to help your child's nervous system return to calm — and that only happens when you are calm first.</p>
+</div>
+
+<!-- ══════════════════════════════════ PAGE 3: MISTAKES ══════════════════════════════════ -->
+<div class="page">
+  <div class="page-label">Common mistakes — and why they backfire</div>
+  <div class="section-num">3</div>
+  <h2>Why your current<br>approach isn't <em>working</em></h2>
+
+  <p>Every response below comes from love. From wanting to stop the pain quickly — for your child, and for yourself. But understanding why each one backfires is what allows you to replace them.</p>
+
+  <div class="mistake-grid">
+    <div class="mistake-card">
+      <div class="mistake-header">
+        <div class="mistake-x">✕</div>
+        <div class="mistake-label">"Stop crying right now"</div>
+      </div>
+      <div class="mistake-quote">Stop it. There's nothing to cry about.</div>
+      <div class="mistake-why">Invalidates the emotion entirely. The child learns their feelings are <strong>wrong or shameful</strong> — which increases intensity, not reduces it. Suppressed emotions don't disappear; they come out louder later.</div>
+    </div>
+    <div class="mistake-card">
+      <div class="mistake-header">
+        <div class="mistake-x">✕</div>
+        <div class="mistake-label">Distraction ("Look at this!")</div>
+      </div>
+      <div class="mistake-quote">Ooh, look at the puppy outside!</div>
+      <div class="mistake-why">Sidesteps the emotion instead of processing it. Short-term it may work. Long-term, it <strong>doesn't teach the child to regulate</strong> — it teaches them to be distracted from their feelings. The tantrum returns, often worse.</div>
+    </div>
+    <div class="mistake-card">
+      <div class="mistake-header">
+        <div class="mistake-x">✕</div>
+        <div class="mistake-label">Threats ("I'll leave you here")</div>
+      </div>
+      <div class="mistake-quote">If you don't stop, I'm going without you.</div>
+      <div class="mistake-why">Creates fear and abandonment anxiety on top of the existing overwhelm. The child now has <strong>two crises</strong> to manage. Trust is damaged — and they become more clingy, not more regulated.</div>
+    </div>
+    <div class="mistake-card">
+      <div class="mistake-header">
+        <div class="mistake-x">✕</div>
+        <div class="mistake-label">Over-explaining logic</div>
+      </div>
+      <div class="mistake-quote">We can't buy that because we already bought something and we have a budget and next time if you're good...</div>
+      <div class="mistake-why">The thinking brain is offline. <strong>Words do not register.</strong> You are speaking to a part of their brain that isn't available. This exhausts you and has no impact on them in the moment.</div>
+    </div>
+  </div>
+
+  <div class="india-block">
+    <div class="india-flag">🇮🇳</div>
+    <div class="india-title">The Indian Parent Reality — why we react faster and harsher</div>
+    <div class="india-item">Too many voices in the room — parents, grandparents, and relatives all reacting at once, often contradicting each other, which escalates the child's dysregulation.</div>
+    <div class="india-item"><em>"Log kya kahenge"</em> — the public gaze. The embarrassment of a child's meltdown in a public place activates your own stress response, which transfers to your child.</div>
+    <div class="india-item">Comparison culture — "See how Rohan behaves" — creates shame, not regulation. Shame makes a dysregulated child feel worse, not better.</div>
+    <div class="india-item">Generational patterns — many of us were not allowed to express big emotions. We don't know what to do when our children do, because nobody modelled it for us.</div>
+  </div>
+
+  <p>None of this is a judgment. It is an acknowledgement of the reality you are parenting inside. The framework in the next section was designed with all of this in mind.</p>
+</div>
+
+<!-- ══════════════════════════════════ PAGE 4: FRAMEWORK ══════════════════════════════════ -->
+<div class="page">
+  <div class="page-label">The core response system</div>
+  <div class="section-num">4</div>
+  <h2>The WiseSprouts<br><em>3-Step</em> Response System</h2>
+
+  <p>This framework is built on emotion coaching principles aligned with evidence-based child development research. It is not about being permissive. It is about being <strong>effective</strong>. The sequence matters — do not skip to Step 2 before completing Step 1.</p>
+
+  <div class="page-divider"><div class="page-divider-leaf">🌿</div></div>
+
+  <div class="framework-wrap">
+
+    <div class="framework-step">
+      <div class="framework-num">1</div>
+      <div class="framework-content">
+        <div class="framework-title">Regulate yourself first</div>
+        <div class="framework-body">Before your child can calm down, you must calm down. This is not a platitude — it is neuroscience. Children co-regulate with their caregivers. Your nervous system literally becomes their regulation anchor. If you arrive escalated, you amplify their state. If you arrive calm, you give them something to anchor to.</div>
+        <div class="framework-micro">
+          <div class="framework-micro-label">In the next 10 seconds, do this</div>
+          <div class="framework-say" style="font-style:normal;font-family:var(--sans);font-size:13px;color:var(--gd);font-weight:600;">Lower your voice · Slow your breathing · Relax your shoulders</div>
+          <div class="framework-action">You do not need to feel calm to act calm. The physical actions precede the emotional state. Your child is watching your body, not just hearing your words.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="framework-connector"></div>
+
+    <div class="framework-step">
+      <div class="framework-num">2</div>
+      <div class="framework-content">
+        <div class="framework-title">Name the emotion — exactly</div>
+        <div class="framework-body">This is called emotion coaching, and it has decades of research behind it. When you name a child's emotion accurately, something measurable happens in the brain: the amygdala (emotional brain) begins to quiet, and the prefrontal cortex (thinking brain) begins to re-engage. The name creates a bridge back to regulation.</div>
+        <div class="framework-micro">
+          <div class="framework-micro-label">Say one of these — exactly as written</div>
+          <div class="framework-say">You're really upset right now.</div>
+          <div class="framework-say">You didn't want to stop playing. That feels so frustrating.</div>
+          <div class="framework-say">It's really hard to leave when you're having so much fun.</div>
+          <div class="framework-action">Do not add "but" after these sentences. "You're upset, <em>but</em> we have to go" cancels the validation. Let the naming sit alone, with a pause.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="framework-connector"></div>
+
+    <div class="framework-step">
+      <div class="framework-num">3</div>
+      <div class="framework-content">
+        <div class="framework-title">Hold the limit — without rejection</div>
+        <div class="framework-body">This is where most parents either collapse (give in to stop the crying) or escalate (threaten or punish). Both are understandable. Neither works long-term. The third path: accept the emotion fully while guiding the behaviour clearly. Emotion is welcomed. The behaviour is redirected. The child does not feel rejected — they feel held.</div>
+        <div class="framework-micro">
+          <div class="framework-micro-label">Say this — in a low, steady voice</div>
+          <div class="framework-say">I'm here. I won't let you hit.</div>
+          <div class="framework-say">You can feel angry. You can't throw things. I'll stay right here.</div>
+          <div class="framework-say">I hear you. The answer is still no. I love you.</div>
+          <div class="framework-action">Stay physically present. Crouch to their level. Do not walk away unless you need a moment to regulate yourself. Presence is more powerful than words.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="pull-quote">
+    <div class="pull-quote-text">"The goal is not to raise a child who never has big feelings. It is to raise a child who knows what to do when they do."</div>
+    <div class="pull-quote-source">— Akanksha, WiseSprouts</div>
   </div>
 </div>
 
-<!-- MISTAKES -->
+<!-- ══════════════════════════════════ PAGE 5: SCRIPTS ══════════════════════════════════ -->
 <div class="page">
-  <h2>Why your approach isn’t working</h2>
+  <div class="page-label">Word-for-word scripts</div>
+  <div class="section-num">5</div>
+  <h2>Exactly what to say<br>in the <em>hardest</em> moments</h2>
 
-  <p><strong>“Stop crying”</strong><br>
-  Result: Emotion increases</p>
+  <p>Knowing a framework helps. Having the exact words ready helps more. These scripts are field-tested and follow the 3-step system. Read them now, so they are available when your thinking brain is also under pressure.</p>
 
-  <p><strong>Distraction</strong><br>
-  Result: No regulation learned</p>
+  <div class="scripts-wrap">
 
-  <p><strong>Threats</strong><br>
-  Result: Fear + more chaos</p>
+    <div class="script-card">
+      <div class="script-situation">😤 Scenario 1 — Screaming in a supermarket or public place</div>
+      <div class="script-body">
+        <div class="script-line">
+          <div class="script-say">You really wanted that toy. It's so hard to walk past it.</div>
+        </div>
+        <div class="script-pause">[ pause — let them feel heard ]</div>
+        <div class="script-line" style="margin-top:10px;">
+          <div class="script-say">We're not buying it today. I'm right here with you.</div>
+        </div>
+        <div class="script-then">Then: crouch down, stay calm, stop talking. Your presence is the response now.</div>
+        <div class="script-rule">
+          <div class="script-rule-icon">⚠️</div>
+          <div class="script-rule-text"><strong>Do not apologise to onlookers or rush.</strong> The moment you hurry, you communicate that your child's distress is a problem to be hidden rather than a feeling to be supported. Other parents understand. The ones who don't — it doesn't matter.</div>
+        </div>
+      </div>
+    </div>
 
-  <p><strong>Over-explaining</strong><br>
-  Result: Brain not listening</p>
-</div>
+    <div class="script-card">
+      <div class="script-situation">👊 Scenario 2 — Child is hitting you</div>
+      <div class="script-body">
+        <div class="script-line">
+          <div class="script-say">I won't let you hit me.</div>
+        </div>
+        <div class="script-then">[ Gently and firmly hold their hands — no squeezing, just contact ]</div>
+        <div class="script-line" style="margin-top:10px;">
+          <div class="script-say">You're angry. That's okay. Hitting isn't okay. Let's help your body calm down.</div>
+        </div>
+        <div class="script-rule">
+          <div class="script-rule-icon">💡</div>
+          <div class="script-rule-text">The physical hold is not punishment — it is containment. It gives the child's body something to push against without causing harm. Keep your voice low and your grip gentle. The limit is clear; the rejection is absent.</div>
+        </div>
+      </div>
+    </div>
 
-<!-- FRAMEWORK -->
-<div class="page">
-  <h2>The 3-step system</h2>
+    <div class="script-card">
+      <div class="script-situation">😭 Scenario 3 — Crying uncontrollably, cannot be reasoned with</div>
+      <div class="script-body">
+        <div class="script-line">
+          <div class="script-say">You're safe. I'm right here.</div>
+        </div>
+        <div class="script-then">[ Sit quietly beside them. Do not flood them with more words. ]</div>
+        <div class="script-line" style="margin-top:10px;">
+          <div class="script-say">Take your time. I'm not going anywhere.</div>
+        </div>
+        <div class="script-rule">
+          <div class="script-rule-icon">🌿</div>
+          <div class="script-rule-text"><strong>Fewer words. More presence.</strong> When a child is in full dysregulation, your steady, quiet body does more work than any sentence. Let the silence be part of the response. Resist the urge to fill it.</div>
+        </div>
+      </div>
+    </div>
 
-  <p><strong>1. Regulate yourself</strong><br>
-  Lower voice. Slow breathing.</p>
+    <div class="script-card">
+      <div class="script-situation">🏠 Scenario 4 — Grandparent intervenes mid-tantrum</div>
+      <div class="script-body">
+        <div class="script-line">
+          <div class="script-say" style="font-style:italic;">[ To grandparent, quietly and warmly ] Bade papa / Nani, I'm handling this — can you give us two minutes? I'll explain after.</div>
+        </div>
+        <div class="script-then">Then return your full attention to your child. Consistency of the response is what teaches — not the one intervention, but the hundred consistent ones.</div>
+        <div class="script-rule">
+          <div class="script-rule-icon">🇮🇳</div>
+          <div class="script-rule-text">Have the grandparent conversation separately — never in the moment. Say: <em>"I'm trying a method that helps her calm faster. I'd love your support in staying consistent for a few days — it takes time but it works."</em> Frame it as a request, not a correction.</div>
+        </div>
+      </div>
+    </div>
 
-  <p><strong>2. Name emotion</strong><br>
-  “You’re upset right now”</p>
-
-  <p><strong>Do not add “but”</strong></p>
-
-  <p><strong>3. Hold limit</strong><br>
-  “I won’t let you hit”</p>
-
-  <div class="pull">
-    The goal is not to stop emotions.<br>
-    It is to teach what to do with them.
   </div>
 </div>
 
-<!-- SCRIPTS -->
+<!-- ══════════════════════════════════ PAGE 6: PREVENTION ══════════════════════════════════ -->
 <div class="page">
-  <h2>What to say</h2>
+  <div class="page-label">Prevention — upstream parenting</div>
+  <div class="section-num">6</div>
+  <h2>Reducing tantrums<br><em>before</em> they begin</h2>
 
-  <div class="pull">
-    The right sentence matters more than 20 wrong ones.
+  <p>Tantrums are not random. Once you begin tracking them, patterns emerge within days. Most meltdowns have predictable triggers — and most of those triggers are preventable. This section is about becoming a parent who acts upstream, not just in the moment.</p>
+
+  <div class="prevention-grid">
+    <div class="prev-card">
+      <div class="prev-num">Prevention 01</div>
+      <div class="prev-title">Routine predictability</div>
+      <div class="prev-body">Children feel safe when they know what comes next. Unpredictability — especially around transitions — is one of the most consistent tantrum triggers. The brain reads uncertainty as threat.</div>
+      <div class="prev-tip">"In 5 minutes, we'll stop playing and have dinner."</div>
+    </div>
+    <div class="prev-card">
+      <div class="prev-num">Prevention 02</div>
+      <div class="prev-title">Trigger mapping</div>
+      <div class="prev-body">For one week, note the time, what happened before, and whether your child was hungry, tired, or overstimulated. Most tantrums cluster around one of these three. Knowing your child's pattern lets you intervene before the storm hits.</div>
+      <div class="prev-tip">Keep a simple note: Time · Trigger · Hungry/Tired/Overstimulated</div>
+    </div>
+    <div class="prev-card">
+      <div class="prev-num">Prevention 03</div>
+      <div class="prev-title">Structured choices</div>
+      <div class="prev-body">Children who feel they have no control seek it through resistance. Giving controlled choices throughout the day reduces the need to battle for it. The choices must be real — both options must be acceptable to you.</div>
+      <div class="prev-tip">"Red cup or blue cup?" not "What do you want?"</div>
+    </div>
+    <div class="prev-card">
+      <div class="prev-num">Prevention 04</div>
+      <div class="prev-title">Screen time and overstimulation</div>
+      <div class="prev-body">Screens — especially fast-moving content — dysregulate the nervous system over time. Children who have extended screen sessions before an outing or bedtime are measurably harder to regulate. Build a buffer of calm activity before high-demand transitions.</div>
+      <div class="prev-tip">20 minutes of calm play before leaving the house</div>
+    </div>
   </div>
 
-  <p><strong>Public meltdown</strong><br>
-  “You really wanted that. I’m here.”</p>
+  <div class="page-divider"><div class="page-divider-leaf">🌱</div></div>
 
-  <p><strong>Hitting</strong><br>
-  “I won’t let you hit. You’re angry.”</p>
-
-  <p><strong>Crying</strong><br>
-  “You’re safe. I’m here.”</p>
+  <h3>A note on the "bad days"</h3>
+  <p>Even with excellent prevention, some days your child will be dysregulated in a way that has nothing to do with your parenting. Teething, illness, a disrupted sleep cycle, an emotionally intense day at school — their nervous system is primed. On these days, your job is not to prevent the tantrum. It is to move through it together, as gently as possible.</p>
+  <p><strong>One hard day is not a pattern. Patterns are made of many days.</strong></p>
 </div>
 
-<!-- PREVENTION -->
+<!-- ══════════════════════════════════ PAGE 7: INDIA ══════════════════════════════════ -->
 <div class="page">
-  <h2>Prevent tantrums</h2>
+  <div class="page-label">India-aware parenting</div>
+  <div class="section-num">7</div>
+  <h2>Strategies for the<br>reality you're <em>living in</em></h2>
 
-  <p>
-  Patterns are predictable:<br>
-  <strong>hunger · fatigue · overstimulation</strong>
-  </p>
+  <p>Western parenting frameworks often assume a nuclear family, a quiet home, and a single consistent caregiver. Most Indian parents are navigating something more complex — and richer. These strategies are designed for that reality.</p>
 
-  <p>Use routines</p>
-  <p>Give limited choices</p>
+  <div class="india-scenario">
+    <div class="india-scenario-head">
+      <div class="india-scenario-emoji">👴👵</div>
+      <div class="india-scenario-title">When grandparents undermine your response</div>
+    </div>
+    <div class="india-scenario-body">
+      <div class="india-col">
+        <div class="india-avoid">
+          <div class="india-col-label">Avoid</div>
+          <div class="india-col-text">Arguing in front of the child. Correcting grandparents in the moment. Asking them to "not interfere" — which feels like rejection to them and models conflict for your child.</div>
+        </div>
+        <div class="india-do">
+          <div class="india-col-label">Instead</div>
+          <div class="india-col-text">Later, privately: <em>"I know you want to help her feel better — so do I. I'm using a method that works better when we're consistent. Can I show you what to say?"</em> Give them a role — they need to feel needed, not excluded.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="india-scenario">
+    <div class="india-scenario-head">
+      <div class="india-scenario-emoji">🛒</div>
+      <div class="india-scenario-title">Public tantrums and the Indian gaze</div>
+    </div>
+    <div class="india-scenario-body">
+      <div class="india-col">
+        <div class="india-avoid">
+          <div class="india-col-label">The shame response</div>
+          <div class="india-col-text"><em>"Everyone is looking at us. What will people think? Stop this right now."</em> — This activates your stress response, transfers it to your child, and adds social shame to their existing overwhelm.</div>
+        </div>
+        <div class="india-do">
+          <div class="india-col-label">The reframe</div>
+          <div class="india-col-text">Remind yourself: <em>"My child needs me right now. What strangers think of my parenting matters far less than what my child learns from this moment."</em> Your calm in this moment is a gift your child will carry forward.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="india-scenario">
+    <div class="india-scenario-head">
+      <div class="india-scenario-emoji">📊</div>
+      <div class="india-scenario-title">Academic pressure and comparison</div>
+    </div>
+    <div class="india-scenario-body">
+      <div class="india-col">
+        <div class="india-avoid">
+          <div class="india-col-label">Avoid completely</div>
+          <div class="india-col-text"><em>"See how Ananya never throws tantrums."</em> or <em>"Your cousin doesn't behave like this."</em> Comparison creates shame, not motivation. A shamed child is a more dysregulated child — not a better-behaved one.</div>
+        </div>
+        <div class="india-do">
+          <div class="india-col-label">Instead</div>
+          <div class="india-col-text"><em>"I know this is hard for you right now. Yesterday you handled it so well when we had to leave the park — I saw you try."</em> Compare your child only to their own past self. Progress, not perfection.</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- CHEAT SHEET -->
+<!-- ══════════════════════════════════ CHEAT SHEET ══════════════════════════════════ -->
 <div class="page">
-  <h2>Quick cheat sheet</h2>
+  <div class="page-label">Quick reference — save or print this page</div>
+  <div class="section-num">8</div>
+  <h2>Your tantrum<br><em>cheat sheet</em></h2>
 
-  <p><strong>Do:</strong><br>
-  Stay calm<br>
-  Name emotion<br>
-  Stay present</p>
+  <p style="margin-bottom:28px;">The full guide lives in your memory with time and practice. Until then — here is everything condensed onto one page. Screenshot it. Put it on your fridge. Keep it somewhere you can reach it at 6:47am.</p>
 
-  <p><strong>Avoid:</strong><br>
-  Shouting<br>
-  Threatening<br>
-  Over-explaining</p>
+  <div class="cheatsheet">
+    <div class="cheatsheet-title">When a tantrum starts</div>
+    <div class="cheatsheet-sub">Follow this sequence. The order matters.</div>
+    <div class="cheatsheet-cols">
+      <div>
+        <div class="cheatsheet-col-title do">Do this ✓</div>
+        <div class="cheat-item"><div class="cheat-icon">1️⃣</div> Lower your voice, slow your breath, relax your body first</div>
+        <div class="cheat-item"><div class="cheat-icon">2️⃣</div> Name the emotion — <em>"You're really upset right now"</em></div>
+        <div class="cheat-item"><div class="cheat-icon">3️⃣</div> Hold the limit without rejection — <em>"I'm here. I won't let you hit."</em></div>
+        <div class="cheat-item"><div class="cheat-icon">4️⃣</div> Stay physically present — crouch to their level</div>
+        <div class="cheat-item"><div class="cheat-icon">5️⃣</div> Use fewer words. Your presence is the response.</div>
+        <div class="cheat-item"><div class="cheat-icon">6️⃣</div> After calm returns — reconnect warmly before discussing</div>
+      </div>
+      <div class="cheatsheet-divider"></div>
+      <div>
+        <div class="cheatsheet-col-title avoid">Never do this ✕</div>
+        <div class="cheat-item"><div class="cheat-icon" style="color:#FECACA;">✕</div> Shout, threaten, or warn of consequences mid-meltdown</div>
+        <div class="cheat-item"><div class="cheat-icon" style="color:#FECACA;">✕</div> Say "stop crying" — it doesn't work and adds shame</div>
+        <div class="cheat-item"><div class="cheat-icon" style="color:#FECACA;">✕</div> Over-explain your reasoning — the thinking brain is offline</div>
+        <div class="cheat-item"><div class="cheat-icon" style="color:#FECACA;">✕</div> Compare them to other children in the moment</div>
+        <div class="cheat-item"><div class="cheat-icon" style="color:#FECACA;">✕</div> Give in to end the tantrum — it teaches them it works</div>
+        <div class="cheat-item"><div class="cheat-icon" style="color:#FECACA;">✕</div> Apologise to onlookers — your child is watching you</div>
+      </div>
+    </div>
+    <div class="cheatsheet-reminder">
+      <div class="cheatsheet-reminder-text">
+        You are not trying to <strong>stop</strong> the tantrum.<br>
+        You are trying to <strong>build</strong> the emotional intelligence<br>
+        that makes them less frequent — and less intense — over time.
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- CTA -->
-<div class="cta">
-  <h2>
-    If tantrums are happening daily,<br>
-    you don’t need more advice.<br>
-    You need a plan for your child.
-  </h2>
-
-  <a href="https://wa.me/919999999999" class="btn">
-    Message on WhatsApp
-  </a>
-
-  <p style="margin-top:16px;font-size:12px;opacity:0.7;">
-    Limited slots each week
-  </p>
+<!-- ══════════════════════════════════ FINAL CTA ══════════════════════════════════ -->
+<div class="cta-page">
+  <div class="cta-inner-wrap">
+    <div class="cta-eyebrow">You've read the guide. Here's what's next.</div>
+    <div class="cta-title">
+      If tantrums are happening<br>daily — you need a<br><em>personalised plan.</em>
+    </div>
+    <div class="cta-body">
+      This guide gives you the framework. But every child is different — their temperament, their triggers, their family environment. A personalised approach gets results faster.
+    </div>
+    <div class="cta-cards">
+      <div class="cta-card">
+        <div class="cta-card-emoji">🎯</div>
+        <div class="cta-card-title">Built for your child</div>
+        <div class="cta-card-text">A plan designed around your child's specific age, temperament, and triggers — not a generic approach.</div>
+      </div>
+      <div class="cta-card">
+        <div class="cta-card-emoji">🏠</div>
+        <div class="cta-card-title">Your family context</div>
+        <div class="cta-card-text">Joint family, grandparent dynamics, school pressure — all factored in. India-aware, always.</div>
+      </div>
+      <div class="cta-card">
+        <div class="cta-card-emoji">💬</div>
+        <div class="cta-card-title">Direct access</div>
+        <div class="cta-card-text">A real conversation — no forms, no chatbots. Message Akanksha directly on WhatsApp. Free to start.</div>
+      </div>
+      <div class="cta-card">
+        <div class="cta-card-emoji">📋</div>
+        <div class="cta-card-title">Follow-up included</div>
+        <div class="cta-card-text">You receive your plan in writing, with follow-up to track progress and adjust as needed.</div>
+      </div>
+    </div>
+    <a href="https://wa.me/919949216571?text=Hi%20Akanksha%2C%20I%20read%20the%20Calm%20in%20the%20Storm%20guide%20and%20I%27d%20like%20a%20personalised%20tantrum%20plan%20for%20my%20child." class="cta-btn" target="_blank">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Message Akanksha on WhatsApp
+    </a>
+    <div class="cta-note">Free initial chat · No commitment · Personalised plan priced by topic</div>
+    <div class="cta-brand">WiseSprouts · wisesprouts.in · © 2025</div>
+  </div>
 </div>
 
 </body>
