@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The WiseSprouts Starter Guide — Akanksha Rajhans</title>
+  <meta name="description" content="The 5 child development principles every Indian parent needs to know before anything else. A science-informed guide by WiseSprouts." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --gd: #1A5C2A; --gm: #2E7D44; --gl: #E8F5EC; --gp: #F2FAF4;
+      --cream: #FFFBF5; --cream2: #FFF8EE; --cream3: #FDF5E6;
+      --amber: #D97706; --amberl: #FEF3C7; --amberdk: #78350F;
+      --indigo: #4338CA; --indigol: #EEF2FF;
+      --red: #DC2626; --redl: #FEF2F2;
+      --td: #1C1208; --tm: #3D2E14; --tmu: #7A6548; --tf: #C4A882;
+      --border: #E8D5B0; --white: #fff;
+      --navy: #0F1A2E;
+      --serif: 'Lora', Georgia, serif;
+      --sans: 'Nunito', system-ui, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--cream); color: var(--td); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+
+    /* ── COVER ── */
+    .cover {
+      min-height: 100vh; background: var(--cream3);
+      display: flex; flex-direction: column;
+      border-bottom: 0.5px solid var(--border);
+      position: relative; overflow: hidden;
+    }
+    .cover-deco {
+      position: absolute; top: 0; right: 0;
+      width: 420px; height: 100%;
+      background: linear-gradient(160deg, #E8F5EC 0%, #F2FAF4 50%, transparent 100%);
+      pointer-events: none;
+    }
+    .cover-deco-circles {
+      position: absolute; top: 60px; right: -60px;
+      width: 420px; height: 420px; border-radius: 50%;
+      border: 0.5px solid rgba(26,92,42,0.1);
+    }
+    .cover-deco-circles::after {
+      content: ''; position: absolute; top: 50px; left: 50px; right: 50px; bottom: 50px;
+      border-radius: 50%; border: 0.5px solid rgba(26,92,42,0.07);
+    }
+    .cover-top {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 28px 56px; position: relative; z-index: 1;
+    }
+    .cover-brand {
+      font-family: var(--serif); font-size: 15px; font-weight: 700;
+      color: var(--gd); display: flex; align-items: center; gap: 8px;
+    }
+    .cover-brand-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gm); }
+    .cover-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--gm);
+      border: 0.5px solid rgba(46,125,68,0.3);
+      border-radius: 20px; padding: 5px 14px; background: var(--gl);
+    }
+    .cover-body {
+      flex: 1; display: flex; flex-direction: column;
+      justify-content: center; padding: 40px 56px 40px;
+      position: relative; z-index: 1; max-width: 720px;
+    }
+    .cover-series {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--gm); margin-bottom: 24px;
+    }
+    .cover-series-line { width: 32px; height: 1.5px; background: var(--gm); }
+    .cover-label {
+      font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--tf); margin-bottom: 12px;
+    }
+    .cover-title {
+      font-family: var(--serif); font-size: 54px; line-height: 1.08;
+      font-weight: 700; color: var(--td); letter-spacing: -0.025em;
+      margin-bottom: 10px;
+    }
+    .cover-title em { color: var(--gd); font-style: italic; font-weight: 400; }
+    .cover-subtitle {
+      font-family: var(--serif); font-size: 18px; font-weight: 400;
+      font-style: italic; color: var(--tmu);
+      line-height: 1.6; margin-bottom: 40px; max-width: 500px;
+    }
+    .cover-promise {
+      display: flex; flex-direction: column; gap: 10px; margin-bottom: 48px;
+    }
+    .promise-item {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 14px; font-weight: 600; color: var(--tm); line-height: 1.55;
+    }
+    .promise-check {
+      width: 20px; height: 20px; border-radius: 50%;
+      background: var(--gl); border: 1px solid rgba(26,92,42,0.3);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 10px; color: var(--gd); font-weight: 700; margin-top: 1px;
+    }
+    .cover-warning {
+      background: var(--white); border: 0.5px solid var(--border);
+      border-left: 3px solid var(--amber); border-radius: 0 10px 10px 0;
+      padding: 16px 20px; max-width: 480px;
+    }
+    .cover-warning-label { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); margin-bottom: 6px; }
+    .cover-warning-text { font-size: 13px; color: var(--tmu); line-height: 1.65; }
+    .cover-warning-text strong { color: var(--tm); }
+    .cover-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 24px 56px; border-top: 0.5px solid var(--border);
+      position: relative; z-index: 1;
+    }
+    .cover-author { }
+    .cover-author-label { font-size: 10px; color: var(--tf); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
+    .cover-author-name { font-family: var(--serif); font-size: 16px; font-weight: 700; color: var(--td); }
+    .cover-author-cred { font-size: 12px; color: var(--gm); margin-top: 2px; }
+    .cover-edition { font-size: 11px; color: var(--tf); text-align: right; }
+
+    /* ── PAGES ── */
+    .page { max-width: 800px; margin: 0 auto; padding: 72px 56px; }
+    .page + .page { border-top: 0.5px solid var(--border); }
+    .page-bg-sage { background: var(--gp); }
+    .page-bg-cream2 { background: var(--cream2); }
+    .page-bg-white { background: var(--white); }
+
+    /* ── TYPOGRAPHY ── */
+    .page-label {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--gm); margin-bottom: 8px;
+    }
+    .page-label::after { content: ''; flex: 1; height: 0.5px; background: var(--border); }
+
+    h2 {
+      font-family: var(--serif); font-size: 38px; line-height: 1.15;
+      font-weight: 700; color: var(--td); margin-bottom: 8px; letter-spacing: -0.02em;
+    }
+    h2 em { color: var(--gd); font-style: italic; font-weight: 400; }
+    h3 { font-family: var(--serif); font-size: 20px; font-weight: 600; color: var(--td); margin-bottom: 10px; line-height: 1.35; }
+    h4 { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--tmu); margin-bottom: 8px; }
+    p { font-size: 15px; color: var(--tm); line-height: 1.85; margin-bottom: 16px; }
+    p:last-child { margin-bottom: 0; }
+    p strong { color: var(--td); font-weight: 700; }
+    p em { color: var(--gd); }
+
+    .lead-text {
+      font-family: var(--serif); font-size: 19px; font-style: italic;
+      color: var(--td); line-height: 1.7; margin-bottom: 28px;
+      border-left: 3px solid var(--gd); padding-left: 20px;
+    }
+
+    /* ── PRINCIPLE NUMBER BADGE ── */
+    .principle-header { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 28px; }
+    .principle-num {
+      width: 64px; height: 64px; border-radius: 16px;
+      background: var(--gd); color: var(--white);
+      font-family: var(--serif); font-size: 28px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      box-shadow: 0 4px 16px rgba(26,92,42,0.2);
+    }
+    .principle-meta { padding-top: 4px; }
+    .principle-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gm); margin-bottom: 6px; }
+    .principle-title { font-family: var(--serif); font-size: 26px; font-weight: 700; color: var(--td); line-height: 1.2; }
+    .principle-title em { color: var(--gd); font-style: italic; font-weight: 400; }
+
+    /* ── BEHAVIOUR EXAMPLES ── */
+    .beh-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 24px 0; }
+    .beh-card {
+      background: var(--white); border: 0.5px solid var(--border);
+      border-radius: 12px; padding: 18px 18px;
+      transition: box-shadow .2s;
+    }
+    .beh-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.06); }
+    .beh-emoji { font-size: 22px; margin-bottom: 8px; }
+    .beh-surface { font-size: 11px; font-weight: 700; color: var(--red); letter-spacing: 0.04em; margin-bottom: 4px; }
+    .beh-surface-text { font-size: 12px; color: #7F1D1D; font-style: italic; margin-bottom: 10px; line-height: 1.4; }
+    .beh-divider { height: 0.5px; background: var(--border); margin-bottom: 10px; }
+    .beh-real { font-size: 11px; font-weight: 700; color: var(--gd); letter-spacing: 0.04em; margin-bottom: 4px; }
+    .beh-real-text { font-size: 12px; color: #14532D; line-height: 1.55; }
+
+    /* ── PULL QUOTE ── */
+    .pull-quote {
+      margin: 32px 0; padding: 24px 28px;
+      background: var(--cream3); border-radius: 0 16px 16px 0;
+      border-left: 4px solid var(--gd);
+    }
+    .pull-quote-text {
+      font-family: var(--serif); font-size: 20px; font-style: italic;
+      color: var(--td); line-height: 1.6; margin-bottom: 8px;
+    }
+    .pull-quote-source { font-size: 11px; font-weight: 700; color: var(--gm); letter-spacing: 0.06em; text-transform: uppercase; }
+
+    /* ── TEASER BOX ── */
+    .teaser-box {
+      background: var(--navy); border-radius: 16px; padding: 28px 32px;
+      margin-top: 32px;
+    }
+    .teaser-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(168,213,194,0.8); margin-bottom: 10px; }
+    .teaser-text { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.75; margin-bottom: 16px; }
+    .teaser-text strong { color: #A8D5C2; }
+    .teaser-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 700; color: #A8D5C2;
+      text-decoration: none; border-bottom: 0.5px solid rgba(168,213,194,0.3);
+      padding-bottom: 1px; transition: color .2s;
+    }
+    .teaser-link:hover { color: var(--white); }
+
+    /* ── LIST STYLES ── */
+    .plain-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin: 16px 0; }
+    .plain-list li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 14px; color: var(--tm); line-height: 1.6;
+    }
+    .plain-list li::before { content: '—'; color: var(--tf); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .plain-list li strong { color: var(--td); }
+
+    .check-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin: 16px 0; }
+    .check-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--tm); line-height: 1.6; }
+    .check-list li::before { content: '✓'; color: var(--gm); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+    .x-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin: 16px 0; }
+    .x-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--tm); line-height: 1.6; }
+    .x-list li::before { content: '✕'; color: var(--red); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+    .arrow-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin: 16px 0; }
+    .arrow-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--tm); line-height: 1.6; }
+    .arrow-list li::before { content: '→'; color: var(--amber); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── CALLOUT BOXES ── */
+    .callout {
+      border-radius: 14px; padding: 22px 26px; margin: 24px 0;
+    }
+    .callout-sage { background: var(--gl); border: 0.5px solid rgba(46,125,68,0.2); }
+    .callout-amber { background: var(--amberl); border-left: 4px solid var(--amber); border-radius: 0 14px 14px 0; }
+    .callout-cream { background: var(--cream2); border: 0.5px solid var(--border); }
+    .callout-indigo { background: var(--indigol); border: 0.5px solid rgba(67,56,202,0.2); }
+    .callout-title { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
+    .callout-sage .callout-title { color: var(--gd); }
+    .callout-amber .callout-title { color: var(--amberdk); }
+    .callout-indigo .callout-title { color: var(--indigo); }
+    .callout-text { font-size: 14px; line-height: 1.7; color: var(--tm); }
+    .callout-text strong { color: var(--td); }
+
+    /* ── SPLIT CONTRAST ── */
+    .split-contrast { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 24px 0; }
+    .split-left { background: var(--redl); border: 0.5px solid rgba(220,38,38,0.15); border-radius: 12px; padding: 18px 20px; }
+    .split-right { background: var(--gl); border: 0.5px solid rgba(46,125,68,0.2); border-radius: 12px; padding: 18px 20px; }
+    .split-label { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; }
+    .split-left .split-label { color: var(--red); }
+    .split-right .split-label { color: var(--gd); }
+    .split-text { font-size: 13px; line-height: 1.65; }
+    .split-left .split-text { color: #7F1D1D; }
+    .split-right .split-text { color: #14532D; }
+
+    /* ── SCENARIO CARD ── */
+    .scenario-grid { display: flex; flex-direction: column; gap: 14px; margin: 24px 0; }
+    .scenario-card { background: var(--white); border: 0.5px solid var(--border); border-radius: 14px; overflow: hidden; }
+    .scenario-head {
+      background: var(--cream3); padding: 12px 20px;
+      display: flex; align-items: center; gap: 10px;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .scenario-emoji { font-size: 18px; }
+    .scenario-title { font-size: 13px; font-weight: 700; color: var(--td); }
+    .scenario-body { padding: 18px 20px; }
+    .scenario-surface { font-size: 12px; color: var(--red); font-weight: 700; letter-spacing: 0.04em; margin-bottom: 4px; }
+    .scenario-surface-text { font-size: 13px; color: #7F1D1D; font-style: italic; margin-bottom: 12px; }
+    .scenario-deeper { font-size: 12px; color: var(--gd); font-weight: 700; letter-spacing: 0.04em; margin-bottom: 4px; }
+    .scenario-deeper-text { font-size: 13px; color: #14532D; line-height: 1.6; }
+
+    /* ── WEEK RESET ── */
+    .week-items { display: flex; flex-direction: column; gap: 12px; margin: 24px 0; }
+    .week-item {
+      display: flex; align-items: flex-start; gap: 16px;
+      background: var(--white); border: 0.5px solid var(--border);
+      border-radius: 12px; padding: 16px 18px;
+    }
+    .week-num {
+      width: 32px; height: 32px; border-radius: 10px;
+      background: var(--gd); color: var(--white);
+      font-family: var(--serif); font-size: 14px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .week-title { font-size: 14px; font-weight: 700; color: var(--td); margin-bottom: 4px; }
+    .week-body { font-size: 13px; color: var(--tmu); line-height: 1.6; }
+
+    /* ── SEQUENCE BOX ── */
+    .sequence-box {
+      background: var(--gd); border-radius: 16px; padding: 32px 36px; margin: 28px 0;
+    }
+    .sequence-title { font-family: var(--serif); font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 20px; }
+    .sequence-items { display: flex; flex-direction: column; gap: 10px; }
+    .sequence-item { display: flex; align-items: flex-start; gap: 14px; }
+    .sequence-step {
+      width: 26px; height: 26px; border-radius: 50%;
+      background: rgba(168,213,194,0.2); border: 0.5px solid rgba(168,213,194,0.5);
+      color: #A8D5C2; font-size: 12px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .sequence-text { font-size: 14px; color: rgba(255,255,255,0.92); line-height: 1.65; padding-top: 2px; }
+    .sequence-text strong { color: #A8D5C2; }
+
+    /* ── CLOSING CTA ── */
+    .cta-section { background: var(--navy); padding: 80px 56px; }
+    .cta-inner { max-width: 700px; margin: 0 auto; }
+    .cta-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(168,213,194,0.8); margin-bottom: 20px; }
+    .cta-title { font-family: var(--serif); font-size: 38px; font-weight: 700; color: var(--white); line-height: 1.15; margin-bottom: 16px; letter-spacing: -0.02em; }
+    .cta-title em { color: #A8D5C2; font-style: italic; font-weight: 400; }
+    .cta-body { font-size: 15px; color: rgba(255,255,255,0.72); line-height: 1.85; margin-bottom: 40px; }
+    .cta-body strong { color: rgba(255,255,255,0.95); }
+
+    /* Guide cards */
+    .guide-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 40px; }
+    .guide-card {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px; padding: 22px 20px; text-decoration: none;
+      transition: background .2s, border-color .2s, transform .2s;
+    }
+    .guide-card:hover { background: rgba(255,255,255,0.09); border-color: rgba(168,213,194,0.35); transform: translateY(-2px); }
+    .guide-card-badge {
+      display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; border-radius: 20px; padding: 3px 10px; margin-bottom: 12px;
+    }
+    .badge-paid { background: rgba(168,213,194,0.15); color: #A8D5C2; }
+    .badge-free { background: rgba(37,211,102,0.15); color: #25D366; }
+    .guide-card-emoji { font-size: 24px; margin-bottom: 8px; display: block; }
+    .guide-card-title { font-family: var(--serif); font-size: 16px; font-weight: 600; color: var(--white); margin-bottom: 6px; line-height: 1.3; }
+    .guide-card-desc { font-size: 12px; color: rgba(255,255,255,0.52); line-height: 1.6; }
+    .guide-card-price { font-size: 13px; font-weight: 700; color: #A8D5C2; margin-top: 10px; }
+
+    .cta-divider { height: 0.5px; background: rgba(255,255,255,0.1); margin: 32px 0; }
+    .cta-wa-label { font-size: 13px; color: rgba(255,255,255,0.55); margin-bottom: 14px; }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #25D366; color: var(--white);
+      padding: 14px 28px; border-radius: 12px;
+      font-family: var(--sans); font-size: 14px; font-weight: 700;
+      text-decoration: none; box-shadow: 0 4px 18px rgba(37,211,102,.28);
+      transition: opacity .2s, transform .15s;
+    }
+    .cta-btn:hover { opacity: .9; transform: translateY(-2px); }
+    .cta-note { font-size: 12px; color: rgba(255,255,255,.28); margin-top: 12px; }
+    .cta-closing {
+      margin-top: 48px; padding-top: 32px;
+      border-top: 0.5px solid rgba(255,255,255,0.08);
+      font-family: var(--serif); font-size: 17px; font-style: italic;
+      color: rgba(255,255,255,0.65); line-height: 1.75;
+    }
+    .cta-closing strong { color: rgba(168,213,194,0.9); font-style: normal; }
+
+    footer {
+      background: #070E1A; padding: 24px 56px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .foot-logo { font-family: var(--serif); font-size: 14px; font-weight: 700; color: rgba(255,255,255,.38); }
+    .foot-meta { font-size: 11px; color: rgba(255,255,255,.2); }
+
+    /* ── PAGE DIVIDER ── */
+    .section-divider { display: flex; align-items: center; gap: 16px; margin: 36px 0; }
+    .section-divider::before, .section-divider::after { content: ''; flex: 1; height: 0.5px; background: var(--border); }
+    .section-divider-inner { font-size: 16px; }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width: 700px) {
+      .cover-title { font-size: 36px; }
+      .cover-body, .cover-top, .cover-bottom { padding-left: 24px; padding-right: 24px; }
+      .page { padding: 52px 24px; }
+      .beh-grid { grid-template-columns: 1fr; }
+      .split-contrast { grid-template-columns: 1fr; }
+      .guide-cards { grid-template-columns: 1fr; }
+      .cta-section { padding: 60px 24px; }
+      .principle-header { flex-direction: column; gap: 12px; }
+      .principle-num { width: 52px; height: 52px; font-size: 22px; }
+      footer { flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ COVER ══════════════════════════════════════════════════════════════════ -->
+<div class="cover">
+  <div class="cover-deco"></div>
+  <div class="cover-deco-circles"></div>
+
+  <div class="cover-top">
+    <div class="cover-brand"><div class="cover-brand-dot"></div> WiseSprouts</div>
+    <div class="cover-tag">Starter Guide</div>
+  </div>
+
+  <div class="cover-body">
+    <div class="cover-series"><div class="cover-series-line"></div> The WiseSprouts Parenting Series</div>
+    <div class="cover-label">Foundation guide · Before anything else</div>
+    <div class="cover-title">The WiseSprouts<br><em>Starter Guide</em></div>
+    <div class="cover-subtitle">
+      The 5 child development principles every Indian parent needs to know — before anything else.
+    </div>
+
+    <div class="cover-promise">
+      <div class="promise-item"><div class="promise-check">✓</div> Why behaviour is rarely "just bad behaviour"</div>
+      <div class="promise-item"><div class="promise-check">✓</div> Why the same child acts completely differently in different situations</div>
+      <div class="promise-item"><div class="promise-check">✓</div> Why many common parenting reactions fail — even when they come from love</div>
+      <div class="promise-item"><div class="promise-check">✓</div> How Indian family life shapes child behaviour in ways most advice ignores</div>
+      <div class="promise-item"><div class="promise-check">✓</div> The one question to ask before reacting to any behaviour</div>
+    </div>
+
+    <div class="cover-warning">
+      <div class="cover-warning-label">Important — before you read</div>
+      <div class="cover-warning-text">
+        This is not a solutions guide. It is the <strong>lens that helps you stop guessing.</strong><br>
+        When the lens changes, your response changes. And when your response changes consistently, your child's behaviour often changes faster than you expect.
+      </div>
+    </div>
+  </div>
+
+  <div class="cover-bottom">
+    <div class="cover-author">
+      <div class="cover-author-label">Written by</div>
+      <div class="cover-author-name">Akanksha Rajhans</div>
+      <div class="cover-author-cred">Child Development Specialist · WiseSprouts</div>
+    </div>
+    <div class="cover-edition">wisesprouts.in<br>© 2025 WiseSprouts</div>
+  </div>
+</div>
+
+<!-- ══ PAGE 1: BEFORE ANYTHING ELSE ══════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-label">Before anything else</div>
+  <h2>Most parents don't have a child problem.<br>They have an <em>interpretation problem.</em></h2>
+
+  <div class="lead-text">
+    "If you misread the meaning of what your child is doing, you almost always choose the wrong response."
+  </div>
+
+  <p>A toddler throws food — it looks disrespectful. A preschooler melts down before school — it looks stubborn. A child refuses to share — it looks rude. A school-age child lies — it looks manipulative.</p>
+
+  <p>But behaviour is rarely that simple. <strong>Children communicate through behaviour long before they can explain themselves with insight, logic, or self-control.</strong></p>
+
+  <div class="callout callout-cream">
+    <div class="callout-title">The cycle most parents are stuck in</div>
+    <ul class="plain-list">
+      <li>Child does something difficult</li>
+      <li>Adult interprets the intention incorrectly</li>
+      <li>Adult reacts to the surface behaviour</li>
+      <li>Child feels more overwhelmed, unseen, or ashamed</li>
+      <li><strong>Behaviour worsens</strong></li>
+    </ul>
+  </div>
+
+  <p>The goal of WiseSprouts is not to give you clever hacks. It is to help you <strong>see what is happening underneath behaviour</strong> so you can respond in a way that is calmer, clearer, and developmentally smarter.</p>
+
+  <p>The 5 principles in this guide are the foundation of that shift. They will not solve everything. But they will stop you from making the interpretation errors that keep most parents stuck.</p>
+</div>
+
+<!-- ══ PRINCIPLE 1 ════════════════════════════════════════════════════════════ -->
+<div class="page page-bg-white">
+  <div class="page-label">Principle 1 of 5</div>
+  <div class="principle-header">
+    <div class="principle-num">1</div>
+    <div class="principle-meta">
+      <div class="principle-eyebrow">The first shift</div>
+      <div class="principle-title">Behaviour is <em>communication</em><br>before it is defiance.</div>
+    </div>
+  </div>
+
+  <p>When a child cannot say "I am overwhelmed," "I feel out of control," or "I don't yet have the skill you're expecting" — they show it through behaviour. This is not a choice. It is a developmental reality.</p>
+
+  <div class="beh-grid">
+    <div class="beh-card">
+      <div class="beh-emoji">🥄</div>
+      <div class="beh-surface">Surface reading</div>
+      <div class="beh-surface-text">"My toddler is being naughty and throwing food."</div>
+      <div class="beh-divider"></div>
+      <div class="beh-real">What may actually be happening</div>
+      <div class="beh-real-text">Finished eating, overstimulated, experimenting with cause and effect, or too dysregulated to sit any longer.</div>
+    </div>
+    <div class="beh-card">
+      <div class="beh-emoji">🏫</div>
+      <div class="beh-surface">Surface reading</div>
+      <div class="beh-surface-text">"My child hits after school — they're aggressive."</div>
+      <div class="beh-divider"></div>
+      <div class="beh-real">What may actually be happening</div>
+      <div class="beh-real-text">Exhausted from holding it together all day, craving control after too many demands, lacking a safe way to discharge accumulated stress.</div>
+    </div>
+    <div class="beh-card">
+      <div class="beh-emoji">🙉</div>
+      <div class="beh-surface">Surface reading</div>
+      <div class="beh-surface-text">"My child never listens — total disrespect."</div>
+      <div class="beh-divider"></div>
+      <div class="beh-real">What may actually be happening</div>
+      <div class="beh-real-text">Hearing your words at a moment when their body is too activated to process them. It is not selective — it is physiological.</div>
+    </div>
+    <div class="beh-card">
+      <div class="beh-emoji">🤝</div>
+      <div class="beh-surface">Surface reading</div>
+      <div class="beh-surface-text">"She refuses to share — she's selfish."</div>
+      <div class="beh-divider"></div>
+      <div class="beh-real">What may actually be happening</div>
+      <div class="beh-real-text">Object permanence and ownership are still developing. Sharing is a complex social skill — not a moral default that children are born with.</div>
+    </div>
+  </div>
+
+  <div class="callout callout-sage">
+    <div class="callout-title">The question that changes everything</div>
+    <div class="callout-text"><strong>"What is this behaviour trying to tell me that my child cannot yet say clearly?"</strong><br><br>That one shift — from "why is my child doing this to me" to "what is this telling me about my child" — changes the entire response.</div>
+  </div>
+
+  <p>This does not mean every behaviour is acceptable. It means <strong>the most effective limits are built on understanding the message first.</strong> When you respond to what's underneath, you solve the actual problem — not just the surface one.</p>
+
+  <div class="teaser-box">
+    <div class="teaser-label">Where deeper guidance matters</div>
+    <div class="teaser-text">Understanding the principle is the starting point. But knowing what to say, how to hold a boundary, and what to do when the same behaviour repeats daily — that is where <strong>situation-specific guidance</strong> becomes essential. Each premium guide goes deep on one behaviour at a time.</div>
+    <a href="calm-in-the-storm.html" class="teaser-link">Read: Calm in the Storm — Tantrums Guide →</a>
+  </div>
+</div>
+
+<!-- ══ PRINCIPLE 2 ════════════════════════════════════════════════════════════ -->
+<div class="page page-bg-sage">
+  <div class="page-label">Principle 2 of 5</div>
+  <div class="principle-header">
+    <div class="principle-num">2</div>
+    <div class="principle-meta">
+      <div class="principle-eyebrow">The timing mistake</div>
+      <div class="principle-title">Regulation comes<br><em>before</em> reasoning.</div>
+    </div>
+  </div>
+
+  <p>Parents often try to teach in the worst possible moment. They explain. Lecture. Correct. Threaten. Repeat themselves. But when a child is emotionally flooded, reasoning becomes far less available — not because they won't listen, but because they physiologically cannot.</p>
+
+  <div class="pull-quote">
+    <div class="pull-quote-text">"Knowing a skill and accessing it under stress are not the same thing. A child in distress is not at their best level of functioning."</div>
+    <div class="pull-quote-source">— WiseSprouts</div>
+  </div>
+
+  <div class="split-contrast">
+    <div class="split-left">
+      <div class="split-label">❌ When a child is dysregulated</div>
+      <div class="split-text">They cannot listen well, think clearly, remember rules, use language effectively, or choose differently — even if they "know better" on a good day.</div>
+    </div>
+    <div class="split-right">
+      <div class="split-label">✓ When a child is calm</div>
+      <div class="split-text">They can listen, think, remember, use language, and make better choices. Teaching and reasoning lands here — not during the storm.</div>
+    </div>
+  </div>
+
+  <h3>The common trap</h3>
+  <p>We assume: <em>"He knows this already, so he should be able to do it right now."</em></p>
+  <p>But accessing a skill under stress requires a regulated nervous system. If that isn't there yet, the knowledge is irrelevant in the moment.</p>
+
+  <div class="callout callout-amber">
+    <div class="callout-title">What playtime-ending tantrums actually need</div>
+    <div class="callout-text">
+      Not a long explanation of the routine. Not a character lesson. Not a comparison or warning.<br><br>
+      <strong>What they need:</strong> calm containment · fewer words · steady presence · simple, clear limits.<br><br>
+      The teaching happens later, when the nervous system is available again.
+    </div>
+  </div>
+
+  <p>Many parents know they <em>should</em> "stay calm" — but very few know exactly what to say, what to avoid saying, and how to hold a boundary without becoming harsh or giving in. That gap between knowing and doing is where structured guidance becomes powerful.</p>
+
+  <div class="teaser-box">
+    <div class="teaser-label">What this looks like in practice</div>
+    <div class="teaser-text">The WiseSprouts 3-Step Response System gives you the exact sequence — and word-for-word scripts — for your child's most dysregulated moments. It is the core of the Tantrums guide and applies across most big-emotion situations.</div>
+    <a href="calm-in-the-storm.html" class="teaser-link">See the 3-Step System →</a>
+  </div>
+</div>
+
+<!-- ══ PRINCIPLE 3 ════════════════════════════════════════════════════════════ -->
+<div class="page page-bg-white">
+  <div class="page-label">Principle 3 of 5</div>
+  <div class="principle-header">
+    <div class="principle-num">3</div>
+    <div class="principle-meta">
+      <div class="principle-eyebrow">The false choice</div>
+      <div class="principle-title">Connection is not the<br><em>opposite</em> of boundaries.</div>
+    </div>
+  </div>
+
+  <p>This is where many parents get confused. They believe there are only two options: be soft and get ignored, or be strict and get results. But that is not effective parenting — it is a false choice.</p>
+
+  <p>Children need both emotional safety and clear limits. The strongest parenting does not remove boundaries. It removes <strong>unnecessary fear, shame, and confusion</strong> from how boundaries are delivered.</p>
+
+  <div class="callout callout-sage">
+    <div class="callout-title">What calm authority sounds like</div>
+    <div class="callout-text">
+      <ul class="check-list" style="margin:0;">
+        <li>"I can see you're upset. I'm still not changing the limit."</li>
+        <li>"I won't let you hit."</li>
+        <li>"You don't have to like this. I'll help you through it."</li>
+        <li>"I hear that you want more screen time. The answer is still no."</li>
+      </ul>
+      <br>That is not permissive. That is calm leadership.
+    </div>
+  </div>
+
+  <h3>What weakens authority</h3>
+  <ul class="x-list">
+    <li>Repeating limits eight times before enforcing them</li>
+    <li>Shouting because calm didn't "work instantly"</li>
+    <li>Threatening consequences you won't enforce</li>
+    <li>Giving in just to stop the crying</li>
+    <li>Becoming emotionally reactive every time your child protests</li>
+  </ul>
+
+  <div class="pull-quote">
+    <div class="pull-quote-text">"A child does not learn boundaries only from the rule. They learn from the adult's nervous system, consistency, tone, and follow-through."</div>
+    <div class="pull-quote-source">— Akanksha, WiseSprouts</div>
+  </div>
+
+  <p>The real parenting skill is not boundary-setting in theory. It is learning how to hold different kinds of limits — in tantrums, at bedtime, around screen time, during sibling conflict, in public — without collapsing or escalating. That is exactly why generic advice often fails.</p>
+
+  <div class="teaser-box">
+    <div class="teaser-label">Context-specific boundary guidance</div>
+    <div class="teaser-text">Generic "set a boundary" advice rarely works because every situation has a different emotional driver underneath it. <strong>Each premium guide addresses one situation specifically</strong> — with the scripts, the sequences, and the India-aware context already built in.</div>
+    <a href="https://wa.me/919949216571?text=Hi%20Akanksha%2C%20I%20read%20the%20Starter%20Guide%20and%20I%27d%20like%20to%20know%20which%20guide%20fits%20my%20child%20best." class="teaser-link" target="_blank">Ask Akanksha which guide fits your child →</a>
+  </div>
+</div>
+
+<!-- ══ PRINCIPLE 4 ════════════════════════════════════════════════════════════ -->
+<div class="page page-bg-cream2">
+  <div class="page-label">Principle 4 of 5</div>
+  <div class="principle-header">
+    <div class="principle-num">4</div>
+    <div class="principle-meta">
+      <div class="principle-eyebrow">The Indian context</div>
+      <div class="principle-title">Child development does not happen<br>in isolation from <em>family culture.</em></div>
+    </div>
+  </div>
+
+  <p>This is where most imported parenting advice breaks down for Indian families. The frameworks assume one or two caregivers, high consistency, a private home, minimal grandparent involvement, and more individualistic family values. That is not the reality most Indian parents are living.</p>
+
+  <p>Here, parenting often happens inside a more layered system — and that system has its own pressures that change how you respond to your child.</p>
+
+  <div class="callout callout-amber">
+    <div class="callout-title">🇮🇳 The Indian parenting reality</div>
+    <div class="callout-text">
+      <ul class="arrow-list" style="margin:0;">
+        <li>Grandparents with strong opinions — often contradicting your approach in real time</li>
+        <li>Comparison from relatives around behaviour, obedience, eating, and grades</li>
+        <li><em>"Log kya kahenge"</em> — the public gaze that accelerates your own stress response</li>
+        <li>Less room for emotional mess in joint living situations</li>
+        <li>Academic pressure beginning early and compounding over time</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Why this changes everything</h3>
+  <p>A child's tantrum in a mall is not only about the child. It is also about your embarrassment, the speed at which others step in, the pressure to end the scene fast, and the fear of being judged as an ineffective parent. <strong>That changes your state. And your state changes your child's state.</strong></p>
+
+  <div class="split-contrast">
+    <div class="split-left">
+      <div class="split-label">What most parenting advice assumes</div>
+      <div class="split-text">Quiet nuclear home. One consistent approach. Privacy during difficult moments. No competing voices. Cultural individualism.</div>
+    </div>
+    <div class="split-right">
+      <div class="split-label">What WiseSprouts is built for</div>
+      <div class="split-text">Joint families. Grandparent dynamics. Public pressure. Indian academic context. Multiple caregivers with different approaches. Real-life complexity.</div>
+    </div>
+  </div>
+
+  <p>Parenting support for Indian families must be science-informed, culturally realistic, and emotionally practical. Not imported blindly. Not performative. Not shame-based.</p>
+
+  <div class="teaser-box">
+    <div class="teaser-label">India-aware, always</div>
+    <div class="teaser-text">Every WiseSprouts guide includes India-specific sections: joint family strategies, public situation handling, grandparent dynamics, and the cultural pressures that change how parents respond. <strong>This is the moat no global parenting content can cross.</strong></div>
+    <a href="calm-in-the-storm.html#india" class="teaser-link">See the India section in the Tantrums guide →</a>
+  </div>
+</div>
+
+<!-- ══ PRINCIPLE 5 ════════════════════════════════════════════════════════════ -->
+<div class="page page-bg-white">
+  <div class="page-label">Principle 5 of 5</div>
+  <div class="principle-header">
+    <div class="principle-num">5</div>
+    <div class="principle-meta">
+      <div class="principle-eyebrow">The most damaging mistake</div>
+      <div class="principle-title">Most difficult behaviours are <em>skill gaps,</em><br>not character flaws.</div>
+    </div>
+  </div>
+
+  <p>One of the most damaging things parents do is assign permanent character meaning to developmentally normal behaviour. When we say "she is stubborn," "he is manipulative," or "she is attention-seeking" — we treat what is often an immature skill under stress as if it were a fixed trait.</p>
+
+  <div class="beh-grid">
+    <div class="beh-card">
+      <div class="beh-emoji">😡</div>
+      <div class="beh-surface">The label</div>
+      <div class="beh-surface-text">"She screams when she loses a game. She's a sore loser."</div>
+      <div class="beh-divider"></div>
+      <div class="beh-real">The skill gap</div>
+      <div class="beh-real-text">Losing tolerance, frustration language, emotional recovery after disappointment — all skills that need building, not punishing.</div>
+    </div>
+    <div class="beh-card">
+      <div class="beh-emoji">🤥</div>
+      <div class="beh-surface">The label</div>
+      <div class="beh-surface-text">"He lies constantly. He's just dishonest."</div>
+      <div class="beh-divider"></div>
+      <div class="beh-real">The skill gap</div>
+      <div class="beh-real-text">Often: fear of reaction, trying to avoid shame, lacking repair skills, protecting the relationship clumsily. Not a character flaw — a coping mechanism.</div>
+    </div>
+  </div>
+
+  <h3>Why this matters — practically</h3>
+  <p><strong>If you treat a skill gap like a character flaw, you punish what actually needs teaching.</strong> The consequence makes the child feel worse about themselves — but does not build the missing skill.</p>
+
+  <div class="callout callout-sage">
+    <div class="callout-title">Real accountability asks different questions</div>
+    <div class="callout-text">
+      <ul class="check-list" style="margin:0;">
+        <li>What happened?</li>
+        <li>What skill was missing in that moment?</li>
+        <li>What support or boundary is needed now?</li>
+        <li>How do we reduce this over time — not just stop it once?</li>
+      </ul>
+    </div>
+  </div>
+
+  <p>This does not remove accountability. It improves it — because real accountability is about building the capacity to do differently, not just stopping the immediate behaviour.</p>
+
+  <div class="pull-quote">
+    <div class="pull-quote-text">"The strategy for tantrums is not the strategy for lying. Different behaviours reveal different skill gaps. Different skill gaps need different responses."</div>
+    <div class="pull-quote-source">— Akanksha, WiseSprouts</div>
+  </div>
+
+  <div class="teaser-box">
+    <div class="teaser-label">Why each guide exists separately</div>
+    <div class="teaser-text">Vague parenting advice creates vague results. <strong>Each WiseSprouts premium guide goes deep into one specific behaviour pattern</strong> — identifying the skill gap underneath, the scripts to use in the moment, and the prevention system to reduce repetition over time.</div>
+    <a href="https://wa.me/919949216571?text=Hi%20Akanksha%2C%20which%20WiseSprouts%20guide%20would%20help%20most%20for%20my%20child%20right%20now%3F" class="teaser-link" target="_blank">Ask Akanksha which guide fits your child →</a>
+  </div>
+</div>
+
+<!-- ══ PAGE 7: THE ONE QUESTION ══════════════════════════════════════════════ -->
+<div class="page page-bg-sage">
+  <div class="page-label">The one thing to remember</div>
+  <h2>The question to ask<br><em>before</em> every reaction</h2>
+
+  <p style="margin-bottom: 28px;">If you take only one thing from this guide, take this:</p>
+
+  <div class="sequence-box">
+    <div class="sequence-title">Ask: "What is driving this behaviour right now?"</div>
+    <div class="sequence-items">
+      <div class="sequence-item">
+        <div class="sequence-step">→</div>
+        <div class="sequence-text">Not: <strong>"How do I stop this fast?"</strong></div>
+      </div>
+      <div class="sequence-item">
+        <div class="sequence-step">→</div>
+        <div class="sequence-text">Not: <strong>"Why is my child like this?"</strong></div>
+      </div>
+      <div class="sequence-item">
+        <div class="sequence-step">→</div>
+        <div class="sequence-text">Not: <strong>"What will people think?"</strong></div>
+      </div>
+      <div class="sequence-item">
+        <div class="sequence-step">✓</div>
+        <div class="sequence-text"><strong>"What is driving this behaviour right now?"</strong> — hunger, fatigue, overstimulation, frustration, a skill gap, connection need, environmental pressure.</div>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="margin-top: 32px;">A more useful parenting sequence</h3>
+  <ul class="check-list">
+    <li><strong>What is driving this behaviour?</strong> — identify the underlying state</li>
+    <li><strong>What state is my child in right now?</strong> — regulated or dysregulated</li>
+    <li><strong>Does this moment need connection, regulation, a boundary, or all three?</strong></li>
+    <li><strong>What response solves more than the surface issue?</strong></li>
+  </ul>
+
+  <p style="margin-top: 20px;">That sequence is how you stop parenting by impulse — and start parenting with accuracy.</p>
+
+  <div class="pull-quote" style="margin-top: 32px;">
+    <div class="pull-quote-text">"Parents who improve are not the ones who never react. They are the ones who become more accurate over time."</div>
+    <div class="pull-quote-source">— Akanksha, WiseSprouts</div>
+  </div>
+</div>
+
+<!-- ══ PAGE 8: REALITY CHECK ACROSS PROBLEMS ══════════════════════════════════ -->
+<div class="page page-bg-white">
+  <div class="page-label">Applying the lens</div>
+  <h2>What this looks like across<br><em>real</em> parenting problems</h2>
+
+  <p style="margin-bottom: 28px;">This is where the difference between generic content and a real framework becomes visible. The surface view drives the wrong response. The deeper view reveals the right one.</p>
+
+  <div class="scenario-grid">
+    <div class="scenario-card">
+      <div class="scenario-head"><div class="scenario-emoji">😤</div><div class="scenario-title">Tantrums</div></div>
+      <div class="scenario-body">
+        <div class="scenario-surface">Surface view</div>
+        <div class="scenario-surface-text">"My child is dramatic and manipulative."</div>
+        <div class="scenario-deeper">Deeper view</div>
+        <div class="scenario-deeper-text">Child is overwhelmed, frustrated, and missing regulation support. The behaviour is a signal, not a strategy.</div>
+      </div>
+    </div>
+    <div class="scenario-card">
+      <div class="scenario-head"><div class="scenario-emoji">📱</div><div class="scenario-title">Screen time battles</div></div>
+      <div class="scenario-body">
+        <div class="scenario-surface">Surface view</div>
+        <div class="scenario-surface-text">"My child is addicted and impossible without screens."</div>
+        <div class="scenario-deeper">Deeper view</div>
+        <div class="scenario-deeper-text">Screens may be filling multiple roles: stimulation, routine dependency, boredom relief, transition avoidance, or caregiver survival. The limit strategy must address the role first.</div>
+      </div>
+    </div>
+    <div class="scenario-card">
+      <div class="scenario-head"><div class="scenario-emoji">🌙</div><div class="scenario-title">Sleep resistance</div></div>
+      <div class="scenario-body">
+        <div class="scenario-surface">Surface view</div>
+        <div class="scenario-surface-text">"My child just doesn't sleep."</div>
+        <div class="scenario-deeper">Deeper view</div>
+        <div class="scenario-deeper-text">Sleep struggles almost always involve regulation, routine, separation anxiety, overstimulation, timing, or learned associations. Each one requires a different response.</div>
+      </div>
+    </div>
+    <div class="scenario-card">
+      <div class="scenario-head"><div class="scenario-emoji">🥦</div><div class="scenario-title">Food refusal</div></div>
+      <div class="scenario-body">
+        <div class="scenario-surface">Surface view</div>
+        <div class="scenario-surface-text">"My child is just too fussy."</div>
+        <div class="scenario-deeper">Deeper view</div>
+        <div class="scenario-deeper-text">Eating struggles often involve control needs, sensory sensitivity, pressure dynamics, appetite rhythm, or family feeding patterns — not stubbornness.</div>
+      </div>
+    </div>
+    <div class="scenario-card">
+      <div class="scenario-head"><div class="scenario-emoji">👊</div><div class="scenario-title">Aggression</div></div>
+      <div class="scenario-body">
+        <div class="scenario-surface">Surface view</div>
+        <div class="scenario-surface-text">"My child is becoming violent."</div>
+        <div class="scenario-deeper">Deeper view</div>
+        <div class="scenario-deeper-text">Aggression is most often an immature expression of overwhelm, stress, or frustration — a child who lacks the language or skill to discharge big feelings any other way.</div>
+      </div>
+    </div>
+    <div class="scenario-card">
+      <div class="scenario-head"><div class="scenario-emoji">🙈</div><div class="scenario-title">Not listening</div></div>
+      <div class="scenario-body">
+        <div class="scenario-surface">Surface view</div>
+        <div class="scenario-surface-text">"My child ignores me deliberately."</div>
+        <div class="scenario-deeper">Deeper view</div>
+        <div class="scenario-deeper-text">The issue may be timing, too many instructions at once, weak connection, unclear limits, or an expectation that exceeds their current developmental capacity.</div>
+      </div>
+    </div>
+  </div>
+
+  <p style="margin-top: 8px;">When the driver changes, the response changes. And when the response changes consistently, outcomes improve far faster than any surface-level tactic.</p>
+</div>
+
+<!-- ══ PAGE 9: STARTER RESET ═══════════════════════════════════════════════════ -->
+<div class="page page-bg-cream2">
+  <div class="page-label">Your starting point</div>
+  <h2>A simple reset<br>for <em>this week</em></h2>
+
+  <p style="margin-bottom: 28px;">You do not need to transform your entire parenting approach overnight. Start with these five things — and only these five things.</p>
+
+  <div class="week-items">
+    <div class="week-item">
+      <div class="week-num">1</div>
+      <div>
+        <div class="week-title">Observe before reacting</div>
+        <div class="week-body">Pause for a few seconds longer than usual. Ask what is driving the behaviour before responding to its surface.</div>
+      </div>
+    </div>
+    <div class="week-item">
+      <div class="week-num">2</div>
+      <div>
+        <div class="week-title">Track patterns, not incidents</div>
+        <div class="week-body">Notice when behaviour gets harder — before meals, after school, at bedtime, during transitions, around certain people or environments. Patterns reveal drivers.</div>
+      </div>
+    </div>
+    <div class="week-item">
+      <div class="week-num">3</div>
+      <div>
+        <div class="week-title">Reduce word overload</div>
+        <div class="week-body">Many children do worse when adults over-explain during high-emotion moments. Less words. More presence. Especially when the child is already dysregulated.</div>
+      </div>
+    </div>
+    <div class="week-item">
+      <div class="week-num">4</div>
+      <div>
+        <div class="week-title">Keep one boundary more consistent</div>
+        <div class="week-body">Not ten. One. Consistency in a single area creates more security and fewer battles than scattered attempts to fix everything at once.</div>
+      </div>
+    </div>
+    <div class="week-item">
+      <div class="week-num">5</div>
+      <div>
+        <div class="week-title">Stop reading every behaviour as disrespect</div>
+        <div class="week-body">This single reframe often softens the entire parent-child dynamic within days. Behaviour is communication — even when it is inconvenient, embarrassing, or exhausting.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-cream" style="margin-top: 28px;">
+    <div class="callout-title">What not to do</div>
+    <div class="callout-text">Do not read this guide and try five new techniques in one day. That creates performance pressure for you and inconsistency for your child.<br><br>The goal is not to become perfect. <strong>The goal is to become more accurate.</strong></div>
+  </div>
+</div>
+
+<!-- ══ FINAL CTA ═══════════════════════════════════════════════════════════════ -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-eyebrow">Start with understanding. Go deeper where your child needs it most.</div>
+    <div class="cta-title">This guide gives you<br>the <em>foundation.</em><br>What comes next?</div>
+    <div class="cta-body">
+      If you are dealing with a <strong>repeated challenge</strong> — tantrums, screen time conflict, sleep resistance, food refusal, aggression, or emotional outbursts — a focused guide will help you far faster than general advice ever can.<br><br>
+      Because the real shift in parenting doesn't come from knowing more. It comes from knowing <strong>what matters most in your child's specific situation.</strong>
+    </div>
+
+    <div class="guide-cards">
+      <a href="calm-in-the-storm.html" class="guide-card">
+        <span class="guide-card-badge badge-paid">₹499 · PDF Guide</span>
+        <span class="guide-card-emoji">😤</span>
+        <div class="guide-card-title">Calm in the Storm</div>
+        <div class="guide-card-desc">The complete science-backed tantrum response plan for Indian parents. Scripts, frameworks, India-aware strategies.</div>
+        <div class="guide-card-price">Get the guide →</div>
+      </a>
+      <a href="https://wa.me/919949216571?text=Hi%20Akanksha%2C%20I%20read%20the%20Starter%20Guide%20and%20I%27d%20like%20to%20discuss%20my%20child%27s%20specific%20challenges." class="guide-card" target="_blank">
+        <span class="guide-card-badge badge-free">Start Here</span>
+        <span class="guide-card-emoji">💬</span>
+        <div class="guide-card-title">1-on-1 with Akanksha</div>
+        <div class="guide-card-desc">Message directly on WhatsApp. Free initial chat. Personalised plan built around your child's specific age, temperament, and challenges.</div>
+        <div class="guide-card-price">Message now →</div>
+      </a>
+      <a href="https://wa.me/919949216571?text=Hi%20Akanksha%2C%20I%20read%20the%20Starter%20Guide%20and%20I%27d%20like%20to%20know%20about%20the%20screen%20time%20guide." class="guide-card" target="_blank">
+        <span class="guide-card-badge badge-paid">₹799 · Guide Bundle</span>
+        <span class="guide-card-emoji">📱</span>
+        <div class="guide-card-title">Screens Without War</div>
+        <div class="guide-card-desc">How to reduce screen time without battles — with an India-aware approach to rules, routines, and joint family dynamics.</div>
+        <div class="guide-card-price">Get the guide →</div>
+      </a>
+      <a href="https://wa.me/919949216571?text=Hi%20Akanksha%2C%20I%20read%20the%20Starter%20Guide%20and%20I%27d%20like%20a%20personalised%20child%20development%20plan." class="guide-card" target="_blank">
+        <span class="guide-card-badge badge-paid">₹4,999 · Personalised</span>
+        <span class="guide-card-emoji">🎯</span>
+        <div class="guide-card-title">Your Child's Development Plan</div>
+        <div class="guide-card-desc">A complete bespoke plan — your child's age, temperament, family context, and specific challenges. Nothing generic.</div>
+        <div class="guide-card-price">Start free chat →</div>
+      </a>
+    </div>
+
+    <div class="cta-divider"></div>
+    <div class="cta-wa-label">Or if you're not sure which guide fits your child best — just ask:</div>
+    <a href="https://wa.me/919949216571?text=Hi%20Akanksha%2C%20I%20read%20the%20WiseSprouts%20Starter%20Guide%20and%20I%27d%20like%20to%20know%20which%20resource%20would%20help%20my%20child%20most%20right%20now." class="cta-btn" target="_blank">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Message Akanksha on WhatsApp
+    </a>
+    <div class="cta-note">Free initial chat · No commitment · India-aware, always</div>
+
+    <div class="cta-closing">
+      When you understand behaviour differently, you stop reacting blindly.<br>
+      When you respond more accurately, <strong>parenting becomes lighter.</strong><br>
+      And when one problem keeps repeating — that is where deeper guidance becomes worth it.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-logo">WiseSprouts</div>
+  <div class="foot-meta">© 2025 WiseSprouts · Built by WiseLabs</div>
+</footer>
+
+</body>
+</html>
