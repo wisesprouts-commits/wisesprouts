@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en" style="color-scheme:light only;">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light only" />
+  <title>Screens Without War — WiseSprouts</title>
+  <meta name="description" content="The Indian Parent's Playbook on screen time. A science-backed system — not a list of rules — by Akanksha, WiseSprouts." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: light only;
+      --gd:#1A5C2A; --gm:#2E7D44; --gl:#E8F5EC; --gp:#F2FAF4;
+      --cream:#FFFBF5; --cream2:#FFF8EE; --cream3:#FDF5E6;
+      --ind:#1D4ED8; --indl:#EFF6FF; --indm:#3B82F6;
+      --amber:#D97706; --amberl:#FEF3C7; --amberdk:#78350F;
+      --red:#DC2626; --redl:#FEF2F2;
+      --purple:#7C3AED; --purplel:#F5F3FF;
+      --td:#1C1208; --tm:#3D2E14; --tmu:#7A6548; --tf:#C4A882;
+      --border:#E8D5B0; --white:#fff;
+      --navy:#0F1A2E; --navym:#1E3048;
+      --serif:'Lora',Georgia,serif;
+      --sans:'Nunito',system-ui,sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html { color-scheme: light only; background: #FFFBF5; }
+    body{font-family:var(--sans);background:#FFFBF5;color:#1C1208;-webkit-font-smoothing:antialiased;line-height:1.6;}
+
+    /* ── COVER ─────────────────────────────────────────────────────────── */
+    .cover{min-height:100vh;background:var(--navy);display:flex;flex-direction:column;position:relative;overflow:hidden;}
+    .cover-glow{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 80% 30%,rgba(29,78,216,0.18) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 10% 80%,rgba(26,92,42,0.14) 0%,transparent 55%);pointer-events:none;}
+    .cover-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;}
+    .cover-top{display:flex;align-items:center;justify-content:space-between;padding:28px 56px;position:relative;z-index:1;}
+    .cover-brand{font-family:var(--serif);font-size:15px;font-weight:700;color:rgba(255,255,255,0.85);display:flex;align-items:center;gap:8px;}
+    .cover-brand-dot{width:7px;height:7px;border-radius:50%;background:#A8D5C2;}
+    .cover-tag{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#93C5FD;border:0.5px solid rgba(147,197,253,0.3);border-radius:20px;padding:5px 14px;}
+    .cover-body{flex:1;display:flex;flex-direction:column;justify-content:center;padding:40px 56px;position:relative;z-index:1;max-width:760px;}
+    .cover-series{display:flex;align-items:center;gap:12px;font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#93C5FD;margin-bottom:20px;}
+    .cover-series-line{width:32px;height:1.5px;background:#93C5FD;}
+    .cover-vol{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:12px;}
+    .cover-title{font-family:var(--serif);font-size:64px;line-height:1.0;font-weight:700;color:var(--white);letter-spacing:-0.03em;margin-bottom:8px;}
+    .cover-title em{color:#93C5FD;font-style:italic;font-weight:400;}
+    .cover-sub-title{font-family:var(--serif);font-size:22px;font-weight:400;font-style:italic;color:rgba(255,255,255,0.65);margin-bottom:36px;}
+    .cover-promise-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:44px;}
+    .promise-item{display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:600;color:rgba(255,255,255,0.82);line-height:1.55;}
+    .promise-dot{width:18px;height:18px;border-radius:50%;background:rgba(147,197,253,0.15);border:0.5px solid rgba(147,197,253,0.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:9px;color:#93C5FD;font-weight:700;margin-top:1px;}
+    .cover-premise{background:rgba(29,78,216,0.12);border:0.5px solid rgba(147,197,253,0.25);border-left:3px solid #93C5FD;border-radius:0 12px 12px 0;padding:18px 22px;max-width:560px;}
+    .cover-premise-label{font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#93C5FD;margin-bottom:8px;}
+    .cover-premise-text{font-size:14px;color:rgba(255,255,255,0.88);line-height:1.75;}
+    .cover-premise-text strong{color:#93C5FD;}
+    .cover-bottom{display:flex;align-items:flex-end;justify-content:space-between;padding:24px 56px;border-top:0.5px solid rgba(255,255,255,0.08);position:relative;z-index:1;}
+    .cover-author-label{font-size:10px;color:rgba(255,255,255,0.35);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+    .cover-author-name{font-family:var(--serif);font-size:16px;font-weight:700;color:rgba(255,255,255,0.92);}
+    .cover-author-cred{font-size:12px;color:#A8D5C2;margin-top:2px;}
+    .cover-edition{font-size:11px;color:rgba(255,255,255,0.25);text-align:right;}
+
+    /* ── PAGES ─────────────────────────────────────────────────────────── */
+    .page{max-width:820px;margin:0 auto;padding:72px 60px;}
+    .page+.page{border-top:0.5px solid var(--border);}
+    .page-dark{background:#0D1420;}
+    .page-blue{background:var(--indl);}
+    .page-sage{background:var(--gp);}
+    .page-cream{background:var(--cream2);}
+    .page-amber{background:var(--amberl);}
+    .page-white{background:var(--white);}
+
+    /* ── TYPOGRAPHY ────────────────────────────────────────────────────── */
+    .page-label{display:flex;align-items:center;gap:10px;font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gm);margin-bottom:8px;}
+    .page-label::after{content:'';flex:1;height:0.5px;background:var(--border);}
+    .page-label-blue{color:var(--ind);}
+    .page-label-blue::after{background:rgba(29,78,216,0.15);}
+    .page-label-dark{color:#93C5FD;letter-spacing:0.16em;}
+    .page-label-dark::after{background:rgba(255,255,255,0.08);}
+    h2{font-family:var(--serif);font-size:38px;line-height:1.15;font-weight:700;color:var(--td);margin-bottom:8px;letter-spacing:-0.02em;}
+    h2 em{color:var(--gd);font-style:italic;font-weight:400;}
+    h2.blue em{color:var(--ind);}
+    h2.on-dark{color:var(--white);}
+    h2.on-dark em{color:#93C5FD;}
+    h3{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--td);margin-bottom:10px;line-height:1.3;}
+    h3.on-dark{color:var(--white);}
+    p{font-size:15px;color:var(--tm);line-height:1.85;margin-bottom:16px;}
+    p:last-child{margin-bottom:0;}
+    p strong{color:var(--td);font-weight:700;}
+    p em{color:var(--gd);}
+    .p-dark{color:rgba(255,255,255,0.82);}
+    .p-dark strong{color:var(--white);}
+    .lead{font-family:var(--serif);font-size:19px;font-style:italic;color:var(--td);line-height:1.7;margin-bottom:28px;border-left:3px solid var(--ind);padding-left:20px;}
+
+    /* ── RESEARCH CALLOUT ──────────────────────────────────────────────── */
+    .research-badge{display:inline-flex;align-items:center;gap:7px;background:var(--indl);border:0.5px solid rgba(29,78,216,0.2);border-radius:20px;padding:5px 14px;font-size:11px;font-weight:700;color:var(--ind);letter-spacing:0.04em;margin-bottom:18px;}
+    .research-badge::before{content:'📊';font-size:12px;}
+    .research-block{background:var(--white);border:0.5px solid rgba(29,78,216,0.15);border-left:3px solid var(--ind);border-radius:0 14px 14px 0;padding:20px 24px;margin:20px 0;}
+    .research-block.on-dark{background:rgba(29,78,216,0.12);border-color:rgba(147,197,253,0.25);border-left-color:#93C5FD;}
+    .research-source{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--ind);margin-bottom:6px;}
+    .research-source.on-dark{color:#93C5FD;}
+    .research-text{font-size:14px;color:var(--tm);line-height:1.7;}
+    .research-text.on-dark{color:rgba(255,255,255,0.85);}
+    .research-text strong{color:var(--td);}
+    .research-text.on-dark strong{color:var(--white);}
+
+    /* ── 5C FRAMEWORK ─────────────────────────────────────────────────── */
+    .five-c-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:28px 0;}
+    .five-c-card{border-radius:12px;padding:16px 14px;text-align:center;}
+    .five-c-letter{font-family:var(--serif);font-size:32px;font-weight:700;margin-bottom:6px;line-height:1;}
+    .five-c-name{font-size:12px;font-weight:700;margin-bottom:6px;letter-spacing:0.04em;}
+    .five-c-desc{font-size:10.5px;line-height:1.5;}
+    .c-child{background:#EFF6FF;} .c-child .five-c-letter{color:#1D4ED8;} .c-child .five-c-name{color:#1D4ED8;} .c-child .five-c-desc{color:#3B82F6;}
+    .c-content{background:#F5F3FF;} .c-content .five-c-letter{color:#7C3AED;} .c-content .five-c-name{color:#7C3AED;} .c-content .five-c-desc{color:#8B5CF6;}
+    .c-calm{background:var(--gl);} .c-calm .five-c-letter{color:var(--gd);} .c-calm .five-c-name{color:var(--gd);} .c-calm .five-c-desc{color:var(--gm);}
+    .c-crowd{background:var(--amberl);} .c-crowd .five-c-letter{color:var(--amberdk);} .c-crowd .five-c-name{color:var(--amberdk);} .c-crowd .five-c-desc{color:var(--amber);}
+    .c-comm{background:var(--redl);} .c-comm .five-c-letter{color:var(--red);} .c-comm .five-c-name{color:var(--red);} .c-comm .five-c-desc{color:#EF4444;}
+
+    /* ── AGE TABLE ─────────────────────────────────────────────────────── */
+    .age-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:13px;}
+    .age-table th{background:var(--navy);color:rgba(255,255,255,0.9);font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:10px 14px;text-align:left;}
+    .age-table td{padding:12px 14px;vertical-align:top;border-bottom:0.5px solid var(--border);color:var(--tm);line-height:1.6;}
+    .age-table tr:last-child td{border-bottom:none;}
+    .age-table tr:nth-child(even) td{background:rgba(242,250,244,0.5);}
+    .age-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.06em;padding:3px 8px;border-radius:20px;white-space:nowrap;}
+    .age-0{background:var(--redl);color:var(--red);}
+    .age-1{background:var(--amberl);color:var(--amberdk);}
+    .age-2{background:var(--gl);color:var(--gd);}
+    .age-3{background:var(--indl);color:var(--ind);}
+    .source-tag{font-size:10px;color:var(--tf);font-weight:600;}
+
+    /* ── PRINCIPLE CARDS ───────────────────────────────────────────────── */
+    .principle-strip{display:flex;gap:0;border:0.5px solid var(--border);border-radius:16px;overflow:hidden;margin:28px 0;}
+    .principle-num-col{width:60px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:28px;font-weight:700;}
+    .principle-body{padding:20px 22px;flex:1;}
+    .p1 .principle-num-col{background:var(--indl);color:var(--ind);}
+    .p2 .principle-num-col{background:var(--purplel);color:var(--purple);}
+    .p3 .principle-num-col{background:var(--amberl);color:var(--amberdk);}
+    .p4 .principle-num-col{background:var(--gl);color:var(--gd);}
+    .p5 .principle-num-col{background:var(--redl);color:var(--red);}
+    .principle-title-small{font-family:var(--serif);font-size:16px;font-weight:600;color:var(--td);margin-bottom:6px;}
+    .principle-body-text{font-size:13px;color:var(--tmu);line-height:1.65;}
+
+    /* ── RULE CARDS ────────────────────────────────────────────────────── */
+    .rule-card{border-radius:16px;overflow:hidden;border:0.5px solid var(--border);margin-bottom:16px;}
+    .rule-head{padding:13px 22px;display:flex;align-items:center;gap:12px;}
+    .rule-num{font-family:var(--serif);font-size:14px;font-weight:700;color:rgba(255,255,255,0.9);background:var(--navy);width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .rule-title{font-family:var(--serif);font-size:16px;font-weight:600;}
+    .rule-body{background:var(--white);padding:18px 22px;}
+    .rule-r1 .rule-head{background:var(--indl);} .rule-r1 .rule-title{color:var(--ind);}
+    .rule-r2 .rule-head{background:var(--gl);} .rule-r2 .rule-title{color:var(--gd);}
+    .rule-r3 .rule-head{background:var(--amberl);} .rule-r3 .rule-title{color:var(--amberdk);}
+    .rule-r4 .rule-head{background:var(--purplel);} .rule-r4 .rule-title{color:var(--purple);}
+    .rule-r5 .rule-head{background:var(--redl);} .rule-r5 .rule-title{color:var(--red);}
+    .rule-body-text{font-size:13.5px;color:var(--tmu);line-height:1.7;margin-bottom:10px;}
+    .rule-example{background:var(--cream2);border-radius:8px;padding:12px 16px;font-size:13px;margin-top:8px;}
+    .rule-example-label{font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--tf);margin-bottom:5px;}
+    .strong-line{font-style:italic;color:var(--td);font-weight:600;}
+    .weak-line{font-style:italic;color:var(--tmu);}
+
+    /* ── SCRIPT CARD ───────────────────────────────────────────────────── */
+    .script-card{border-radius:16px;overflow:hidden;border:0.5px solid var(--border);margin-bottom:18px;}
+    .script-head{background:var(--td);padding:13px 22px;display:flex;align-items:center;gap:10px;}
+    .script-head-text{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--white);}
+    .script-body{background:var(--white);padding:20px 22px;}
+    .script-say{background:var(--gl);border-left:3px solid var(--gd);border-radius:0 10px 10px 0;padding:11px 16px;font-family:var(--serif);font-size:14px;font-style:italic;color:var(--gd);font-weight:600;line-height:1.55;margin-bottom:8px;}
+    .script-then{font-size:12px;color:var(--tmu);padding:0 4px;margin-bottom:8px;}
+    .script-note{background:var(--cream2);border:0.5px solid var(--border);border-radius:10px;padding:12px 16px;font-size:12.5px;color:var(--tm);line-height:1.6;margin-top:10px;}
+    .script-note strong{color:var(--td);}
+
+    /* ── CRISIS MANUAL ────────────────────────────────────────────────── */
+    .crisis-bg{background:#0D1420;}
+    .crisis-header{text-align:center;margin-bottom:40px;}
+    .crisis-label{font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#EF4444;margin-bottom:12px;}
+    .crisis-title{font-family:var(--serif);font-size:34px;font-weight:700;color:var(--white);line-height:1.15;margin-bottom:10px;}
+    .crisis-sub{font-size:14px;color:rgba(255,255,255,0.55);}
+    .crisis-steps{display:flex;flex-direction:column;gap:14px;}
+    .crisis-step{background:rgba(255,255,255,0.04);border:0.5px solid rgba(255,255,255,0.1);border-radius:14px;padding:20px 22px;display:flex;align-items:flex-start;gap:16px;}
+    .crisis-step-num{width:36px;height:36px;border-radius:50%;background:rgba(239,68,68,0.15);border:0.5px solid rgba(239,68,68,0.3);color:#FCA5A5;font-family:var(--serif);font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .crisis-step-title{font-size:13px;font-weight:700;color:var(--white);margin-bottom:4px;}
+    .crisis-step-text{font-size:12.5px;color:rgba(255,255,255,0.68);line-height:1.65;}
+    .crisis-step-text strong{color:rgba(255,255,255,0.95);}
+    .crisis-line{font-style:italic;font-size:14px;background:rgba(239,68,68,0.1);border:0.5px solid rgba(239,68,68,0.2);border-radius:10px;padding:12px 16px;color:rgba(255,255,255,0.82);margin-top:6px;line-height:1.6;}
+    .crisis-line strong{color:#FCA5A5;}
+
+    /* ── INDIA SECTION ─────────────────────────────────────────────────── */
+    .india-scenario{border-radius:16px;overflow:hidden;border:0.5px solid var(--border);margin-bottom:16px;}
+    .india-head{background:var(--cream3);padding:14px 22px;display:flex;align-items:center;gap:10px;border-bottom:0.5px solid var(--border);}
+    .india-head-emoji{font-size:19px;}
+    .india-head-title{font-size:13px;font-weight:700;color:var(--td);}
+    .india-body{background:var(--white);padding:18px 22px;display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+    .india-avoid{background:var(--redl);border:0.5px solid rgba(220,38,38,0.15);border-radius:10px;padding:14px 16px;}
+    .india-do{background:var(--gl);border:0.5px solid rgba(46,125,68,0.2);border-radius:10px;padding:14px 16px;}
+    .india-label{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;}
+    .india-avoid .india-label{color:var(--red);}
+    .india-do .india-label{color:var(--gd);}
+    .india-text{font-size:12.5px;line-height:1.65;}
+    .india-avoid .india-text{color:#7F1D1D;}
+    .india-do .india-text{color:#14532D;}
+
+    /* ── QUICK REF ─────────────────────────────────────────────────────── */
+    .quick-ref{background:var(--navy);border-radius:20px;padding:36px 40px;margin:28px 0;}
+    .quick-ref-title{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--white);margin-bottom:6px;}
+    .quick-ref-sub{font-size:12px;color:rgba(255,255,255,0.4);margin-bottom:28px;}
+    .quick-ref-cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+    .qr-col-label{font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:14px;}
+    .qr-do-label{color:#A8D5C2;}
+    .qr-avoid-label{color:#FCA5A5;}
+    .qr-item{display:flex;align-items:flex-start;gap:9px;margin-bottom:10px;}
+    .qr-icon{font-size:12px;flex-shrink:0;margin-top:2px;}
+    .qr-text{font-size:13px;color:rgba(255,255,255,0.85);line-height:1.55;}
+    .qr-divider{width:0.5px;background:rgba(255,255,255,0.1);}
+
+    /* ── SPLIT / CALLOUT ───────────────────────────────────────────────── */
+    .callout{border-radius:14px;padding:22px 26px;margin:20px 0;}
+    .callout-sage{background:var(--gl);border:0.5px solid rgba(46,125,68,0.2);}
+    .callout-blue{background:var(--indl);border:0.5px solid rgba(29,78,216,0.15);}
+    .callout-amber{background:var(--amberl);border-left:4px solid var(--amber);border-radius:0 14px 14px 0;}
+    .callout-cream{background:var(--cream2);border:0.5px solid var(--border);}
+    .callout-red{background:var(--redl);border:0.5px solid rgba(220,38,38,0.15);}
+    .callout-navy{background:var(--navym);border-radius:14px;}
+    .callout-title{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px;}
+    .callout-sage .callout-title{color:var(--gd);}
+    .callout-blue .callout-title{color:var(--ind);}
+    .callout-amber .callout-title{color:var(--amberdk);}
+    .callout-red .callout-title{color:var(--red);}
+    .callout-navy .callout-title{color:#A8D5C2;}
+    .callout-text{font-size:14px;line-height:1.72;color:var(--tm);}
+    .callout-navy .callout-text{color:rgba(255,255,255,0.82);}
+    .callout-text strong{color:var(--td);}
+    .callout-navy .callout-text strong{color:var(--white);}
+
+    /* ── PULL QUOTE ─────────────────────────────────────────────────────── */
+    .pull-quote{margin:28px 0;padding:22px 28px;border-left:4px solid var(--ind);background:var(--indl);border-radius:0 14px 14px 0;}
+    .pull-quote.green{border-left-color:var(--gd);background:var(--gl);}
+    .pull-quote-text{font-family:var(--serif);font-size:19px;font-style:italic;color:var(--td);line-height:1.6;margin-bottom:8px;}
+    .pull-quote-source{font-size:11px;font-weight:700;color:var(--ind);letter-spacing:0.06em;text-transform:uppercase;}
+    .pull-quote.green .pull-quote-source{color:var(--gd);}
+
+    /* ── LISTS ─────────────────────────────────────────────────────────── */
+    .check-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin:14px 0;}
+    .check-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--tm);line-height:1.6;}
+    .check-list li::before{content:'✓';color:var(--gm);font-weight:700;flex-shrink:0;margin-top:1px;}
+    .x-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin:14px 0;}
+    .x-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--tm);line-height:1.6;}
+    .x-list li::before{content:'✕';color:var(--red);font-weight:700;flex-shrink:0;margin-top:1px;}
+    .step-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin:14px 0;}
+    .step-list li{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--tm);line-height:1.6;}
+    .step-num{width:22px;height:22px;border-radius:50%;background:var(--gd);color:var(--white);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+    .arrow-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin:14px 0;}
+    .arrow-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--tm);line-height:1.6;}
+    .arrow-list li::before{content:'→';color:var(--amber);font-weight:700;flex-shrink:0;margin-top:1px;}
+    .dark-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin:14px 0;}
+    .dark-list li{display:flex;align-items:flex-start;gap:9px;font-size:13.5px;color:rgba(255,255,255,0.82);line-height:1.6;}
+    .dark-list li::before{content:'→';color:#A8D5C2;font-weight:700;flex-shrink:0;margin-top:1px;}
+
+    /* ── SECTION DIVIDER ────────────────────────────────────────────────── */
+    .sec-divider{display:flex;align-items:center;gap:16px;margin:36px 0;}
+    .sec-divider::before,.sec-divider::after{content:'';flex:1;height:0.5px;background:var(--border);}
+    .sec-divider-inner{font-size:18px;}
+
+    /* ── TEASER ─────────────────────────────────────────────────────────── */
+    .teaser{background:var(--navy);border-radius:14px;padding:24px 28px;margin-top:28px;}
+    .teaser-label{font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(168,213,194,0.8);margin-bottom:8px;}
+    .teaser-text{font-size:14px;color:rgba(255,255,255,0.82);line-height:1.72;margin-bottom:12px;}
+    .teaser-text strong{color:#A8D5C2;}
+    .teaser-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#A8D5C2;text-decoration:none;border-bottom:0.5px solid rgba(168,213,194,0.3);padding-bottom:1px;}
+    .teaser-link:hover{color:var(--white);}
+
+    /* ── FINAL CTA ──────────────────────────────────────────────────────── */
+    .cta-section{background:linear-gradient(160deg,#0D1420 0%,#0F1A2E 60%,#0D1F10 100%);padding:80px 56px;}
+    .cta-inner{max-width:720px;margin:0 auto;}
+    .cta-eyebrow{font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(168,213,194,0.8);margin-bottom:20px;}
+    .cta-title{font-family:var(--serif);font-size:38px;font-weight:700;color:var(--white);line-height:1.15;margin-bottom:14px;letter-spacing:-0.02em;}
+    .cta-title em{color:#93C5FD;font-style:italic;font-weight:400;}
+    .cta-body{font-size:15px;color:rgba(255,255,255,0.68);line-height:1.85;margin-bottom:36px;}
+    .cta-body strong{color:rgba(255,255,255,0.95);}
+    .guide-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:36px;}
+    .guide-card{background:rgba(255,255,255,0.04);border:0.5px solid rgba(255,255,255,0.1);border-radius:16px;padding:22px 20px;text-decoration:none;display:block;transition:background .2s,border-color .2s,transform .2s;}
+    .guide-card:hover{background:rgba(255,255,255,0.08);border-color:rgba(168,213,194,0.3);transform:translateY(-2px);}
+    .guide-card-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;border-radius:20px;padding:3px 10px;margin-bottom:12px;}
+    .badge-paid{background:rgba(168,213,194,0.15);color:#A8D5C2;}
+    .badge-free{background:rgba(37,211,102,0.12);color:#25D366;}
+    .badge-premium{background:rgba(139,92,246,0.15);color:#C4B5FD;}
+    .guide-card-emoji{font-size:22px;margin-bottom:8px;display:block;}
+    .guide-card-title{font-family:var(--serif);font-size:15px;font-weight:600;color:var(--white);margin-bottom:5px;line-height:1.3;}
+    .guide-card-desc{font-size:12px;color:rgba(255,255,255,0.48);line-height:1.6;}
+    .guide-card-price{font-size:12px;font-weight:700;color:#A8D5C2;margin-top:10px;}
+    .cta-divider{height:0.5px;background:rgba(255,255,255,0.08);margin:32px 0;}
+    .cta-btn{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:var(--white);padding:14px 28px;border-radius:12px;font-family:var(--sans);font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 4px 18px rgba(37,211,102,.25);transition:opacity .2s,transform .15s;}
+    .cta-btn:hover{opacity:.9;transform:translateY(-2px);}
+    .cta-note{font-size:12px;color:rgba(255,255,255,.28);margin-top:10px;}
+    .cta-closing{margin-top:48px;padding-top:32px;border-top:0.5px solid rgba(255,255,255,0.07);font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(255,255,255,0.6);line-height:1.8;}
+    .cta-closing strong{color:#A8D5C2;font-style:normal;}
+    footer{background:#050D14;padding:22px 56px;display:flex;align-items:center;justify-content:space-between;}
+    .foot-logo{font-family:var(--serif);font-size:14px;font-weight:700;color:rgba(255,255,255,.35);}
+    .foot-meta{font-size:11px;color:rgba(255,255,255,.18);}
+
+    /* ── RESPONSIVE ─────────────────────────────────────────────────────── */
+    @media(max-width:720px){
+      .cover-title{font-size:42px;}
+      .cover-body,.cover-top,.cover-bottom{padding-left:24px;padding-right:24px;}
+      .cover-promise-grid{grid-template-columns:1fr;}
+      .page{padding:52px 24px;}
+      .five-c-grid{grid-template-columns:1fr 1fr;}
+      .quick-ref-cols{grid-template-columns:1fr;}
+      .guide-cards{grid-template-columns:1fr;}
+      .india-body{grid-template-columns:1fr;}
+      .cta-section{padding:60px 24px;}
+      footer{flex-direction:column;gap:8px;text-align:center;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ COVER ══════════════════════════════════════════════════════════════════ -->
+<div class="cover">
+  <div class="cover-glow"></div>
+  <div class="cover-grid"></div>
+  <div class="cover-top">
+    <div class="cover-brand"><div class="cover-brand-dot"></div>WiseSprouts</div>
+    <div class="cover-tag">Paid Guide · Vol. 3</div>
+  </div>
+  <div class="cover-body">
+    <div class="cover-series"><div class="cover-series-line"></div>The WiseSprouts Parenting Series</div>
+    <div class="cover-vol">The Indian Parent's Playbook</div>
+    <div class="cover-title">Screens<br><em>Without War</em></div>
+    <div class="cover-sub-title">A science-backed system for Indian families — not just another list of screen-time tips.</div>
+    <div class="cover-promise-grid">
+      <div class="promise-item"><div class="promise-dot">✓</div>Why screen limits fail — and what actually works</div>
+      <div class="promise-item"><div class="promise-dot">✓</div>The 5C framework from AAP paediatric guidance</div>
+      <div class="promise-item"><div class="promise-dot">✓</div>Age-by-age guidance: 0 to 12 years</div>
+      <div class="promise-item"><div class="promise-dot">✓</div>Rules that survive joint families and tired evenings</div>
+      <div class="promise-item"><div class="promise-dot">✓</div>Grandparent scripts, mealtime strategies, bedtime fixes</div>
+      <div class="promise-item"><div class="promise-dot">✓</div>A crisis manual — open it when you're about to give in</div>
+    </div>
+    <div class="cover-premise">
+      <div class="cover-premise-label">The core promise</div>
+      <div class="cover-premise-text">You will not leave this guide with guilt. You will leave with a <strong>screen system</strong> — because a system survives real family life in a way that rules never do.</div>
+    </div>
+  </div>
+  <div class="cover-bottom">
+    <div>
+      <div class="cover-author-label">Written by</div>
+      <div class="cover-author-name">Akanksha Rajhans</div>
+      <div class="cover-author-cred">Child Development Specialist · Yale-Aligned Training · WiseSprouts</div>
+    </div>
+    <div class="cover-edition">wisesprouts.in<br>© 2025 WiseSprouts</div>
+  </div>
+</div>
+
+<!-- ══ PAGE 1: THE BIG REFRAME ════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-label page-label-blue">The reframe that changes everything</div>
+  <h2 class="blue">Your child is not <em>"addicted to screens."</em><br>They are using screens for a job.</h2>
+  <div class="lead">Screen battles rarely respond to "just reduce it" — because time is not the actual problem. What the screen is <em>doing</em> in the day is.</div>
+  <p>Screens can quietly become a <strong>calming tool</strong> during overstimulation, a <strong>boredom escape</strong> in under-structured hours, a <strong>transition bridge</strong> between activities, a <strong>reward economy</strong> that children learn to negotiate, a <strong>caregiver survival strategy</strong> during exhausted evenings, or the easiest available stimulation when a child is overtired and under-aroused.</p>
+  <p>That is why "just reduce it" fails. You are not fighting a habit. You are trying to remove something that is currently doing a job — without replacing the job it was doing. <strong>Understand the role first. Then build the system.</strong></p>
+
+  <div class="research-block">
+    <div class="research-source">AAP · American Academy of Paediatrics</div>
+    <div class="research-text">Rules focused on <strong>balance, content, co-viewing, and communication</strong> are associated with better child well-being than rules focused only on time. The impact of screen media depends on developmental stage, device type, and context — not just minutes logged.</div>
+  </div>
+
+  <div class="callout callout-amber">
+    <div class="callout-title">🇮🇳 The Indian version of this problem</div>
+    <div class="callout-text">In many Indian homes, screens are not just entertainment — they are also a <strong>meal strategy</strong> ("she only eats with YouTube"), a <strong>grandparent peace tool</strong> ("Nani just gives them the phone"), a <strong>homework reward</strong>, and sometimes the only predictable quiet in a busy joint household. Any screen system that ignores these realities will not survive Day 3.</div>
+  </div>
+
+  <p>Treating screen time as a morality issue leads to guilt, shame, and inconsistent enforcement. <strong>Treating it as a family regulation issue</strong> — what is the screen replacing, and what structure is missing? — leads to actual change.</p>
+</div>
+
+<!-- ══ PAGE 2: THE 5C FRAMEWORK ════════════════════════════════════════════════ -->
+<div class="page page-blue">
+  <div class="page-label page-label-blue">The framework that replaces the "hours" debate</div>
+  <h2 class="blue">Stop counting minutes.<br>Start using the <em>5C Framework.</em></h2>
+  <p>The "how many hours is safe?" question is the wrong starting point. Current paediatric guidance — including AAP's updated position — has moved explicitly away from a single universal hour limit. Instead, the framework that leading child development programmes now use is built around five dimensions.</p>
+
+  <div class="five-c-grid">
+    <div class="five-c-card c-child">
+      <div class="five-c-letter">C</div>
+      <div class="five-c-name">Child</div>
+      <div class="five-c-desc">Age, developmental stage, temperament, and how this child specifically responds to screens</div>
+    </div>
+    <div class="five-c-card c-content">
+      <div class="five-c-letter">C</div>
+      <div class="five-c-name">Content</div>
+      <div class="five-c-desc">What is actually being watched — fast clips, co-viewed stories, educational programmes, gaming rage loops</div>
+    </div>
+    <div class="five-c-card c-calm">
+      <div class="five-c-letter">C</div>
+      <div class="five-c-name">Calm</div>
+      <div class="five-c-desc">Is the child calmer or more dysregulated after screen use? What is the exit behaviour?</div>
+    </div>
+    <div class="five-c-card c-crowd">
+      <div class="five-c-letter">C</div>
+      <div class="five-c-name">Crowding Out</div>
+      <div class="five-c-desc">Is screen time replacing sleep, movement, play, meals, or family conversation?</div>
+    </div>
+    <div class="five-c-card c-comm">
+      <div class="five-c-letter">C</div>
+      <div class="five-c-name">Communication</div>
+      <div class="five-c-desc">Are there consistent, clear rules across all caregivers in the household?</div>
+    </div>
+  </div>
+
+  <div class="research-block">
+    <div class="research-source">HealthyChildren.org · AAP 5 C's of Media Guidance</div>
+    <div class="research-text">AAP's 5 C's approach was developed because there is <strong>not enough evidence for one universal limit</strong> that fits all children. The guidance recommends that parents focus on quality, balance, co-viewing, and communication — using these five dimensions to assess whether screen use is supporting or undermining development.</div>
+  </div>
+
+  <div class="callout callout-sage">
+    <div class="callout-title">Not all screen time is equal — practically</div>
+    <div class="callout-text">A family movie night co-watched with engaged discussion is fundamentally different from: endless short-form autoplay clips, solo gaming rage loops, background TV running all day, a phone handed over at every difficult emotion, or a screen used to avoid every transition. The 5C framework helps you see the difference.</div>
+  </div>
+</div>
+
+<!-- ══ PAGE 3: THE 5 PRINCIPLES ════════════════════════════════════════════════ -->
+<div class="page page-white">
+  <div class="page-label">Five principles before you set any rule</div>
+  <h2>The principles that make<br>every rule <em>more effective</em></h2>
+  <p style="margin-bottom:28px;">These are not tips. They are the foundation your screen system needs to be built on — or the rules will not hold.</p>
+
+  <div class="principle-strip p1">
+    <div class="principle-num-col">1</div>
+    <div class="principle-body">
+      <div class="principle-title-small">Screen time is not one problem</div>
+      <div class="principle-body-text">Content and context define impact — not time alone. A calm, co-viewed, age-appropriate programme with a parent is not the same as looping fast stimulating clips alone for hours. Your system should reflect this distinction.</div>
+    </div>
+  </div>
+  <div class="principle-strip p2">
+    <div class="principle-num-col">2</div>
+    <div class="principle-body">
+      <div class="principle-title-small">Screens shape the day by what they crowd out</div>
+      <div class="principle-body-text">The question is not only "how much screen time?" It is: <strong>what did it replace?</strong> Sleep, play, movement, meals, and family conversation cannot be crowded out without the whole system weakening.</div>
+    </div>
+  </div>
+  <div class="principle-strip p3">
+    <div class="principle-num-col">3</div>
+    <div class="principle-body">
+      <div class="principle-title-small">The evening screen is usually the biggest problem</div>
+      <div class="principle-body-text">Reviews consistently find associations between bedtime screen use and shorter sleep duration, longer time to fall asleep, and poorer sleep quality. If you fix total time but leave evening screens untouched, you may not fix the actual problem. <span class="source-tag">Source: PMC/NIH</span></div>
+    </div>
+  </div>
+  <div class="principle-strip p4">
+    <div class="principle-num-col">4</div>
+    <div class="principle-body">
+      <div class="principle-title-small">Child development matters more than parental anxiety</div>
+      <div class="principle-body-text">WHO gives clear age-based guidance for under-5s. For older children, there is no single universal cap — the focus shifts to quality, balance, and co-viewing rather than one magic number. Your anxiety about screens should not replace the actual framework.</div>
+    </div>
+  </div>
+  <div class="principle-strip p5">
+    <div class="principle-num-col">5</div>
+    <div class="principle-body">
+      <div class="principle-title-small">If your rule needs perfect cooperation, it is not a real rule</div>
+      <div class="principle-body-text">Real rules work in joint families, on tired evenings, when grandparents are visiting, and when you are not at your best. Your screen system must include: the rule, the routine, the environment, the wording, the backup plan, and the repair step.</div>
+    </div>
+  </div>
+
+  <div class="teaser">
+    <div class="teaser-label">If your child's screen use is affecting behaviour</div>
+    <div class="teaser-text">Screen dysregulation and emotional dysregulation are closely linked. If your child is regularly <strong>more reactive, more difficult, or harder to settle</strong> after screen use, there may be a deeper regulation pattern that needs addressing. The Tantrums guide covers the underlying neuroscience — and the tools are transferable.</div>
+    <a href="calm-in-the-storm.html" class="teaser-link">Read: Calm in the Storm — Tantrums Guide →</a>
+  </div>
+</div>
+
+<!-- ══ PAGE 4: AGE-BY-AGE GUIDANCE ════════════════════════════════════════════ -->
+<div class="page page-sage">
+  <div class="page-label">Science-backed · Age-appropriate</div>
+  <h2>Age-by-age guidance<br>you can actually <em>use</em></h2>
+  <p style="margin-bottom:6px;">This is not arbitrary. The recommendations below are aligned with WHO guidance for under-5s and AAP's framework for older children. The goal is not a magic number — it is a developmental lens.</p>
+
+  <table class="age-table">
+    <thead>
+      <tr>
+        <th>Age</th>
+        <th>Guideline</th>
+        <th>What to prioritise instead</th>
+        <th>Source</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="age-badge age-0">0–12 months</span></td>
+        <td>No screen time for entertainment. Zero is the recommendation.</td>
+        <td>Face-to-face interaction, singing, reading aloud, physical play, and skin-to-skin contact. Language development happens through real-world engagement, not passive viewing.</td>
+        <td class="source-tag">WHO, 2019</td>
+      </tr>
+      <tr>
+        <td><span class="age-badge age-0">12–24 months</span></td>
+        <td>Avoid using screens as routine pacifiers. If introduced at all, keep it extremely limited, high-quality, and parent-guided — never solo viewing.</td>
+        <td>Language-rich engagement. At this stage the brain is building vocabulary through live interaction — not through a screen talking at them.</td>
+        <td class="source-tag">WHO, 2019</td>
+      </tr>
+      <tr>
+        <td><span class="age-badge age-1">2–5 years</span></td>
+        <td>No more than 1 hour/day of sedentary screen time. Less is better. WHO specifies this clearly for ages 3–4.</td>
+        <td>Active play, outdoor time, imaginative play, and caregiver interaction. Screens should not crowd out these developmental necessities. Content must be age-appropriate and ideally co-viewed.</td>
+        <td class="source-tag">WHO, 2019</td>
+      </tr>
+      <tr>
+        <td><span class="age-badge age-2">6–12 years</span></td>
+        <td>No universal hour cap. AAP explicitly says the evidence does not support one fixed number for all children in this range.</td>
+        <td>Focus on quality and context: Is homework done? Sleep protected? Movement happening daily? Is the child calmer or more dysregulated after screen use? Is content age-appropriate?</td>
+        <td class="source-tag">AAP</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="research-block">
+    <div class="research-source">World Health Organization · Guidelines on Physical Activity, Sedentary Behaviour and Sleep for Children Under 5</div>
+    <div class="research-text">WHO emphasises the <strong>full 24-hour pattern</strong> of activity, sedentary time, and sleep — not just one isolated habit. For children under 5, healthy growth depends on the whole day being balanced, with reading, storytelling, active play, and regular sleep as non-negotiables alongside any screen limits.</div>
+  </div>
+
+  <div class="callout callout-blue">
+    <div class="callout-title">For 6–12 year olds — the right questions to ask daily</div>
+    <div class="callout-text">
+      <ul class="check-list" style="margin:0;">
+        <li>Is homework getting done without a fight?</li>
+        <li>Is sleep full and uninterrupted?</li>
+        <li>Is physical movement happening daily?</li>
+        <li>Is my child calmer or more dysregulated after screen use?</li>
+        <li>Is the content age-appropriate and not creating anxiety or aggression?</li>
+        <li>Are we still having real conversations as a family?</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PAGE 5: RULES THAT HOLD ═════════════════════════════════════════════════ -->
+<div class="page page-white">
+  <div class="page-label">The rules chapter</div>
+  <h2>Rules that actually<br><em>hold</em> in real family life</h2>
+  <p style="margin-bottom:28px;">These are not aspirational. They are designed for tired evenings, joint homes, visiting relatives, and children who have already learned that persistence sometimes works.</p>
+
+  <div class="rule-card rule-r1">
+    <div class="rule-head"><div class="rule-num">1</div><div class="rule-title">Make screens predictable, not negotiable</div></div>
+    <div class="rule-body">
+      <div class="rule-body-text">When children don't know when screens happen, they bargain for them all day. Predictability removes the negotiation entirely — because there is nothing left to negotiate.</div>
+      <div class="rule-example">
+        <div class="rule-example-label">The model</div>
+        <div class="strong-line">Same time. Same place. Same duration. Same exit routine.</div>
+      </div>
+      <div class="rule-example" style="margin-top:6px;">
+        <div class="rule-example-label">Say this</div>
+        <div class="strong-line">"Screens happen after dinner for 20 minutes. Then they are done for tonight."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rule-card rule-r2">
+    <div class="rule-head"><div class="rule-num">2</div><div class="rule-title">Put screens behind behaviour — not behind feelings</div></div>
+    <div class="rule-body">
+      <div class="rule-body-text">Do not use screens to erase every hard emotion. If screens are the automatic response to boredom, frustration, or disappointment, your child never builds the skill of tolerating those states — which makes every offline moment harder.</div>
+      <div class="rule-example">
+        <div class="rule-example-label">Better response to hard emotion</div>
+        <div class="strong-line">Regulate first. Then decide. Not the other way around.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rule-card rule-r3">
+    <div class="rule-head"><div class="rule-num">3</div><div class="rule-title">Protect the two sacred zones</div></div>
+    <div class="rule-body">
+      <div class="rule-body-text">The two highest-value screen-free windows are <strong>wake-up time</strong> and <strong>pre-sleep time</strong>. Bedtime screen use is repeatedly associated with shorter sleep duration, longer time to fall asleep, and poorer sleep quality. If you fix only one thing — fix the evening screen.</div>
+      <div class="rule-example">
+        <div class="rule-example-label">Science note</div>
+        <div class="strong-line">Screen use before bed disrupts melatonin production and delays sleep onset — consistently across multiple studies. (PMC/NIH)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rule-card rule-r4">
+    <div class="rule-head"><div class="rule-num">4</div><div class="rule-title">Reduce access before you demand self-control</div></div>
+    <div class="rule-body">
+      <div class="rule-body-text">Children cannot reliably self-regulate in an environment designed for instant, frictionless access. Design the environment first — then hold the expectation. This is not punishment. It is environmental design.</div>
+      <ul class="check-list" style="margin-top:10px;">
+        <li>Move devices out of reach between allowed times</li>
+        <li>Disable autoplay on all platforms</li>
+        <li>Remove one-tap access from home screens</li>
+        <li>Turn off all notifications</li>
+        <li>Keep screens out of bedrooms entirely</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="rule-card rule-r5">
+    <div class="rule-head"><div class="rule-num">5</div><div class="rule-title">Use a one-line rule — not a speech</div></div>
+    <div class="rule-body">
+      <div class="rule-body-text">The more you explain mid-conflict, the more it becomes a negotiation. Short rules hold better than long explanations.</div>
+      <div class="rule-example">
+        <div class="rule-example-label">Strong version ✓</div>
+        <div class="strong-line">"Screen time is done."</div>
+      </div>
+      <div class="rule-example" style="margin-top:6px;">
+        <div class="rule-example-label">Weak version ✕</div>
+        <div class="weak-line">"See, we already had enough today and it's not good for your brain and if you just calm down and listen, you can have a little tomorrow if you behave…"</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pull-quote green" style="margin-top:28px;">
+    <div class="pull-quote-text">"A rule that only works when everyone is calm, aligned, and fully motivated will not survive Indian family life. Design your system for the hard days — not the easy ones."</div>
+    <div class="pull-quote-source">— Akanksha, WiseSprouts</div>
+  </div>
+</div>
+
+<!-- ══ PAGE 6: INDIA CHAPTER ═══════════════════════════════════════════════════ -->
+<div class="page page-cream">
+  <div class="page-label">🇮🇳 India-aware — your moat</div>
+  <h2>The Indian family reality<br>no playbook addresses — <em>until now</em></h2>
+  <p>Most screen-time guides are built for a quiet nuclear home with two aligned parents and no competing caregivers. That is not the majority of Indian families. Here is what actually needs addressing.</p>
+
+  <div class="india-scenario">
+    <div class="india-head"><div class="india-head-emoji">👴👵</div><div class="india-head-title">Grandparents as the override switch</div></div>
+    <div class="india-body">
+      <div class="india-avoid">
+        <div class="india-label">What usually happens</div>
+        <div class="india-text">Parent says no screens. Child goes to Nani. Nani gives the phone. Child learns: persistence eventually works. Rule collapses within 48 hours.</div>
+      </div>
+      <div class="india-do">
+        <div class="india-label">What actually works</div>
+        <div class="india-text">Separate conversation privately: <em>"I need your help with this. Screen rules are part of the sleep routine. If we stay consistent for two weeks, the battles reduce — for everyone."</em> Give them a role. They need to feel part of the solution.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="india-scenario">
+    <div class="india-head"><div class="india-head-emoji">🍽️</div><div class="india-head-title">The screen-eating habit</div></div>
+    <div class="india-body">
+      <div class="india-avoid">
+        <div class="india-label">The trap</div>
+        <div class="india-text">Screen eating begins as convenience and becomes the only way a child will eat. Removing it suddenly creates food battles on top of screen battles — a two-front war no one wins quickly.</div>
+      </div>
+      <div class="india-do">
+        <div class="india-label">Step it down gradually</div>
+        <div class="india-text">First reduce novelty of the content. Then shift to audio only. Then move to a fixed mealtime routine without screens. Then remove screens at meals entirely. Each stage takes 5–7 days.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="india-scenario">
+    <div class="india-head"><div class="india-head-emoji">📱📱📱</div><div class="india-head-title">The multiple-device problem</div></div>
+    <div class="india-body">
+      <div class="india-avoid">
+        <div class="india-label">The reality</div>
+        <div class="india-text">One phone. One tablet. One grandparent's phone. The TV. A laptop. A backup phone. A child who has learned that if they are persistent enough, one device will eventually be available somewhere.</div>
+      </div>
+      <div class="india-do">
+        <div class="india-label">The system fix</div>
+        <div class="india-text">Environmental design is more powerful than willpower. Designate one charging station for all family devices. Devices go there at a fixed time each evening. No exceptions — including parent phones after bedtime.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="india-scenario">
+    <div class="india-head"><div class="india-head-emoji">👥</div><div class="india-head-title">Social pressure and the "modern parent" performance</div></div>
+    <div class="india-body">
+      <div class="india-avoid">
+        <div class="india-label">The pressure</div>
+        <div class="india-text">Indian parents often feel they must appear strict, calm, modern, and effective simultaneously — especially around extended family. Every screen rule breakdown becomes a visible parenting failure.</div>
+      </div>
+      <div class="india-do">
+        <div class="india-label">The reframe</div>
+        <div class="india-text">You do not need to win the opinion of every relative. You need a household system that works for your child. State it simply, don't defend it endlessly, and let the results speak over time.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-amber" style="margin-top:8px;">
+    <div class="callout-title">The "log kya kahenge" trap in screen parenting</div>
+    <div class="callout-text">When a child has a screen-related meltdown in front of relatives — or when you enforce a limit and your child becomes upset publicly — the social pressure to give in immediately is real. That pressure changes your state. And your state changes your child's state. <strong>The script is simple: hold the limit, lower your voice, stay steady, and address the audience later — not during the moment.</strong></div>
+  </div>
+
+  <div class="teaser">
+    <div class="teaser-label">Need a more personalised approach?</div>
+    <div class="teaser-text">Joint family dynamics, grandparent boundaries, and consistent rule-setting across multiple caregivers often require a conversation — not just a guide. <strong>Akanksha works directly with Indian families navigating exactly these situations.</strong></div>
+    <a href="https://wa.me/919949216571?text=Hi%20Akanksha%2C%20I%20read%20the%20Screens%20Without%20War%20guide%20and%20I%27d%20like%20help%20with%20my%20specific%20family%20screen%20situation." class="teaser-link" target="_blank">Message Akanksha on WhatsApp →</a>
+  </div>
+</div>
+
+<!-- ══ PAGE 7: SCRIPTS ══════════════════════════════════════════════════════════ -->
+<div class="page page-white">
+  <div class="page-label">Word-for-word scripts</div>
+  <h2>Exactly what to say<br>in the <em>hardest moments</em></h2>
+  <p style="margin-bottom:28px;">Read these before the conflict, not during it. The words need to be available when your own thinking brain is under pressure.</p>
+
+  <div class="script-card">
+    <div class="script-head"><div class="script-head-text">😤 When your child throws a tantrum as screens end</div></div>
+    <div class="script-body">
+      <div class="script-say">I know it's hard to stop. The screen is finished. I'll help you through it.</div>
+      <div class="script-then">Then: lower the stimulation in the room. Stay physically nearby. Do not restart the argument. Do not re-explain.</div>
+      <div class="script-note"><strong>Do not give the screen back to buy peace.</strong> Every time you do, you teach that escalation works. The short-term quiet costs weeks of future battles.</div>
+    </div>
+  </div>
+
+  <div class="script-card">
+    <div class="script-head"><div class="script-head-text">🙅 When your child says "just five more minutes" for the tenth time</div></div>
+    <div class="script-body">
+      <div class="script-say">The answer is no. Screen time is done for today.</div>
+      <div class="script-then">Then: stop talking. Silence after a clear limit is more powerful than continued explanation. You do not need to justify it further.</div>
+      <div class="script-note">The child is not asking for information. They are checking whether the limit is real. Holding it quietly tells them it is.</div>
+    </div>
+  </div>
+
+  <div class="script-card">
+    <div class="script-head"><div class="script-head-text">👴👵 When grandparent gives the phone after you said no</div></div>
+    <div class="script-body">
+      <div class="script-say">[ To child, calmly ] We'll talk about this later. Right now screens are off.</div>
+      <div class="script-then">[ To grandparent, later and privately — never in front of the child ]</div>
+      <div class="script-say">I need your help with this. The screen rule is part of her sleep routine. If we stay consistent for even two weeks, the daily battles reduce — for everyone, including you.</div>
+      <div class="script-note">Framing it as a shared benefit ("for everyone") is more effective than framing it as a correction. They are more likely to cooperate when they feel included, not overruled.</div>
+    </div>
+  </div>
+
+  <div class="script-card">
+    <div class="script-head"><div class="script-head-text">🍽️ When your child refuses to eat without a screen</div></div>
+    <div class="script-body">
+      <div class="script-say">I know you're used to screens at mealtimes. We're trying something different now. The food is here, and I'm here with you.</div>
+      <div class="script-then">For the first week: use audio (music or an audiobook) instead of a screen. This reduces the habit without cold-turkey conflict. Step down gradually over 2–3 weeks.</div>
+      <div class="script-note"><strong>Do not go from screen-eating to total silence overnight.</strong> The transition is a process — a week-by-week step-down is more sustainable than a sudden removal that collapses on Day 2.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PAGE 8: CRISIS MANUAL ═══════════════════════════════════════════════════ -->
+<div class="page crisis-bg">
+  <div class="page-label page-label-dark">Open this when you're about to give in</div>
+  <div class="crisis-header">
+    <div class="crisis-label">🚨 Crisis Manual</div>
+    <div class="crisis-title">When the house is<br>on fire</div>
+    <div class="crisis-sub">Read this before you hand the screen back. It takes 60 seconds.</div>
+  </div>
+
+  <div class="crisis-steps">
+    <div class="crisis-step">
+      <div class="crisis-step-num">1</div>
+      <div>
+        <div class="crisis-step-title">Ask: habit or dependency?</div>
+        <div class="crisis-step-text">A habit is a pattern. A dependency is a crutch that is filling a need — regulation, connection, boredom relief, or sleep avoidance — that is not being met any other way. <strong>If it's a dependency, giving in doesn't solve it. It deepens it.</strong></div>
+      </div>
+    </div>
+    <div class="crisis-step">
+      <div class="crisis-step-num">2</div>
+      <div>
+        <div class="crisis-step-title">Ask: am I using the screen to avoid a hard parenting moment?</div>
+        <div class="crisis-step-text">It is okay to notice this without shame. But knowing you are avoiding a hard moment is the first step to choosing differently — even on a tired evening.</div>
+      </div>
+    </div>
+    <div class="crisis-step">
+      <div class="crisis-step-num">3</div>
+      <div>
+        <div class="crisis-step-title">Ask: what is the actual need right now?</div>
+        <div class="crisis-step-text">Connection? Rest? Predictability? Food? Sleep? A transition that feels too abrupt? <strong>Meeting the actual need is faster than the screen battle you are in.</strong></div>
+      </div>
+    </div>
+    <div class="crisis-step">
+      <div class="crisis-step-num">4</div>
+      <div>
+        <div class="crisis-step-title">Use the 3-line reset</div>
+        <div class="crisis-line">
+          <strong>"I know you want it."</strong><br>
+          <strong>"The answer is no for now."</strong><br>
+          <strong>"I will help you through the upset."</strong>
+        </div>
+        <div class="crisis-step-text" style="margin-top:8px;">Then stop talking. Hold steady. Sit nearby. Do not add more words.</div>
+      </div>
+    </div>
+    <div class="crisis-step">
+      <div class="crisis-step-num">5</div>
+      <div>
+        <div class="crisis-step-title">Don't restart the debate</div>
+        <div class="crisis-step-text">Once the decision is made — stop talking. Every additional sentence you add after "the answer is no" becomes new material for the child to negotiate with.</div>
+      </div>
+    </div>
+    <div class="crisis-step">
+      <div class="crisis-step-num">6</div>
+      <div>
+        <div class="crisis-step-title">Repair later — without drama</div>
+        <div class="crisis-step-text">If you shouted, gave in, or overpromised — come back later and reset calmly. <strong>"Earlier was hard. Tomorrow we go back to the usual rule."</strong> That is how real families improve. Not through perfect consistency, but through repair after imperfection.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-navy" style="margin-top:28px;">
+    <div class="callout-title">The truth about screen battles</div>
+    <div class="callout-text">If screen battles are happening daily, the issue is no longer just screen time. <strong>It is a family system problem.</strong> The conflict, the negotiation, the giving-in, and the guilt are all part of a cycle that goes deeper than hours logged. When that is the situation, a guide gives you the framework — but a conversation with someone who knows your specific family is what actually moves things.</div>
+  </div>
+
+  <div class="teaser" style="margin-top:20px;">
+    <div class="teaser-label">Daily screen battles → deeper support needed</div>
+    <div class="teaser-text">Akanksha works 1-on-1 with Indian families where screen dynamics have become a systemic issue — with grandparent overrides, mealtime dependency, or full dysregulation post-screens. <strong>Free initial chat. No commitment.</strong></div>
+    <a href="https://wa.me/919949216571?text=Hi%20Akanksha%2C%20I%20read%20Screens%20Without%20War%20and%20I%20think%20we%20need%20a%20personalised%20plan%20for%20our%20screen%20situation." class="teaser-link" target="_blank">Message Akanksha for a personalised plan →</a>
+  </div>
+</div>
+
+<!-- ══ PAGE 9: QUICK REFERENCE ═════════════════════════════════════════════════ -->
+<div class="page page-sage">
+  <div class="page-label">Save or screenshot this page</div>
+  <h2>Your screen system<br><em>quick reference</em></h2>
+  <p style="margin-bottom:28px;">Everything you need on one page. Put it on your fridge. Screenshot it. Read it on the hard days.</p>
+
+  <div class="quick-ref">
+    <div class="quick-ref-title">The WiseSprouts Screen Playbook</div>
+    <div class="quick-ref-sub">Reference card — for the real-life moments</div>
+    <div class="quick-ref-cols">
+      <div>
+        <div class="qr-col-label qr-do-label">Build this ✓</div>
+        <div class="qr-item"><div class="qr-icon">✓</div><div class="qr-text">Predictable screen times — same time, same duration, same exit</div></div>
+        <div class="qr-item"><div class="qr-icon">✓</div><div class="qr-text">Screen-free wake-up and pre-sleep windows (protect these first)</div></div>
+        <div class="qr-item"><div class="qr-icon">✓</div><div class="qr-text">One central charging station — all devices, all caregivers</div></div>
+        <div class="qr-item"><div class="qr-icon">✓</div><div class="qr-text">Autoplay disabled on every device and platform</div></div>
+        <div class="qr-item"><div class="qr-icon">✓</div><div class="qr-text">One-line rules — held quietly and consistently</div></div>
+        <div class="qr-item"><div class="qr-icon">✓</div><div class="qr-text">Grandparent conversations privately — give them a role, not a correction</div></div>
+        <div class="qr-item"><div class="qr-icon">✓</div><div class="qr-text">Track what screens are replacing — sleep, play, meals, connection</div></div>
+        <div class="qr-item"><div class="qr-icon">✓</div><div class="qr-text">Model the behaviour you are asking for (parent phones too)</div></div>
+      </div>
+      <div class="qr-divider"></div>
+      <div>
+        <div class="qr-col-label qr-avoid-label">Stop doing this ✕</div>
+        <div class="qr-item"><div class="qr-icon">✕</div><div class="qr-text">Using screens as the default response to boredom or big emotions</div></div>
+        <div class="qr-item"><div class="qr-icon">✕</div><div class="qr-text">Hidden or shifting rules that change based on mood or tiredness</div></div>
+        <div class="qr-item"><div class="qr-icon">✕</div><div class="qr-text">Negotiating in the middle of a meltdown</div></div>
+        <div class="qr-item"><div class="qr-icon">✕</div><div class="qr-text">Late-night screens in bedrooms (yours included)</div></div>
+        <div class="qr-item"><div class="qr-icon">✕</div><div class="qr-text">Mixing grandparent exceptions with parent rules without alignment</div></div>
+        <div class="qr-item"><div class="qr-icon">✕</div><div class="qr-text">Giving in to end the battle — it teaches that escalation works</div></div>
+        <div class="qr-item"><div class="qr-icon">✕</div><div class="qr-text">Treating every lapse as a failure — repair and reset is the method</div></div>
+        <div class="qr-item"><div class="qr-icon">✕</div><div class="qr-text">Using screens as the automatic meal strategy indefinitely</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pull-quote" style="margin-top:0;">
+    <div class="pull-quote-text">"The goal is not to raise a screen-free child. The goal is to make screens subordinate to life — not the other way around."</div>
+    <div class="pull-quote-source">— Akanksha, WiseSprouts</div>
+  </div>
+</div>
+
+<!-- ══ FINAL CTA ════════════════════════════════════════════════════════════════ -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-eyebrow">You have the framework. Here is what comes next.</div>
+    <div class="cta-title">If screen time is already<br>touching sleep, tantrums, meals,<br>or family peace — it is no longer<br><em>"just screen time."</em></div>
+    <div class="cta-body">
+      It is a family system problem. <strong>This guide gives you the framework.</strong> The next step is making it work in your specific home — with your specific child, your specific grandparents, your specific schedule, and the habits that are already baked in.<br><br>
+      That is where a personalised conversation with Akanksha moves things faster than any guide can.
+    </div>
+
+    <div class="guide-cards">
+      <a href="https://wa.me/919949216571?text=Hi%20Akanksha%2C%20I%20read%20Screens%20Without%20War%20and%20I%27d%20like%20a%20personalised%20screen%20plan%20for%20my%20child." class="guide-card" target="_blank">
+        <span class="guide-card-badge badge-premium">1-on-1 · Most effective</span>
+        <span class="guide-card-emoji">🎯</span>
+        <div class="guide-card-title">Personalised Screen Plan</div>
+        <div class="guide-card-desc">Akanksha builds a bespoke screen system for your child's age, temperament, family dynamics, and specific habits. Nothing generic.</div>
+        <div class="guide-card-price">Start with a free chat →</div>
+      </a>
+      <a href="calm-in-the-storm.html" class="guide-card">
+        <span class="guide-card-badge badge-paid">₹499 · PDF Guide</span>
+        <span class="guide-card-emoji">😤</span>
+        <div class="guide-card-title">Calm in the Storm</div>
+        <div class="guide-card-desc">Screen dysregulation and emotional dysregulation are closely linked. If your child is harder to manage after screens — this guide addresses the root.</div>
+        <div class="guide-card-price">Get the guide →</div>
+      </a>
+      <a href="https://wisesprouts.in/starter-guide.html" class="guide-card">
+        <span class="guide-card-badge badge-free">Free</span>
+        <span class="guide-card-emoji">🌱</span>
+        <div class="guide-card-title">The WiseSprouts Starter Guide</div>
+        <div class="guide-card-desc">The 5 child development principles every Indian parent needs before anything else. The lens that changes how you read behaviour.</div>
+        <div class="guide-card-price">Read free →</div>
+      </a>
+      <a href="https://wa.me/919949216571?text=Hi%20Akanksha%2C%20I%20read%20Screens%20Without%20War%20and%20I%27d%20like%20to%20know%20what%20other%20guides%20might%20help%20my%20child." class="guide-card" target="_blank">
+        <span class="guide-card-badge badge-paid">Coming soon</span>
+        <span class="guide-card-emoji">📚</span>
+        <div class="guide-card-title">More Guides in the Series</div>
+        <div class="guide-card-desc">Sleep resistance, food refusal, aggression, school anxiety — each guide goes deep on one pattern with the same level of depth as this one.</div>
+        <div class="guide-card-price">Ask Akanksha what's next →</div>
+      </a>
+    </div>
+
+    <div class="cta-divider"></div>
+    <div style="font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:14px;">Or if you are not sure where to start — just message:</div>
+    <a href="https://wa.me/919949216571?text=Hi%20Akanksha%2C%20I%20read%20Screens%20Without%20War%20and%20I%27d%20like%20help%20figuring%20out%20where%20to%20start." class="cta-btn" target="_blank">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Message Akanksha on WhatsApp
+    </a>
+    <div class="cta-note">Free initial chat · No commitment · India-aware, always</div>
+
+    <div class="cta-closing">
+      When screens become subordinate to life, <strong>the whole house gets calmer.</strong><br>
+      Meals become easier. Bedtimes become smoother.<br>
+      And your child learns the skill of tolerating ordinary boredom again —<br>
+      which turns out to be one of the most useful things you can give them.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-logo">WiseSprouts</div>
+  <div class="foot-meta">© 2025 WiseSprouts · Guide Vol. 3 · Built by WiseLabs</div>
+</footer>
+
+</body>
+</html>
