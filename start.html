@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WiseSprouts — Akanksha Rajhans</title>
+  <meta name="description" content="Science-informed parenting for modern Indian families. Blogs, guides, and 1-on-1 support by Akanksha, certified child development specialist." />
+  <meta name="color-scheme" content="light only" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --gd: #1A5C2A; --gm: #2E7D44; --gl: #E8F5EC; --gp: #F2FAF4;
+      --cream: #FFFBF5; --cream2: #FFF6EA;
+      --amber: #F59E0B; --amberl: #FEF3C7;
+      --td: #1C1208; --tm: #4A3B22; --tmu: #7A6548; --tf: #B8A888;
+      --border: #EAD9B8; --white: #fff;
+      --navy: #0F1A2E;
+      --serif: 'Lora', Georgia, serif;
+      --sans: 'Nunito', system-ui, sans-serif;
+      color-scheme: light only;
+    }
+    html { color-scheme: light only; }
+    body {
+      font-family: var(--sans);
+      background: var(--cream);
+      color: var(--td);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px 60px;
+    }
+    * { -webkit-text-fill-color: unset; }
+    @media (prefers-color-scheme: dark) {
+      html, body { background: #FFFBF5 !important; color: #1C1208 !important; }
+      .profile-name { color: #1C1208 !important; }
+      .profile-bio { color: #7A6548 !important; }
+      .section-label { color: #B8A888 !important; }
+      .link-card { background: #fff !important; border-color: #EAD9B8 !important; }
+      .link-card-title { color: #1C1208 !important; }
+      .link-card-sub { color: #7A6548 !important; }
+      .guide-card { background: #fff !important; border-color: #EAD9B8 !important; }
+      .guide-name { color: #1C1208 !important; }
+      .guide-desc { color: #7A6548 !important; }
+      .guide-price { color: #1A5C2A !important; }
+      .free-card { background: #E8F5EC !important; border-color: rgba(26,92,42,.2) !important; }
+      .free-card-title { color: #1C1208 !important; }
+      .free-card-sub { color: #7A6548 !important; }
+      .divider-line { background: #EAD9B8 !important; }
+      .footer-text { color: #B8A888 !important; }
+      .cred-pill { background: rgba(26,92,42,0.08) !important; color: #1A5C2A !important; }
+    }
+
+    /* WRAPPER */
+    .wrap { width: 100%; max-width: 420px; display: flex; flex-direction: column; align-items: center; gap: 0; }
+
+    /* PROFILE */
+    .profile { text-align: center; margin-bottom: 28px; }
+    .profile-avatar {
+      width: 84px; height: 84px; border-radius: 50%;
+      background: var(--gd);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif); font-size: 32px; font-weight: 700; color: white;
+      margin: 0 auto 14px;
+      box-shadow: 0 0 0 3px var(--cream), 0 0 0 5px rgba(26,92,42,.2);
+      overflow: hidden;
+    }
+    .profile-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+    .profile-logo { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 6px; }
+    .nav-mark { width: 22px; height: 22px; border-radius: 6px; background: var(--gd); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .profile-brand { font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--gd); }
+    .profile-name { font-size: 14px; font-weight: 600; color: var(--tmu); margin-bottom: 10px; }
+    .profile-bio { font-size: 14px; color: var(--tm); line-height: 1.65; max-width: 320px; margin: 0 auto 14px; }
+    .profile-bio strong { color: var(--td); font-weight: 700; }
+    .creds { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-bottom: 4px; }
+    .cred-pill { display: inline-flex; align-items: center; gap: 4px; background: var(--gl); border-radius: 20px; padding: 4px 10px; font-size: 11px; color: var(--gd); font-weight: 700; letter-spacing: 0.02em; }
+
+    /* DIVIDER */
+    .divider { width: 100%; display: flex; align-items: center; gap: 10px; margin: 20px 0 16px; }
+    .divider-line { flex: 1; height: 0.5px; background: var(--border); }
+    .section-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--tf); white-space: nowrap; }
+
+    /* PRIMARY CTA — Blog */
+    .primary-cta {
+      width: 100%;
+      background: var(--gd);
+      color: white;
+      border-radius: 14px;
+      padding: 16px 20px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+      transition: background .2s, transform .15s, box-shadow .2s;
+      box-shadow: 0 4px 18px rgba(26,92,42,.22);
+    }
+    .primary-cta:hover { background: var(--gm); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,92,42,.28); }
+    .primary-cta-left { display: flex; align-items: center; gap: 12px; }
+    .primary-cta-icon { font-size: 22px; flex-shrink: 0; }
+    .primary-cta-title { font-size: 15px; font-weight: 700; color: white; }
+    .primary-cta-sub { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 2px; }
+    .primary-cta-arrow { font-size: 18px; color: rgba(255,255,255,0.6); flex-shrink: 0; }
+
+    /* LINK CARDS */
+    .link-card {
+      width: 100%;
+      background: var(--white);
+      border: 0.5px solid var(--border);
+      border-radius: 14px;
+      padding: 15px 18px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+      transition: border-color .2s, box-shadow .2s, transform .2s;
+    }
+    .link-card:hover { border-color: rgba(26,92,42,.25); box-shadow: 0 4px 16px rgba(26,92,42,.08); transform: translateY(-2px); }
+    .link-card-left { display: flex; align-items: center; gap: 12px; }
+    .link-card-icon { font-size: 20px; flex-shrink: 0; }
+    .link-card-title { font-size: 14px; font-weight: 700; color: var(--td); }
+    .link-card-sub { font-size: 12px; color: var(--tmu); margin-top: 2px; }
+    .link-card-arrow { font-size: 16px; color: var(--tf); flex-shrink: 0; }
+
+    /* FREE GUIDE CARD */
+    .free-card {
+      width: 100%;
+      background: var(--gl);
+      border: 0.5px solid rgba(26,92,42,.15);
+      border-radius: 14px;
+      padding: 15px 18px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+      transition: border-color .2s, box-shadow .2s, transform .2s;
+    }
+    .free-card:hover { border-color: rgba(26,92,42,.3); box-shadow: 0 4px 16px rgba(26,92,42,.1); transform: translateY(-2px); }
+    .free-card-left { display: flex; align-items: center; gap: 12px; }
+    .free-card-icon { font-size: 20px; flex-shrink: 0; }
+    .free-card-title { font-size: 14px; font-weight: 700; color: var(--td); }
+    .free-card-sub { font-size: 12px; color: var(--tmu); margin-top: 2px; }
+    .free-badge { font-size: 10px; font-weight: 700; background: var(--gd); color: white; padding: 2px 8px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
+
+    /* GUIDE CARDS */
+    .guides-stack { width: 100%; display: flex; flex-direction: column; gap: 10px; margin-bottom: 10px; }
+    .guide-card {
+      width: 100%;
+      background: var(--white);
+      border: 0.5px solid var(--border);
+      border-radius: 14px;
+      padding: 15px 18px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: border-color .2s, box-shadow .2s, transform .2s;
+    }
+    .guide-card:hover { border-color: rgba(26,92,42,.25); box-shadow: 0 4px 16px rgba(26,92,42,.08); transform: translateY(-2px); }
+    .guide-card.featured { border-color: rgba(26,92,42,.25); background: var(--cream2); }
+    .guide-thumb { width: 46px; height: 46px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+    .guide-info { flex: 1; min-width: 0; }
+    .guide-name { font-size: 13px; font-weight: 700; color: var(--td); line-height: 1.35; margin-bottom: 3px; }
+    .guide-desc { font-size: 11px; color: var(--tmu); line-height: 1.45; }
+    .guide-right { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0; }
+    .guide-price { font-family: var(--serif); font-size: 15px; font-weight: 700; color: var(--gd); }
+    .guide-arrow { font-size: 14px; color: var(--tf); }
+
+    /* WA CTA */
+    .wa-cta {
+      width: 100%;
+      background: #25D366;
+      color: white;
+      border-radius: 14px;
+      padding: 16px 20px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+      box-shadow: 0 4px 18px rgba(37,211,102,.25);
+      transition: opacity .2s, transform .15s;
+    }
+    .wa-cta:hover { opacity: .92; transform: translateY(-2px); }
+    .wa-cta-left { display: flex; align-items: center; gap: 12px; }
+    .wa-icon { width: 22px; height: 22px; flex-shrink: 0; }
+    .wa-cta-title { font-size: 15px; font-weight: 700; color: white; }
+    .wa-cta-sub { font-size: 12px; color: rgba(255,255,255,0.75); margin-top: 2px; }
+    .wa-cta-arrow { font-size: 18px; color: rgba(255,255,255,0.6); flex-shrink: 0; }
+
+    /* INSTAGRAM ROW */
+    .social-row { display: flex; gap: 10px; width: 100%; margin-bottom: 10px; }
+    .social-btn {
+      flex: 1;
+      background: var(--white);
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 14px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--tmu);
+      transition: border-color .2s, color .2s, transform .15s;
+    }
+    .social-btn:hover { border-color: rgba(26,92,42,.25); color: var(--gd); transform: translateY(-1px); }
+    .social-icon { font-size: 16px; }
+
+    /* FOOTER */
+    .footer-text { font-size: 11px; color: var(--tf); text-align: center; margin-top: 28px; line-height: 1.6; }
+    .footer-text a { color: var(--tmu); text-decoration: none; }
+    .footer-text a:hover { color: var(--gd); }
+  </style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- PROFILE -->
+  <div class="profile">
+    <div class="profile-avatar">
+      <img src="images/akanksha.jpg" alt="Akanksha" onerror="this.style.display='none'" />
+      A
+    </div>
+    <div class="profile-logo">
+      <div class="nav-mark">
+        <svg width="13" height="13" viewBox="0 0 17 17" fill="none"><path d="M8.5 15C8.5 15 3 11 3 6.5C3 3.96 5.46 2 8.5 2s5.5 1.96 5.5 4.5C14 11 8.5 15 8.5 15Z" fill="white" opacity=".9"/><line x1="8.5" y1="2" x2="8.5" y2="15" stroke="rgba(26,92,42,.4)" stroke-width=".8" stroke-linecap="round"/><path d="M8.5 8C10 6 12 5.5 14 6.5" stroke="rgba(26,92,42,.35)" stroke-width=".8" stroke-linecap="round"/></svg>
+      </div>
+      <span class="profile-brand">WiseSprouts</span>
+    </div>
+    <div class="profile-name">by Akanksha Rajhans</div>
+    <p class="profile-bio">Science-informed parenting for <strong>modern Indian families.</strong> No guilt. No extremes. Just clarity — for your real child, in your real life.</p>
+    <div class="creds">
+      <span class="cred-pill">🎓 Yale · Child Development</span>
+      <span class="cred-pill">🌱 NLP Certified</span>
+      <span class="cred-pill">👩‍👧 Mother of two</span>
+    </div>
+  </div>
+
+  <!-- BLOG — PRIMARY -->
+  <div class="divider">
+    <div class="divider-line"></div>
+    <span class="section-label">Start here</span>
+    <div class="divider-line"></div>
+  </div>
+
+  <a href="blog.html" class="primary-cta">
+    <div class="primary-cta-left">
+      <span class="primary-cta-icon">📖</span>
+      <div>
+        <div class="primary-cta-title">Read the Blog</div>
+        <div class="primary-cta-sub">Science-backed articles on real parenting moments</div>
+      </div>
+    </div>
+    <span class="primary-cta-arrow">→</span>
+  </a>
+
+  <!-- RECENT POSTS -->
+  <a href="blog/toddler-tantrums.html" class="link-card">
+    <div class="link-card-left">
+      <span class="link-card-icon">😤</span>
+      <div>
+        <div class="link-card-title">Why Toddler Tantrums Are a Good Sign</div>
+        <div class="link-card-sub">5 min read · Ages 1–4</div>
+      </div>
+    </div>
+    <span class="link-card-arrow">→</span>
+  </a>
+
+  <a href="blog/synthetic-food-colours.html" class="link-card">
+    <div class="link-card-left">
+      <span class="link-card-icon">🍬</span>
+      <div>
+        <div class="link-card-title">What's Actually in That Bright Red Candy</div>
+        <div class="link-card-sub">7 min read · All ages</div>
+      </div>
+    </div>
+    <span class="link-card-arrow">→</span>
+  </a>
+
+  <!-- FREE GUIDE -->
+  <div class="divider">
+    <div class="divider-line"></div>
+    <span class="section-label">Free resource</span>
+    <div class="divider-line"></div>
+  </div>
+
+  <a href="starter-guide.html" class="free-card">
+    <div class="free-card-left">
+      <span class="free-card-icon">🌱</span>
+      <div>
+        <div class="free-card-title">The WiseSprouts Starter Guide</div>
+        <div class="free-card-sub">5 child development principles every Indian parent needs</div>
+      </div>
+    </div>
+    <span class="free-badge">Free</span>
+  </a>
+
+  <!-- PAID GUIDES -->
+  <div class="divider">
+    <div class="divider-line"></div>
+    <span class="section-label">Guides & support</span>
+    <div class="divider-line"></div>
+  </div>
+
+  <div class="guides-stack">
+
+    <a href="https://wa.me/919949216571?text=Hi%20Akanksha%2C%20I%27d%20like%20to%20get%20the%20Calm%20in%20the%20Storm%20toddler%20tantrums%20guide." class="guide-card" target="_blank">
+      <div class="guide-thumb" style="background:#FEF3C7;">😤</div>
+      <div class="guide-info">
+        <div class="guide-name">Calm in the Storm</div>
+        <div class="guide-desc">Toddler tantrums — why they happen & what to do, step by step</div>
+      </div>
+      <div class="guide-right">
+        <span class="guide-price">₹499</span>
+        <span class="guide-arrow">→</span>
+      </div>
+    </a>
+
+    <a href="https://wa.me/919949216571?text=Hi%20Akanksha%2C%20I%27d%20like%20to%20get%20the%20Screens%20Without%20War%20guide." class="guide-card featured" target="_blank">
+      <div class="guide-thumb" style="background:#EDE9FE;">📱</div>
+      <div class="guide-info">
+        <div class="guide-name">Screens Without War</div>
+        <div class="guide-desc">Screen time without daily battles — India-aware rules & routines</div>
+      </div>
+      <div class="guide-right">
+        <span class="guide-price">₹799</span>
+        <span class="guide-arrow">→</span>
+      </div>
+    </a>
+
+    <a href="https://wa.me/919949216571?text=Hi%20Akanksha%2C%20I%27d%20like%20to%20know%20more%20about%20a%20personalised%20child%20development%20plan%20for%20my%20child." class="guide-card" target="_blank">
+      <div class="guide-thumb" style="background:rgba(139,92,246,0.1);">🎯</div>
+      <div class="guide-info">
+        <div class="guide-name">Personalised Development Plan</div>
+        <div class="guide-desc">1-on-1 · Bespoke plan for your child's age, temperament & context</div>
+      </div>
+      <div class="guide-right">
+        <span class="guide-price">₹4,999</span>
+        <span class="guide-arrow">→</span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- WHATSAPP -->
+  <div class="divider">
+    <div class="divider-line"></div>
+    <span class="section-label">Talk to me</span>
+    <div class="divider-line"></div>
+  </div>
+
+  <a href="https://wa.me/919949216571?text=Hi%20Akanksha%2C%20I%20found%20you%20on%20Instagram%20and%20I%27d%20love%20to%20discuss%20my%20child%27s%20development." class="wa-cta" target="_blank">
+    <div class="wa-cta-left">
+      <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      <div>
+        <div class="wa-cta-title">Message Akanksha</div>
+        <div class="wa-cta-sub">Free initial chat · No commitment</div>
+      </div>
+    </div>
+    <span class="wa-cta-arrow">→</span>
+  </a>
+
+  <!-- SOCIAL -->
+  <div class="social-row">
+    <a href="https://instagram.com/wisesprouts.in" class="social-btn" target="_blank">
+      <span class="social-icon">📸</span> Instagram
+    </a>
+    <a href="index.html" class="social-btn">
+      <span class="social-icon">🌿</span> Full Website
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <p class="footer-text">
+    © 2025 WiseSprouts · <a href="index.html">wisesprouts.in</a><br>
+    Science-informed parenting for modern Indian families
+  </p>
+
+</div>
+</body>
+</html>
