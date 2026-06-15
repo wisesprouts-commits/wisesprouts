@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>That Bright Red Candy Your Child Loves? Here's What's Actually in It — WiseSprouts</title>
+  <meta name="description" content="Sunset Yellow, Tartrazine, Brilliant Blue — the synthetic colours in Indian children's food. What does the science actually say, and which ones should you watch out for?" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <meta name="color-scheme" content="light only" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --gd: #1A5C2A; --gm: #2E7D44; --gl: #E8F5EC; --gp: #F2FAF4;
+      --cream: #FFFBF5; --cream2: #FFF6EA; --cream3: #FDF8F0;
+      --amber: #F59E0B; --amberl: #FEF3C7;
+      --td: #1C1208; --tm: #4A3B22; --tmu: #7A6548; --tf: #B8A888;
+      --border: #EAD9B8; --white: #fff;
+      --navy: #0F1A2E;
+      --serif: 'Lora', Georgia, serif;
+      --sans: 'Nunito', system-ui, sans-serif;
+      color-scheme: light only;
+    }
+    html { scroll-behavior: smooth; color-scheme: light only; }
+    body { font-family: var(--sans); background: #FFFBF5 !important; color: #1C1208 !important; -webkit-font-smoothing: antialiased; }
+    * { -webkit-text-fill-color: unset; }
+    @media (prefers-color-scheme: dark) {
+      html, body { background: #FFFBF5 !important; color: #1C1208 !important; }
+      body * { color: inherit; background-color: initial; }
+      .article-body p { color: #4A3B22 !important; }
+      .article-body h2, .article-body h3 { color: #1C1208 !important; }
+      .article-title { color: #1C1208 !important; }
+      .pull-quote p { color: #1A5C2A !important; }
+      .highlight-box { background: #E8F5EC !important; }
+      .highlight-box p { color: #4A3B22 !important; }
+      .step-title { color: #1C1208 !important; }
+      .step-text { color: #7A6548 !important; }
+      .amber-box { background: #FEF3C7 !important; }
+      .amber-box p { color: #78350F !important; }
+      .amber-box-title { color: #92400E !important; }
+      .red-box { background: #FEE2E2 !important; }
+      .red-box p { color: #7F1D1D !important; }
+      .red-box-title { color: #991B1B !important; }
+      .consult-box { background: #F2FAF4 !important; }
+      .consult-title { color: #1C1208 !important; }
+      .consult-text { color: #7A6548 !important; }
+      .related-card { background: #fff !important; }
+      .related-card-title { color: #1C1208 !important; }
+      nav { background: rgba(255,251,245,0.98) !important; }
+      .nav-logo { color: #1A5C2A !important; }
+      .article-author { background: #E8F5EC !important; }
+      .author-name { color: #1C1208 !important; }
+      .author-cred { color: #7A6548 !important; }
+      .article-meta-item { color: #B8A888 !important; }
+      .bc-link { color: #7A6548 !important; }
+      .bc-current, .bc-sep { color: #B8A888 !important; }
+      .related-card-tag { color: #2E7D44 !important; }
+      .colour-table { background: #fff !important; }
+      .colour-row { border-bottom-color: #EAD9B8 !important; }
+      .colour-name { color: #1C1208 !important; }
+      .colour-found { color: #7A6548 !important; }
+      .concern-low { background: #D1FAE5 !important; color: #065F46 !important; }
+      .concern-medium { background: #FEF3C7 !important; color: #92400E !important; }
+      .concern-high { background: #FEE2E2 !important; color: #991B1B !important; }
+    }
+
+    /* NAV */
+    nav { position: sticky; top: 0; z-index: 200; background: rgba(255,251,245,0.95); backdrop-filter: blur(16px); border-bottom: 0.5px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 40px; height: 64px; }
+    .nav-logo { font-family: var(--serif); font-size: 17px; font-weight: 700; color: var(--gd); text-decoration: none; display: flex; align-items: center; gap: 9px; }
+    .nav-mark { width: 28px; height: 28px; border-radius: 8px; background: var(--gd); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .nav-links { display: flex; align-items: center; gap: 2px; }
+    .nav-link { font-size: 12px; font-weight: 600; color: var(--tmu); text-decoration: none; padding: 6px 12px; border-radius: 8px; transition: color .2s, background .2s; }
+    .nav-link:hover { color: var(--gd); background: var(--gl); }
+    .nav-cta { background: var(--gd); color: var(--white); border: none; border-radius: 10px; padding: 9px 18px; font-family: var(--sans); font-size: 13px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 7px; transition: background .2s, transform .15s; white-space: nowrap; }
+    .nav-cta:hover { background: var(--gm); transform: translateY(-1px); }
+    .wa-icon { width: 16px; height: 16px; flex-shrink: 0; }
+
+    /* BREADCRUMB */
+    .breadcrumb { max-width: 760px; margin: 0 auto; padding: 20px 40px 0; display: flex; align-items: center; gap: 6px; }
+    .bc-link { font-size: 12px; font-weight: 600; color: var(--tmu); text-decoration: none; transition: color .2s; }
+    .bc-link:hover { color: var(--gd); }
+    .bc-sep { font-size: 12px; color: var(--tf); }
+    .bc-current { font-size: 12px; color: var(--tf); }
+
+    /* ARTICLE HEADER */
+    .article-header { max-width: 760px; margin: 0 auto; padding: 32px 40px 0; }
+    .article-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; background: var(--amberl); color: #92400E; margin-bottom: 20px; }
+    .article-title { font-family: var(--serif); font-size: 40px; font-weight: 700; color: var(--td); line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 20px; }
+    .article-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 32px; }
+    .article-meta-item { font-size: 12px; color: var(--tf); font-weight: 600; display: flex; align-items: center; gap: 5px; }
+    .article-author { display: flex; align-items: center; gap: 10px; padding: 16px 20px; background: var(--gl); border-radius: 12px; margin-bottom: 40px; }
+    .author-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--gd); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 16px; font-weight: 700; color: white; flex-shrink: 0; }
+    .author-name { font-size: 13px; font-weight: 700; color: var(--td); }
+    .author-cred { font-size: 11px; color: var(--tmu); margin-top: 2px; }
+
+    /* HERO VISUAL */
+    .article-hero { max-width: 760px; margin: 0 auto; padding: 0 40px 40px; }
+    .article-hero-box { height: 260px; border-radius: 18px; display: flex; align-items: center; justify-content: center; font-size: 80px; background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 50%, #FCA5A5 100%); }
+
+    /* ARTICLE BODY */
+    .article-body { max-width: 760px; margin: 0 auto; padding: 0 40px; }
+    .article-body p { font-size: 16px; color: var(--tm); line-height: 1.9; margin-bottom: 24px; }
+    .article-body h2 { font-family: var(--serif); font-size: 24px; font-weight: 600; color: var(--td); line-height: 1.3; margin: 40px 0 16px; }
+    .article-body h3 { font-family: var(--serif); font-size: 19px; font-weight: 600; color: var(--td); line-height: 1.3; margin: 32px 0 12px; }
+    .article-body strong { color: var(--td); font-weight: 700; }
+    .article-body em { font-style: italic; color: var(--tm); }
+
+    /* PULL QUOTE */
+    .pull-quote { border-left: 3px solid var(--gd); padding: 4px 0 4px 24px; margin: 36px 0; }
+    .pull-quote p { font-family: var(--serif); font-size: 20px; font-style: italic; color: var(--gd); line-height: 1.6; margin: 0; }
+
+    /* HIGHLIGHT BOX */
+    .highlight-box { background: var(--gl); border-radius: 14px; padding: 24px 28px; margin: 32px 0; }
+    .highlight-box-title { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gm); margin-bottom: 12px; }
+    .highlight-box p { font-size: 14px; color: var(--tm); line-height: 1.75; margin-bottom: 10px; }
+    .highlight-box p:last-child { margin-bottom: 0; }
+
+    /* COLOUR TABLE */
+    .colour-table { background: var(--white); border: 0.5px solid var(--border); border-radius: 14px; overflow: hidden; margin: 32px 0; }
+    .colour-table-head { display: grid; grid-template-columns: 2fr 2fr 1fr; background: var(--cream3); padding: 12px 20px; gap: 12px; }
+    .colour-table-head span { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--tmu); }
+    .colour-row { display: grid; grid-template-columns: 2fr 2fr 1fr; padding: 14px 20px; gap: 12px; border-bottom: 0.5px solid var(--border); align-items: center; }
+    .colour-row:last-child { border-bottom: none; }
+    .colour-name { font-size: 13px; font-weight: 700; color: var(--td); }
+    .colour-found { font-size: 12px; color: var(--tmu); line-height: 1.5; }
+    .concern-low { display: inline-block; font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 20px; background: #D1FAE5; color: #065F46; white-space: nowrap; }
+    .concern-medium { display: inline-block; font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 20px; background: var(--amberl); color: #92400E; white-space: nowrap; }
+    .concern-high { display: inline-block; font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 20px; background: #FEE2E2; color: #991B1B; white-space: nowrap; }
+
+    /* WARNING / AMBER BOX */
+    .amber-box { background: var(--amberl); border-left: 3px solid var(--amber); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 32px 0; }
+    .amber-box-title { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #92400E; margin-bottom: 8px; }
+    .amber-box p { font-size: 14px; color: #78350F; line-height: 1.7; margin: 0; }
+
+    /* RED / HIGH CONCERN BOX */
+    .red-box { background: #FEE2E2; border-left: 3px solid #EF4444; border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 32px 0; }
+    .red-box-title { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #991B1B; margin-bottom: 8px; }
+    .red-box p { font-size: 14px; color: #7F1D1D; line-height: 1.7; margin: 0; }
+
+    /* NUMBERED STEPS */
+    .steps-list { margin: 24px 0 32px; display: flex; flex-direction: column; gap: 14px; }
+    .step-item { display: flex; gap: 16px; align-items: flex-start; }
+    .step-num { width: 32px; height: 32px; border-radius: 50%; background: var(--gd); color: white; font-family: var(--serif); font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; }
+    .step-title { font-size: 15px; font-weight: 700; color: var(--td); margin-bottom: 4px; }
+    .step-text { font-size: 13px; color: var(--tmu); line-height: 1.7; }
+
+    /* SELL BOX */
+    .sell-box { background: var(--navy); border-radius: 18px; padding: 32px; margin: 48px 0; }
+    .sell-box-eye { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #A8D5C2; margin-bottom: 10px; }
+    .sell-box-title { font-family: var(--serif); font-size: 22px; font-weight: 700; color: white; line-height: 1.3; margin-bottom: 10px; }
+    .sell-box-title em { color: #A8D5C2; font-style: italic; font-weight: 400; }
+    .sell-box-desc { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 22px; }
+    .sell-box-includes { display: flex; flex-direction: column; gap: 7px; margin-bottom: 24px; }
+    .sell-include { font-size: 13px; color: rgba(255,255,255,0.7); display: flex; gap: 8px; align-items: flex-start; }
+    .sell-include::before { content: '✓'; color: #A8D5C2; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .sell-box-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn-sell { background: #25D366; color: white; padding: 12px 22px; border-radius: 10px; border: none; font-family: var(--sans); font-size: 13px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 7px; box-shadow: 0 4px 14px rgba(37,211,102,.3); transition: opacity .2s, transform .15s; }
+    .btn-sell:hover { opacity: .9; transform: translateY(-1px); }
+    .btn-sell-ghost { background: transparent; color: rgba(255,255,255,0.6); padding: 12px 18px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.15); font-family: var(--sans); font-size: 13px; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: border-color .2s, color .2s; }
+    .btn-sell-ghost:hover { border-color: rgba(168,213,194,.4); color: #A8D5C2; }
+
+    /* CONSULT CTA */
+    .consult-box { background: var(--gp); border: 0.5px solid rgba(26,92,42,.15); border-radius: 16px; padding: 28px; margin: 40px 0; display: flex; gap: 20px; align-items: flex-start; }
+    .consult-icon { font-size: 28px; flex-shrink: 0; }
+    .consult-title { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--td); margin-bottom: 6px; }
+    .consult-text { font-size: 13px; color: var(--tmu); line-height: 1.7; margin-bottom: 14px; }
+    .btn-p { background: var(--gd); color: white; padding: 11px 20px; border-radius: 10px; border: none; font-family: var(--sans); font-size: 13px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 7px; box-shadow: 0 4px 14px rgba(26,92,42,.2); transition: background .2s, transform .15s; }
+    .btn-p:hover { background: var(--gm); transform: translateY(-1px); }
+
+    /* RELATED POSTS */
+    .related { max-width: 760px; margin: 0 auto; padding: 40px 40px 80px; }
+    .related-title { font-family: var(--serif); font-size: 20px; font-weight: 600; color: var(--td); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .related-card { background: var(--white); border: 0.5px solid var(--border); border-radius: 14px; padding: 20px; display: flex; gap: 14px; text-decoration: none; transition: border-color .2s, box-shadow .2s, transform .2s; }
+    .related-card:hover { border-color: rgba(26,92,42,.2); box-shadow: 0 4px 16px rgba(26,92,42,.07); transform: translateY(-2px); }
+    .related-thumb { width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+    .related-card-tag { font-size: 10px; font-weight: 700; color: var(--gm); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 4px; }
+    .related-card-title { font-size: 13px; font-weight: 700; color: var(--td); line-height: 1.4; }
+
+    /* FOOTER */
+    footer { background: #070E1A; padding: 26px 40px; display: flex; align-items: center; justify-content: space-between; }
+    .foot-logo { font-family: var(--serif); font-size: 15px; font-weight: 700; color: rgba(255,255,255,.4); }
+    .foot-links { display: flex; gap: 20px; }
+    .foot-link { font-size: 12px; color: rgba(255,255,255,.22); text-decoration: none; }
+    .foot-link:hover { color: rgba(255,255,255,.45); }
+
+    @media(max-width:900px) {
+      nav { padding: 0 20px; }
+      .nav-links .nav-link { display: none; }
+      .breadcrumb, .article-header, .article-hero, .article-body, .related { padding-left: 20px; padding-right: 20px; }
+      .article-title { font-size: 28px; }
+      .related-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 12px; text-align: center; }
+      .foot-links { flex-wrap: wrap; justify-content: center; }
+      .colour-table-head, .colour-row { grid-template-columns: 1.5fr 1.5fr 1fr; padding: 12px 14px; gap: 8px; }
+      .colour-name { font-size: 12px; }
+      .colour-found { font-size: 11px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="../index.html" class="nav-logo">
+    <div class="nav-mark">
+      <svg width="16" height="16" viewBox="0 0 17 17" fill="none"><path d="M8.5 15C8.5 15 3 11 3 6.5C3 3.96 5.46 2 8.5 2s5.5 1.96 5.5 4.5C14 11 8.5 15 8.5 15Z" fill="white" opacity=".9"/><line x1="8.5" y1="2" x2="8.5" y2="15" stroke="rgba(26,92,42,.4)" stroke-width=".8" stroke-linecap="round"/><path d="M8.5 8C10 6 12 5.5 14 6.5" stroke="rgba(26,92,42,.35)" stroke-width=".8" stroke-linecap="round"/></svg>
+    </div>
+    WiseSprouts
+  </a>
+  <div class="nav-links">
+    <a href="../index.html#about" class="nav-link">About</a>
+    <a href="../index.html#store" class="nav-link">Resources</a>
+    <a href="../blog.html" class="nav-link">Blog</a>
+    <a class="nav-cta" href="https://wa.me/919949216571?text=Hi%20Akanksha%2C%20I%20read%20your%20blog%20on%20food%20colours%20and%20I%27d%20love%20to%20discuss%20my%20child%27s%20diet." target="_blank">
+      <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Message Akanksha
+    </a>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="../index.html" class="bc-link">Home</a>
+  <span class="bc-sep">›</span>
+  <a href="../blog.html" class="bc-link">Blog</a>
+  <span class="bc-sep">›</span>
+  <span class="bc-current">Food colours</span>
+</div>
+
+<!-- ARTICLE HEADER -->
+<div class="article-header">
+  <span class="article-tag">Food & nutrition · All ages</span>
+  <h1 class="article-title">That Bright Red Candy Your Child Loves? Here's What's Actually in It</h1>
+  <div class="article-meta">
+    <span class="article-meta-item">⏱ 7 min read</span>
+    <span class="article-meta-item">📅 June 2025</span>
+    <span class="article-meta-item">🌱 WiseSprouts</span>
+  </div>
+  <div class="article-author">
+    <div class="author-avatar">A</div>
+    <div>
+      <div class="author-name">Akanksha Rajhans</div>
+      <div class="author-cred">Certified Child Development Specialist · Yale & NLP credentials · Mother of two</div>
+    </div>
+  </div>
+</div>
+
+<!-- HERO VISUAL -->
+<div class="article-hero">
+  <div class="article-hero-box">🍬</div>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="article-body">
+
+  <p>You're at the checkout counter, your child spots a packet of bright orange lollipops, and you think: it's just one sweet, how bad can it be? You glance at the back of the packet. The ingredients list is long, dense, and full of words that sound more like a chemistry exam than food. You put it in the trolley anyway, because you don't know what any of it means.</p>
+
+  <p>This article is for that moment. A plain-language guide to what's actually in the coloured snacks, candies, and drinks marketed to Indian children — and what the current science says parents actually need to know.</p>
+
+  <h2>Why food is so colourful in the first place</h2>
+
+  <p>Colour is one of the first signals children use to decide whether they want to eat something. Food manufacturers know this. A bright red candy is more appealing to a 4-year-old than a pale one. An orange popsicle signals "mango" before it's even tasted. Colour creates expectation — and expectation drives choice.</p>
+
+  <p>Natural colours from fruits, vegetables, and spices do exist and are used — turmeric for yellow, beetroot for red, spirulina for blue-green. But they're expensive, less stable (they fade during processing and storage), and harder to standardise. Synthetic dyes are cheaper, more vivid, and consistent batch after batch. That's why they dominate.</p>
+
+  <div class="pull-quote">
+    <p>"The colour of a child's food is often designed to bypass the parent's judgment and speak directly to the child. That's not an accident."</p>
+  </div>
+
+  <p>In India, synthetic food colours are regulated under the Food Safety and Standards Authority of India (FSSAI). A specific list of permitted colours exists, with maximum allowable limits. The problem is that regulation sets a floor — it doesn't mean the permitted colours are without concern. It means they've been deemed acceptable at approved doses. Those are different things.</p>
+
+  <h2>The colours on Indian snack shelves — what they are and where they hide</h2>
+
+  <p>Most parents have never heard of these by name. But they appear on labels constantly, sometimes listed by E-number, sometimes by name, sometimes both. Here's a quick reference for the most common ones.</p>
+
+  <div class="colour-table">
+    <div class="colour-table-head">
+      <span>Colour / E-number</span>
+      <span>Commonly found in</span>
+      <span>Concern level</span>
+    </div>
+    <div class="colour-row">
+      <div class="colour-name">Tartrazine (E102) · Yellow</div>
+      <div class="colour-found">Soft drinks, instant noodles, namkeen, lollipops</div>
+      <div><span class="concern-high">Watch out</span></div>
+    </div>
+    <div class="colour-row">
+      <div class="colour-name">Sunset Yellow (E110) · Orange-yellow</div>
+      <div class="colour-found">Squashes, chips, candy, cheese puffs</div>
+      <div><span class="concern-high">Watch out</span></div>
+    </div>
+    <div class="colour-row">
+      <div class="colour-name">Carmoisine (E122) · Red</div>
+      <div class="colour-found">Jams, jellies, coloured ice creams</div>
+      <div><span class="concern-medium">Moderate</span></div>
+    </div>
+    <div class="colour-row">
+      <div class="colour-name">Allura Red (E129) · Bright red</div>
+      <div class="colour-found">Candy, flavoured milk, fruit drinks</div>
+      <div><span class="concern-high">Watch out</span></div>
+    </div>
+    <div class="colour-row">
+      <div class="colour-name">Brilliant Blue (E133) · Blue</div>
+      <div class="colour-found">Soft drinks, icing, flavoured snacks</div>
+      <div><span class="concern-medium">Moderate</span></div>
+    </div>
+    <div class="colour-row">
+      <div class="colour-name">Erythrosine (E127) · Pink-red</div>
+      <div class="colour-found">Glacé cherries, candy, some biscuits</div>
+      <div><span class="concern-high">Watch out</span></div>
+    </div>
+    <div class="colour-row">
+      <div class="colour-name">Curcumin (E100) · Yellow-orange</div>
+      <div class="colour-found">Snacks, dairy, ready-to-eat meals</div>
+      <div><span class="concern-low">Low concern</span></div>
+    </div>
+  </div>
+
+  <h2>What does the research actually say?</h2>
+
+  <p>Here's where it gets important to be precise, because both extremes — "these are completely safe" and "these are poisoning your children" — are misleading.</p>
+
+  <h3>The hyperactivity link</h3>
+
+  <p>The most well-known research is the 2007 McCann et al. study published in The Lancet, which found that a mixture of six synthetic dyes (including Tartrazine, Sunset Yellow, and Allura Red) combined with sodium benzoate — a common preservative — caused measurably increased hyperactivity in 3-year-olds and 8/9-year-olds compared to a control group.</p>
+
+  <p>This was significant enough that the European Food Safety Authority (EFSA) acted on it. The UK's Food Standards Agency recommended voluntary removal of these six specific dyes from foods. The EU now requires a warning label on any food containing them: <em>"may have an adverse effect on activity and attention in children."</em></p>
+
+  <div class="highlight-box">
+    <div class="highlight-box-title">The "Southampton Six"</div>
+    <p>The six dyes studied in the Lancet research — Tartrazine (E102), Quinoline Yellow (E104), Sunset Yellow (E110), Carmoisine (E122), Ponceau 4R (E124), and Allura Red (E129) — are often called the "Southampton Six." Several are still permitted and actively used in Indian children's products. The EU warning label requirement does not apply here.</p>
+    <p>India's FSSAI has not issued equivalent guidance. These colours remain on the permitted list with no mandatory warning language.</p>
+  </div>
+
+  <h3>But does it cause ADHD?</h3>
+
+  <p>This is an important distinction. The research shows that synthetic dyes can <em>worsen</em> hyperactivity in children who are already susceptible — including children with ADHD — and can cause mild, measurable increases in hyperactivity in children without ADHD. <strong>The evidence does not support that synthetic dyes cause ADHD.</strong></p>
+
+  <p>If your child does not have a sensitivity or ADHD, occasional exposure to these colours is unlikely to cause lasting harm. The concern is cumulative daily exposure — a child eating coloured namkeen, drinking a bright orange squash, eating a red candy, and having a yellow-coloured dessert on the same day is receiving a very different dose to a child who has one coloured item occasionally.</p>
+
+  <h3>Allergic and sensitivity reactions</h3>
+
+  <p>Tartrazine (E102) is particularly associated with allergic reactions in children with aspirin sensitivity or asthma. Reactions can include hives, itching, nasal congestion, and in rare cases, more serious responses. If your child already has diagnosed allergies, this is worth knowing.</p>
+
+  <div class="red-box">
+    <div class="red-box-title">Worth noting: Erythrosine (E127)</div>
+    <p>Erythrosine is iodine-rich. There is ongoing concern about its potential to affect thyroid function with regular consumption in young children. It's been banned in the US for use in foods (though permitted in specific applications). In India it remains permitted. It appears in the bright pink and red coloured candies that are particularly popular with children.</p>
+  </div>
+
+  <h2>Reading the label: what to actually look for</h2>
+
+  <p>Labels in India list permitted colours either by name, E-number, or both. A few practical things to know when you're standing in the snack aisle:</p>
+
+  <div class="steps-list">
+    <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <div class="step-title">Look for "Permitted food colours" in the ingredients</div>
+        <div class="step-text">This phrase means synthetic dyes are present, even if not individually named. Some labels list specific E-numbers; many just use this phrase as shorthand. Either way, it's a flag to check how much colour is visually present in the product.</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <div class="step-title">Brighter = more dye</div>
+        <div class="step-text">This isn't a rule, but it's a useful heuristic. Intensely coloured products — fluorescent orange, vivid red, electric blue — almost always contain higher concentrations of synthetic dye than subtly coloured ones. Natural colours tend to be muted by comparison.</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <div class="step-title">Check for sodium benzoate alongside dyes</div>
+        <div class="step-text">It's the combination of synthetic dyes with sodium benzoate (E211, a common preservative in squashes and soft drinks) that the Lancet study specifically flagged. If both are present together, that's the combination most associated with the hyperactivity findings. It's very common in flavoured drinks marketed to children.</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <div class="step-title">Count cumulative exposure across the day</div>
+        <div class="step-text">One coloured item is very different from four. Concerns around these dyes are largely about daily cumulative dose — a child eating multiple coloured products throughout the day adds up. If you want to reduce exposure, reducing frequency across the day matters more than eliminating any single product entirely.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>A practical, non-anxious approach</h2>
+
+  <p>Here's the honest truth: perfect elimination of synthetic food colours from an Indian child's diet is essentially impossible unless you make everything from scratch. They're in namkeen, in squashes, in biscuits, in ice lollies, in birthday cake icing, in the gulab jamun at the mithai shop.</p>
+
+  <p>The goal isn't zero — it's awareness and reduction where it's easy, particularly for your child's daily staples.</p>
+
+  <div class="amber-box">
+    <div class="amber-box-title">Practical swaps worth making</div>
+    <p>Replace daily coloured squashes and drinks with nimbu paani, coconut water, or plain milk — this alone removes one of the highest-exposure routes. For snacks, roasted makhana, plain puffed rice, or fruits need no colour at all. Save the brightly coloured stuff for occasional treats rather than everyday snacking. These small shifts reduce cumulative load without requiring a complete lifestyle overhaul.</p>
+  </div>
+
+  <p>And if your child shows signs of heightened reactivity, restlessness, or difficulty settling on days when their colour exposure is higher — that's worth paying attention to. Not as proof of causation, but as information about your specific child's sensitivity. Some children are simply more reactive than others.</p>
+
+  <!-- SELL BOX -->
+  <div class="sell-box">
+    <div class="sell-box-eye">PDF Guide · Coming soon</div>
+    <div class="sell-box-title">Want the complete ingredient guide for<br><em>Indian children's snacks?</em></div>
+    <div class="sell-box-desc">I'm putting together a comprehensive guide to reading food labels for your child's age — covering not just colours but preservatives, flavour enhancers, and hidden sugars. With a printable quick-reference card for the supermarket.</div>
+    <div class="sell-box-includes">
+      <div class="sell-include">Full synthetic colours reference with concern levels</div>
+      <div class="sell-include">Preservatives: which ones matter and which don't</div>
+      <div class="sell-include">The most commonly misleading label claims decoded</div>
+      <div class="sell-include">Age-by-age snack guidance for Indian families</div>
+      <div class="sell-include">Printable supermarket cheat sheet</div>
+    </div>
+    <div class="sell-box-btns">
+      <a href="https://wa.me/919949216571?text=Hi%20Akanksha%2C%20I%20read%20your%20blog%20on%20food%20colours%20and%20I%27d%20like%20to%20know%20when%20the%20food%20label%20guide%20is%20ready." class="btn-sell" target="_blank">
+        <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Notify me when it's ready
+      </a>
+      <a href="../index.html#store" class="btn-sell-ghost">See all resources →</a>
+    </div>
+  </div>
+
+  <!-- 1:1 CONSULT CTA -->
+  <div class="consult-box">
+    <div class="consult-icon">🥗</div>
+    <div>
+      <div class="consult-title">Worried about your child's specific diet or reactions?</div>
+      <div class="consult-text">If your child has noticed sensitivities, allergies, or you're seeing behavioural patterns that might be food-related, a 1-on-1 conversation can help you look at the full picture — not just ingredients in isolation. I work with what your family actually eats, not a theoretical ideal diet.</div>
+      <a href="https://wa.me/919949216571?text=Hi%20Akanksha%2C%20I%20read%20your%20food%20colours%20blog%20and%20I%27d%20like%20to%20discuss%20my%20child%27s%20diet%20and%20any%20possible%20sensitivities." class="btn-p" target="_blank">
+        <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Start a free chat
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- RELATED POSTS -->
+<div class="related">
+  <div class="related-title">More from the blog</div>
+  <div class="related-grid">
+    <a href="toddler-tantrums.html" class="related-card">
+      <div class="related-thumb" style="background:#FEF3C7;">😤</div>
+      <div>
+        <div class="related-card-tag">Toddler behaviour</div>
+        <div class="related-card-title">Why Your Toddler Has Tantrums — and Why That's Actually a Good Sign</div>
+      </div>
+    </a>
+    <a href="preservatives-in-kids-food.html" class="related-card">
+      <div class="related-thumb" style="background:#E8F5EC;">🧪</div>
+      <div>
+        <div class="related-card-tag">Food & nutrition</div>
+        <div class="related-card-title">Preservatives in Indian Children's Food: What the Label Doesn't Tell You</div>
+      </div>
+    </a>
+    <a href="screen-time-truth.html" class="related-card">
+      <div class="related-thumb" style="background:#EDE9FE;">📱</div>
+      <div>
+        <div class="related-card-tag">Screen time</div>
+        <div class="related-card-title">The Screen Time Number Nobody Told You About</div>
+      </div>
+    </a>
+    <a href="emotional-intelligence.html" class="related-card">
+      <div class="related-thumb" style="background:#FCE7F3;">💛</div>
+      <div>
+        <div class="related-card-tag">Emotions</div>
+        <div class="related-card-title">Raising Emotionally Intelligent Children in a House That Didn't Talk About Feelings</div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-logo">WiseSprouts</div>
+  <div class="foot-links">
+    <a href="#" class="foot-link">Privacy Policy</a>
+    <a href="../index.html#about" class="foot-link">About</a>
+    <a href="../index.html#store" class="foot-link">Resources</a>
+    <a href="../blog.html" class="foot-link">Blog</a>
+    <a href="https://instagram.com/wisesprouts.in" class="foot-link" target="_blank">Instagram</a>
+  </div>
+  <div class="foot-logo" style="font-family:var(--sans);font-size:12px;">Built by WiseLabs</div>
+</footer>
+
+</body>
+</html>
