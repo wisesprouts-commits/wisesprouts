@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>When "I Don't Want to Go to School" Is More Than Just Stubbornness — WiseSprouts</title>
+  <meta name="description" content="School refusal has real roots — anxiety, social fear, academic pressure, or something that happened that your child can't yet put into words. Here's how to tell the difference and what to do first." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <meta name="color-scheme" content="light only" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --gd: #1A5C2A; --gm: #2E7D44; --gl: #E8F5EC; --gp: #F2FAF4;
+      --cream: #FFFBF5; --cream2: #FFF6EA; --cream3: #FDF8F0;
+      --amber: #F59E0B; --amberl: #FEF3C7;
+      --td: #1C1208; --tm: #4A3B22; --tmu: #7A6548; --tf: #B8A888;
+      --border: #EAD9B8; --white: #fff;
+      --navy: #0F1A2E;
+      --rose: #E11D48; --rosel: #FFF1F2;
+      --serif: 'Lora', Georgia, serif;
+      --sans: 'Nunito', system-ui, sans-serif;
+      color-scheme: light only;
+    }
+    html { scroll-behavior: smooth; color-scheme: light only; }
+    body { font-family: var(--sans); background: #FFFBF5 !important; color: #1C1208 !important; -webkit-font-smoothing: antialiased; }
+    * { -webkit-text-fill-color: unset; }
+    @media (prefers-color-scheme: dark) {
+      html, body { background: #FFFBF5 !important; color: #1C1208 !important; }
+      body * { color: inherit; background-color: initial; }
+      .article-body p { color: #4A3B22 !important; }
+      .article-body h2, .article-body h3 { color: #1C1208 !important; }
+      .article-title { color: #1C1208 !important; }
+      .pull-quote p { color: #1A5C2A !important; }
+      .highlight-box { background: #E8F5EC !important; }
+      .highlight-box p { color: #4A3B22 !important; }
+      .step-title { color: #1C1208 !important; }
+      .step-text { color: #7A6548 !important; }
+      .amber-box { background: #FEF3C7 !important; }
+      .amber-box p { color: #78350F !important; }
+      .amber-box-title { color: #92400E !important; }
+      .rose-box { background: #FFF1F2 !important; }
+      .rose-box p { color: #881337 !important; }
+      .rose-box-title { color: #9F1239 !important; }
+      .signal-card { background: #fff !important; border-color: #EAD9B8 !important; }
+      .signal-title { color: #1C1208 !important; }
+      .signal-text { color: #7A6548 !important; }
+      .consult-box { background: #F2FAF4 !important; }
+      .consult-title { color: #1C1208 !important; }
+      .consult-text { color: #7A6548 !important; }
+      .related-card { background: #fff !important; }
+      .related-card-title { color: #1C1208 !important; }
+      nav { background: rgba(255,251,245,0.98) !important; }
+      .nav-logo { color: #1A5C2A !important; }
+      .article-author { background: #E8F5EC !important; }
+      .author-name { color: #1C1208 !important; }
+      .author-cred { color: #7A6548 !important; }
+      .article-meta-item { color: #B8A888 !important; }
+      .bc-link { color: #7A6548 !important; }
+      .bc-current, .bc-sep { color: #B8A888 !important; }
+      .related-card-tag { color: #2E7D44 !important; }
+    }
+
+    /* NAV */
+    nav { position: sticky; top: 0; z-index: 200; background: rgba(255,251,245,0.95); backdrop-filter: blur(16px); border-bottom: 0.5px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 40px; height: 64px; }
+    .nav-logo { font-family: var(--serif); font-size: 17px; font-weight: 700; color: var(--gd); text-decoration: none; display: flex; align-items: center; gap: 9px; }
+    .nav-mark { width: 28px; height: 28px; border-radius: 8px; background: var(--gd); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .nav-links { display: flex; align-items: center; gap: 2px; }
+    .nav-link { font-size: 12px; font-weight: 600; color: var(--tmu); text-decoration: none; padding: 6px 12px; border-radius: 8px; transition: color .2s, background .2s; }
+    .nav-link:hover { color: var(--gd); background: var(--gl); }
+    .nav-cta { background: var(--gd); color: var(--white); border: none; border-radius: 10px; padding: 9px 18px; font-family: var(--sans); font-size: 13px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 7px; transition: background .2s, transform .15s; white-space: nowrap; }
+    .nav-cta:hover { background: var(--gm); transform: translateY(-1px); }
+    .wa-icon { width: 16px; height: 16px; flex-shrink: 0; }
+
+    /* BREADCRUMB */
+    .breadcrumb { max-width: 760px; margin: 0 auto; padding: 20px 40px 0; display: flex; align-items: center; gap: 6px; }
+    .bc-link { font-size: 12px; font-weight: 600; color: var(--tmu); text-decoration: none; transition: color .2s; }
+    .bc-link:hover { color: var(--gd); }
+    .bc-sep { font-size: 12px; color: var(--tf); }
+    .bc-current { font-size: 12px; color: var(--tf); }
+
+    /* ARTICLE HEADER */
+    .article-header { max-width: 760px; margin: 0 auto; padding: 32px 40px 0; }
+    .article-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; background: var(--amberl); color: #92400E; margin-bottom: 20px; }
+    .article-title { font-family: var(--serif); font-size: 40px; font-weight: 700; color: var(--td); line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 20px; }
+    .article-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 32px; }
+    .article-meta-item { font-size: 12px; color: var(--tf); font-weight: 600; }
+    .article-author { display: flex; align-items: center; gap: 10px; padding: 16px 20px; background: var(--gl); border-radius: 12px; margin-bottom: 40px; }
+    .author-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--gd); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 16px; font-weight: 700; color: white; flex-shrink: 0; }
+    .author-name { font-size: 13px; font-weight: 700; color: var(--td); }
+    .author-cred { font-size: 11px; color: var(--tmu); margin-top: 2px; }
+
+    /* HERO VISUAL */
+    .article-hero { max-width: 760px; margin: 0 auto; padding: 0 40px 40px; }
+    .article-hero-box { height: 260px; border-radius: 18px; display: flex; align-items: center; justify-content: center; font-size: 80px; background: linear-gradient(135deg, #FFF6EA 0%, #FEF3C7 50%, #FDE68A 100%); }
+
+    /* ARTICLE BODY */
+    .article-body { max-width: 760px; margin: 0 auto; padding: 0 40px; }
+    .article-body p { font-size: 16px; color: var(--tm); line-height: 1.9; margin-bottom: 24px; }
+    .article-body h2 { font-family: var(--serif); font-size: 24px; font-weight: 600; color: var(--td); line-height: 1.3; margin: 40px 0 16px; }
+    .article-body h3 { font-family: var(--serif); font-size: 19px; font-weight: 600; color: var(--td); line-height: 1.3; margin: 32px 0 12px; }
+    .article-body strong { color: var(--td); font-weight: 700; }
+    .article-body em { font-style: italic; color: var(--tm); }
+
+    /* PULL QUOTE */
+    .pull-quote { border-left: 3px solid var(--gd); padding: 4px 0 4px 24px; margin: 36px 0; }
+    .pull-quote p { font-family: var(--serif); font-size: 20px; font-style: italic; color: var(--gd); line-height: 1.6; margin: 0; }
+
+    /* HIGHLIGHT BOX */
+    .highlight-box { background: var(--gl); border-radius: 14px; padding: 24px 28px; margin: 32px 0; }
+    .highlight-box-title { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gm); margin-bottom: 12px; }
+    .highlight-box p { font-size: 14px; color: var(--tm); line-height: 1.75; margin-bottom: 10px; }
+    .highlight-box p:last-child { margin-bottom: 0; }
+
+    /* AMBER BOX */
+    .amber-box { background: var(--amberl); border-left: 3px solid var(--amber); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 32px 0; }
+    .amber-box-title { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #92400E; margin-bottom: 8px; }
+    .amber-box p { font-size: 14px; color: #78350F; line-height: 1.7; margin: 0; }
+
+    /* ROSE BOX */
+    .rose-box { background: var(--rosel); border-left: 3px solid var(--rose); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 32px 0; }
+    .rose-box-title { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #9F1239; margin-bottom: 8px; }
+    .rose-box p { font-size: 14px; color: #881337; line-height: 1.7; margin-bottom: 10px; }
+    .rose-box p:last-child { margin-bottom: 0; }
+
+    /* SIGNAL CARDS */
+    .signals { display: flex; flex-direction: column; gap: 12px; margin: 24px 0 32px; }
+    .signal-card { background: var(--white); border: 0.5px solid var(--border); border-radius: 14px; padding: 18px 20px; display: flex; gap: 14px; align-items: flex-start; }
+    .signal-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+    .signal-body { flex: 1; }
+    .signal-title { font-size: 14px; font-weight: 700; color: var(--td); margin-bottom: 5px; }
+    .signal-text { font-size: 13px; color: var(--tmu); line-height: 1.65; }
+
+    /* NUMBERED STEPS */
+    .steps-list { margin: 24px 0 32px; display: flex; flex-direction: column; gap: 14px; }
+    .step-item { display: flex; gap: 16px; align-items: flex-start; }
+    .step-num { width: 32px; height: 32px; border-radius: 50%; background: var(--gd); color: white; font-family: var(--serif); font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; }
+    .step-title { font-size: 15px; font-weight: 700; color: var(--td); margin-bottom: 4px; }
+    .step-text { font-size: 13px; color: var(--tmu); line-height: 1.7; }
+
+    /* SELL BOX */
+    .sell-box { background: var(--navy); border-radius: 18px; padding: 32px; margin: 48px 0; }
+    .sell-box-eye { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #A8D5C2; margin-bottom: 10px; }
+    .sell-box-title { font-family: var(--serif); font-size: 22px; font-weight: 700; color: white; line-height: 1.3; margin-bottom: 10px; }
+    .sell-box-title em { color: #A8D5C2; font-style: italic; font-weight: 400; }
+    .sell-box-desc { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 22px; }
+    .sell-box-includes { display: flex; flex-direction: column; gap: 7px; margin-bottom: 24px; }
+    .sell-include { font-size: 13px; color: rgba(255,255,255,0.7); display: flex; gap: 8px; align-items: flex-start; }
+    .sell-include::before { content: '✓'; color: #A8D5C2; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .sell-box-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn-sell { background: #25D366; color: white; padding: 12px 22px; border-radius: 10px; border: none; font-family: var(--sans); font-size: 13px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 7px; box-shadow: 0 4px 14px rgba(37,211,102,.3); transition: opacity .2s, transform .15s; }
+    .btn-sell:hover { opacity: .9; transform: translateY(-1px); }
+    .btn-sell-ghost { background: transparent; color: rgba(255,255,255,0.6); padding: 12px 18px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.15); font-family: var(--sans); font-size: 13px; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: border-color .2s, color .2s; }
+    .btn-sell-ghost:hover { border-color: rgba(168,213,194,.4); color: #A8D5C2; }
+
+    /* CONSULT CTA */
+    .consult-box { background: var(--gp); border: 0.5px solid rgba(26,92,42,.15); border-radius: 16px; padding: 28px; margin: 40px 0; display: flex; gap: 20px; align-items: flex-start; }
+    .consult-icon { font-size: 28px; flex-shrink: 0; }
+    .consult-title { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--td); margin-bottom: 6px; }
+    .consult-text { font-size: 13px; color: var(--tmu); line-height: 1.7; margin-bottom: 14px; }
+    .btn-p { background: var(--gd); color: white; padding: 11px 20px; border-radius: 10px; border: none; font-family: var(--sans); font-size: 13px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 7px; box-shadow: 0 4px 14px rgba(26,92,42,.2); transition: background .2s, transform .15s; }
+    .btn-p:hover { background: var(--gm); transform: translateY(-1px); }
+
+    /* RELATED */
+    .related { max-width: 760px; margin: 0 auto; padding: 40px 40px 80px; }
+    .related-title { font-family: var(--serif); font-size: 20px; font-weight: 600; color: var(--td); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .related-card { background: var(--white); border: 0.5px solid var(--border); border-radius: 14px; padding: 20px; display: flex; gap: 14px; text-decoration: none; transition: border-color .2s, box-shadow .2s, transform .2s; }
+    .related-card:hover { border-color: rgba(26,92,42,.2); box-shadow: 0 4px 16px rgba(26,92,42,.07); transform: translateY(-2px); }
+    .related-thumb { width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+    .related-card-tag { font-size: 10px; font-weight: 700; color: var(--gm); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 4px; }
+    .related-card-title { font-size: 13px; font-weight: 700; color: var(--td); line-height: 1.4; }
+
+    /* FOOTER */
+    footer { background: #070E1A; padding: 26px 40px; display: flex; align-items: center; justify-content: space-between; }
+    .foot-logo { font-family: var(--serif); font-size: 15px; font-weight: 700; color: rgba(255,255,255,.4); }
+    .foot-links { display: flex; gap: 20px; }
+    .foot-link { font-size: 12px; color: rgba(255,255,255,.22); text-decoration: none; }
+    .foot-link:hover { color: rgba(255,255,255,.45); }
+
+    @media(max-width:900px) {
+      nav { padding: 0 20px; }
+      .nav-links .nav-link { display: none; }
+      .breadcrumb, .article-header, .article-hero, .article-body, .related { padding-left: 20px; padding-right: 20px; }
+      .article-title { font-size: 28px; }
+      .related-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 12px; text-align: center; }
+      .foot-links { flex-wrap: wrap; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="../index.html" class="nav-logo">
+    <div class="nav-mark">
+      <svg width="16" height="16" viewBox="0 0 17 17" fill="none"><path d="M8.5 15C8.5 15 3 11 3 6.5C3 3.96 5.46 2 8.5 2s5.5 1.96 5.5 4.5C14 11 8.5 15 8.5 15Z" fill="white" opacity=".9"/><line x1="8.5" y1="2" x2="8.5" y2="15" stroke="rgba(26,92,42,.4)" stroke-width=".8" stroke-linecap="round"/><path d="M8.5 8C10 6 12 5.5 14 6.5" stroke="rgba(26,92,42,.35)" stroke-width=".8" stroke-linecap="round"/></svg>
+    </div>
+    WiseSprouts
+  </a>
+  <div class="nav-links">
+    <a href="../index.html#about" class="nav-link">About</a>
+    <a href="../index.html#store" class="nav-link">Resources</a>
+    <a href="../blog.html" class="nav-link">Blog</a>
+    <a class="nav-cta" href="https://wa.me/919949216571?text=Hi%20Akanksha%2C%20I%20read%20your%20blog%20on%20school%20refusal%20and%20need%20help%20with%20my%20child." target="_blank">
+      <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Message Akanksha
+    </a>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="../index.html" class="bc-link">Home</a>
+  <span class="bc-sep">›</span>
+  <a href="../blog.html" class="bc-link">Blog</a>
+  <span class="bc-sep">›</span>
+  <span class="bc-current">School refusal</span>
+</div>
+
+<!-- ARTICLE HEADER -->
+<div class="article-header">
+  <span class="article-tag">School & learning · Ages 4–10</span>
+  <h1 class="article-title">When "I Don't Want to Go to School" Is More Than Just Stubbornness</h1>
+  <div class="article-meta">
+    <span class="article-meta-item">⏱ 7 min read</span>
+    <span class="article-meta-item"> · </span>
+    <span class="article-meta-item">📅 June 2025</span>
+    <span class="article-meta-item"> · </span>
+    <span class="article-meta-item">🌱 WiseSprouts</span>
+  </div>
+  <div class="article-author">
+    <div class="author-avatar">A</div>
+    <div>
+      <div class="author-name">Akanksha Rajhans</div>
+      <div class="author-cred">Certified Child Development Specialist · Yale & NLP credentials · Mother of two</div>
+    </div>
+  </div>
+</div>
+
+<!-- HERO VISUAL -->
+<div class="article-hero">
+  <div class="article-hero-box">🏫</div>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="article-body">
+
+  <p>It starts small. A stomach ache on Monday morning that disappears by 10am. Tears at the school gate that the teacher says are fine within minutes. Then one day it's not fine within minutes — it's forty-five minutes of crying, clinging, bargaining, and eventually you driving away feeling like the worst parent in the world while your child's screams fade behind you.</p>
+
+  <p>Most parents in this situation do one of two things. They push through it — "she's fine the moment you leave, just go" — or they give in to it, keeping the child home and hoping the feeling passes. Both can work, occasionally. But both can also make things significantly worse, depending on what's actually driving the refusal.</p>
+
+  <p><strong>School refusal is not a behaviour problem. It is a distress signal.</strong> The question is what kind of distress, and what it needs from you.</p>
+
+  <h2>The difference between reluctance and refusal</h2>
+
+  <p>Not every child who drags their feet on Monday morning has school refusal. Most children, at some point, would prefer to stay home. That's normal. The distinction that matters is this: is the reluctance manageable and short-lived once they're there, or is it escalating, persistent, and accompanied by genuine distress that doesn't resolve?</p>
+
+  <p>True school refusal — what child psychologists call emotionally-based school non-attendance — involves significant emotional distress around attending school, repeated or prolonged absences, and an inability to sustain attendance even when parents and the child agree it's important. It's not a choice the child is making strategically. It's a response to something that feels, to them, genuinely threatening.</p>
+
+  <div class="pull-quote">
+    <p>"A child who won't go to school is not a child who needs more discipline. They are a child telling you, in the only language available to them, that something feels unsafe."</p>
+  </div>
+
+  <h2>What's actually underneath it — the four main roots</h2>
+
+  <p>School refusal rarely has a single cause. But most cases cluster around four broad roots, and understanding which one is driving your child's resistance completely changes what you should do first.</p>
+
+  <div class="signals">
+
+    <div class="signal-card">
+      <div class="signal-icon">😰</div>
+      <div class="signal-body">
+        <div class="signal-title">Separation anxiety</div>
+        <div class="signal-text">The most common root in younger children (ages 4–7). The fear isn't really about school — it's about leaving you. Children with separation anxiety often worry something will happen to a parent while they're away, or that they won't be able to get back to you if they need you. Clues: the distress is most intense at drop-off and resolves relatively quickly once at school; the child is fine on weekends but anxious on Sunday evenings; they worry about your safety when separated in other contexts too.</div>
+      </div>
+    </div>
+
+    <div class="signal-card">
+      <div class="signal-icon">👥</div>
+      <div class="signal-body">
+        <div class="signal-title">Social anxiety or peer difficulties</div>
+        <div class="signal-text">The child is afraid of social situations at school — being judged, embarrassed, excluded, or targeted. This is more common in children aged 7 and up, and often intensifies at transitions (new class, new school, a change in friend group). Clues: the child can describe specific social fears ("no one sits with me at lunch," "the other kids laugh at my answers"); they are more comfortable in one-on-one situations than groups; they often have physical complaints — stomach aches, headaches — that are real but functionally anxiety-driven.</div>
+      </div>
+    </div>
+
+    <div class="signal-card">
+      <div class="signal-icon">📚</div>
+      <div class="signal-body">
+        <div class="signal-title">Academic anxiety or learning difficulty</div>
+        <div class="signal-text">The child is avoiding school because something about the academic environment feels overwhelming or humiliating. This might be undiagnosed learning difficulty (reading struggles, attention challenges), a specific fear of a subject, or the weight of academic expectations in a highly competitive school environment. Clues: the refusal is stronger on days with tests, presentations, or specific subjects; the child expresses feelings of being "stupid" or "not as good as the others"; they were previously happy at school but something changed academically.</div>
+      </div>
+    </div>
+
+    <div class="signal-card">
+      <div class="signal-icon">🤫</div>
+      <div class="signal-body">
+        <div class="signal-title">Something specific happened — and hasn't been said</div>
+        <div class="signal-text">Sometimes school refusal appears suddenly after a period of normal attendance. A child who was fine and is now not fine is telling you something changed. It may be bullying — physical, verbal, or social exclusion. It may be something a teacher said. It may be an incident the child is ashamed of or scared to disclose. Clues: the change was sudden rather than gradual; the child becomes evasive or distressed when asked about school specifically; they mention particular names (other children or adults) with discomfort; they have changed their route, bathroom habits, or eating habits at school.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <h2>The first conversation — and how to have it</h2>
+
+  <p>Most parents' first instinct when a child refuses school is to ask "why don't you want to go?" directly, at the moment of refusal, when the child is already dysregulated. This almost never works. A child in the grip of anxiety does not have access to the reflective, language-based parts of their brain that would allow them to explain themselves clearly. You will get "I don't know," tears, or shutdown.</p>
+
+  <p>The conversation that actually gets information happens later — at a calm moment, not in the morning rush, and not framed as an interrogation.</p>
+
+  <div class="steps-list">
+    <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <div class="step-title">Find a side-by-side moment, not face-to-face</div>
+        <div class="step-text">Conversations about difficult feelings are easier for children when they're not making direct eye contact — in the car, walking, cooking together, drawing beside each other. The reduced social demand of side-by-side contact makes it easier for a child to talk about something hard. "I've been thinking about school mornings" is a gentler opener than "we need to talk about why you keep refusing to go."</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <div class="step-title">Ask about feelings, not facts</div>
+        <div class="step-text">"What part of the day feels hardest?" gets more than "what happened?" "Is there anyone at school you feel comfortable with?" gets more than "do you have friends?" "What does your tummy feel like when you're getting ready for school?" gives a young child permission to locate their experience in their body, which is often where anxiety lives before it has words.</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <div class="step-title">Reflect without fixing</div>
+        <div class="step-text">When a child starts to open up, the instinct is to immediately reassure or problem-solve. Resist this. "That sounds really hard" lands better than "but there's nothing to be scared of." A child who feels genuinely heard is more likely to keep talking — and more likely to believe you when you do eventually offer reassurance, because it comes after understanding, not instead of it.</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <div class="step-title">Ask explicitly about safety</div>
+        <div class="step-text">If the refusal was sudden or the child is particularly closed, it's worth asking directly and calmly: "Has anyone done or said something that made you feel bad or unsafe?" Give them a moment of silence after asking. Children who are hiding something — especially something involving another child or adult — often need the explicit permission of being asked before they feel they can tell you.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>The attendance question: push through or hold back?</h2>
+
+  <p>This is the question parents most often ask, and the honest answer is: it depends on what's driving it, and how long it's been going on.</p>
+
+  <p>The research is consistent that <strong>prolonged absence from school tends to make school refusal worse, not better.</strong> Avoidance is a short-term relief strategy that maintains anxiety in the long run — the longer a child avoids the feared situation, the more threatening it feels, and the harder re-entry becomes. A child who is kept home for two weeks is facing a significantly harder return than a child who missed two days.</p>
+
+  <p>That said, sending a child into a situation where genuine harm is occurring — bullying, an unsafe environment, an unaddressed learning need — and expecting them to "get used to it" is not a strategy. It is a way of teaching the child that their distress doesn't matter to you.</p>
+
+  <div class="highlight-box">
+    <div class="highlight-box-title">A useful frame: warm insistence</div>
+    <p>The approach that tends to work best for most school refusal is what clinicians call "warm insistence" — a combination of genuine empathy for the child's experience and consistent, calm expectation that school attendance will happen. Not coldness, not punishment, not dismissal of the child's feelings — but equally not the option to stay home becoming the default.</p>
+    <p>"I know mornings feel really hard right now. I hear that you're scared. And we are going to go to school. I'll walk you in and stay until you're settled." This is both compassionate and clear. The message is: I believe you that this is hard, and I also believe you can do hard things with my support.</p>
+  </div>
+
+  <h2>What to do at the school gate</h2>
+
+  <p>The drop-off itself is often the hardest moment, and the way parents handle it has a significant impact on how the child settles. A few things that consistently make it easier:</p>
+
+  <p><strong>Keep goodbyes short and warm, not long and reassuring.</strong> A long, anxious goodbye — repeated hugs, endless "you'll be okay, I promise, it'll be fine, I love you, are you sure you're okay?" — unintentionally signals to the child that you are also worried about whether they'll be okay. A warm, confident, brief goodbye communicates certainty: this is fine, I'll be here at 3pm, have a good day.</p>
+
+  <p><strong>Hand them over to a specific person, not the general environment.</strong> A child who is greeted by name by a teacher, a known adult, or a friend at the gate has a bridge into the school environment. Arriving to an anonymous crowd with no one to connect to is much harder than arriving to "your teacher is waiting for you by the classroom door."</p>
+
+  <p><strong>Leave when you say you're leaving.</strong> Repeated "okay, just one more hug" moments extend the drop-off and increase anxiety, both the child's and yours. A brief, consistent goodbye ritual — the same words, the same hug, the same departure — becomes a cue the child's body learns to associate with "this is manageable."</p>
+
+  <div class="amber-box">
+    <div class="amber-box-title">When to involve the school</div>
+    <p>If school refusal has been going on for more than two weeks, is intensifying, or you have any reason to suspect bullying or a specific incident, involve the school directly and specifically. Not a general "she's been a bit unhappy" — a concrete conversation with the class teacher or counsellor about what you're observing at home, what you've been able to find out, and what support the school can put in place. Most schools have far more capacity to help than parents realise, but they need to know what's happening first.</p>
+  </div>
+
+  <div class="rose-box">
+    <div class="rose-box-title">Signs that need professional support</div>
+    <p>Most school refusal responds to parent-led strategies and school involvement. But some situations need professional input from a child psychologist or counsellor. Seek help if: the child has been significantly absent for more than three weeks; the refusal is accompanied by severe physical symptoms (vomiting, inability to eat, complete shutdown); you suspect bullying or abuse that hasn't been addressed; or the child has expressed hopelessness, or statements about not wanting to go on. These are not signs of bad parenting. They are signs that your child needs more support than a parent alone can provide.</p>
+  </div>
+
+  <h2>The Indian school context</h2>
+
+  <p>It's worth naming something that often goes unspoken in Indian parenting conversations about school refusal: the academic pressure that is so normalised in our school system that it often isn't even recognised as pressure.</p>
+
+  <p>A child in class 3 who is already being compared to classmates by marks, who hears "what did Riya get?" every day, who is being tutored in four subjects outside school hours and has no unstructured time — that child's school refusal may not be about a specific incident or a diagnosable anxiety. It may be about a load that is simply too heavy for their developmental stage, expressed in the only way available to them.</p>
+
+  <p>This doesn't mean the answer is to withdraw from school or remove all academic expectations. It means asking honestly: does my child have any say in their own day? Do they have time that belongs to them? Are the expectations calibrated to who this specific child is, or to a standard someone else set? Sometimes the most important intervention is not a strategy for the morning — it's a genuine conversation about what childhood is for.</p>
+
+  <!-- SELL BOX -->
+  <div class="sell-box">
+    <div class="sell-box-eye">1-on-1 · Personalised plan</div>
+    <div class="sell-box-title">School refusal that's been going on<br>for <em>more than a few weeks?</em></div>
+    <div class="sell-box-desc">The longer school refusal continues, the harder re-entry becomes. A personalised plan built around your child's specific root cause — separation anxiety, social fears, academic pressure, or something that happened — gives you a concrete path forward rather than trial and error.</div>
+    <div class="sell-box-includes">
+      <div class="sell-include">Free initial chat to understand your child's specific situation</div>
+      <div class="sell-include">Identifying which root is driving the refusal</div>
+      <div class="sell-include">A step-by-step re-entry plan for your child's age and school</div>
+      <div class="sell-include">Scripts for the school gate, the conversation at home, and the school meeting</div>
+      <div class="sell-include">What to say to family members who are pushing for toughness</div>
+    </div>
+    <div class="sell-box-btns">
+      <a href="https://wa.me/919949216571?text=Hi%20Akanksha%2C%20I%20read%20your%20blog%20on%20school%20refusal%20and%20my%20child%20has%20been%20struggling%20to%20go%20to%20school.%20I%27d%20love%20to%20discuss%20a%20plan." class="btn-sell" target="_blank">
+        <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Start with a free chat
+      </a>
+      <a href="../index.html#store" class="btn-sell-ghost">See all resources →</a>
+    </div>
+  </div>
+
+  <!-- CONSULT CTA -->
+  <div class="consult-box">
+    <div class="consult-icon">🏫</div>
+    <div>
+      <div class="consult-title">Not sure whether to push through or hold back?</div>
+      <div class="consult-text">That's the hardest judgement call in school refusal, and it depends entirely on what's driving it for your specific child. A single conversation with me — about your child's age, what you've observed, what's been tried, and what the school is saying — can give you a clearer answer than weeks of uncertainty.</div>
+      <a href="https://wa.me/919949216571?text=Hi%20Akanksha%2C%20my%20child%20has%20been%20refusing%20school%20and%20I%20don%27t%20know%20whether%20to%20push%20through%20or%20give%20them%20space.%20Can%20we%20chat?" class="btn-p" target="_blank">
+        <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Let's figure this out together
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- RELATED POSTS -->
+<div class="related">
+  <div class="related-title">More from the blog</div>
+  <div class="related-grid">
+    <a href="toddler-tantrums.html" class="related-card">
+      <div class="related-thumb" style="background:#FEF3C7;">😤</div>
+      <div>
+        <div class="related-card-tag">Toddler behaviour</div>
+        <div class="related-card-title">Why Your Toddler Has Tantrums — and Why That's Actually a Good Sign</div>
+      </div>
+    </a>
+    <a href="emotional-intelligence.html" class="related-card">
+      <div class="related-thumb" style="background:#FCE7F3;">💛</div>
+      <div>
+        <div class="related-card-tag">Emotions</div>
+        <div class="related-card-title">Raising Emotionally Intelligent Children in a House That Didn't Talk About Feelings</div>
+      </div>
+    </a>
+    <a href="cosleeping-transition.html" class="related-card">
+      <div class="related-thumb" style="background:#EEF2FF;">🌙</div>
+      <div>
+        <div class="related-card-tag">Sleep</div>
+        <div class="related-card-title">Co-sleeping to Cot: How to Make the Move Without Tears</div>
+      </div>
+    </a>
+    <a href="screen-time-truth.html" class="related-card">
+      <div class="related-thumb" style="background:#EDE9FE;">📱</div>
+      <div>
+        <div class="related-card-tag">Screen time</div>
+        <div class="related-card-title">The Screen Time Number Nobody Told You About</div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-logo">WiseSprouts</div>
+  <div class="foot-links">
+    <a href="#" class="foot-link">Privacy Policy</a>
+    <a href="../index.html#about" class="foot-link">About</a>
+    <a href="../index.html#store" class="foot-link">Resources</a>
+    <a href="../blog.html" class="foot-link">Blog</a>
+    <a href="https://instagram.com/wisesprouts.in" class="foot-link" target="_blank">Instagram</a>
+  </div>
+  <div class="foot-logo" style="font-family:var(--sans);font-size:12px;">Built by WiseLabs</div>
+</footer>
+
+</body>
+</html>
