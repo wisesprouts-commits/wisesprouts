@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>The Toy Box Guide — WiseSprouts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --forest: #3d5c35;
+  --forest-dark: #1e2e1a;
+  --sage: #a8c48a;
+  --cream: #faf7f2;
+  --cream-deep: #f0ead9;
+  --ink: #1a1a1a;
+  --plum: #9b72d0;
+  --plum-bg: #f0eaf9;
+  --sky: #4a90c4;
+  --sky-bg: #e6f2fb;
+  --amber: #c49a20;
+  --amber-bg: #fff8eb;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  background: var(--cream) !important;
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+
+a { color: inherit; }
+
+img, svg { display: block; max-width: 100%; }
+
+/* ═══════════════════════════════
+   TOP BAR
+═══════════════════════════════ */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(250,247,242,0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(61,92,53,0.1);
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topbar .brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--forest);
+}
+
+.topbar .brand span { color: var(--sage); }
+
+.topbar .tag {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(26,26,26,0.4);
+}
+
+/* ═══════════════════════════════
+   HERO
+═══════════════════════════════ */
+.hero {
+  background: var(--forest);
+  position: relative;
+  overflow: hidden;
+  padding: 64px 24px 56px;
+  text-align: center;
+}
+
+.hero::before {
+  content: '🌿';
+  position: absolute;
+  font-size: 280px;
+  top: -90px;
+  right: -60px;
+  opacity: 0.06;
+  transform: rotate(-15deg);
+}
+
+.hero::after {
+  content: '🌱';
+  position: absolute;
+  font-size: 180px;
+  bottom: -60px;
+  left: -40px;
+  opacity: 0.05;
+  transform: rotate(20deg);
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.hero .eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(40px, 7vw, 60px);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--cream);
+  margin-bottom: 22px;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--sage);
+}
+
+.hero p.lede {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(250,247,242,0.78);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.hero .meta-row {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.hero .meta-item {
+  font-size: 12.5px;
+  color: rgba(250,247,242,0.55);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.hero .meta-item .dot {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--sage);
+}
+
+/* ═══════════════════════════════
+   CONTAINER
+═══════════════════════════════ */
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ═══════════════════════════════
+   INTRO BLOCK
+═══════════════════════════════ */
+.intro {
+  padding: 56px 0 8px;
+}
+
+.intro p {
+  font-size: 17px;
+  font-weight: 300;
+  color: #333333;
+  margin-bottom: 18px;
+}
+
+.intro p strong {
+  font-weight: 600;
+  color: var(--forest);
+}
+
+.pull-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--forest);
+  line-height: 1.35;
+  border-left: 3px solid var(--sage);
+  padding: 4px 0 4px 24px;
+  margin: 32px 0 8px;
+}
+
+/* ═══════════════════════════════
+   SECTION HEADERS
+═══════════════════════════════ */
+.section {
+  padding: 56px 0 8px;
+}
+
+.section-head {
+  margin-bottom: 28px;
+}
+
+.section-head .eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--forest);
+  margin-bottom: 10px;
+}
+
+.section-head h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.15;
+}
+
+.section-head h2 em {
+  font-style: italic;
+  color: var(--forest);
+}
+
+.section-head .desc {
+  font-size: 14.5px;
+  font-weight: 300;
+  color: #555;
+  margin-top: 10px;
+  max-width: 560px;
+}
+
+/* ═══════════════════════════════
+   SKILL CARDS (organized by developmental skill)
+═══════════════════════════════ */
+.skill-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.skill-card {
+  background: white;
+  border-radius: 16px;
+  padding: 26px 28px;
+  border-left: 4px solid var(--forest);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.skill-card .sc-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.skill-card .sc-icon {
+  font-size: 26px;
+  flex-shrink: 0;
+}
+
+.skill-card .sc-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.skill-card .sc-builds {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--forest);
+  margin-bottom: 12px;
+}
+
+.skill-card .sc-toys {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.toy-chip {
+  background: var(--cream-deep);
+  border-radius: 100px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #444;
+}
+
+/* ═══════════════════════════════
+   AGE TABS (visual, not interactive — static page)
+═══════════════════════════════ */
+.age-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.age-block {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.age-block .ab-head {
+  background: var(--forest-dark);
+  padding: 20px 28px;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.age-block .ab-range {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--cream);
+}
+
+.age-block .ab-stage {
+  font-size: 12.5px;
+  font-weight: 400;
+  color: rgba(250,247,242,0.55);
+  font-style: italic;
+}
+
+.age-block .ab-body {
+  padding: 24px 28px 26px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 24px;
+}
+
+@media (max-width: 540px) {
+  .age-block .ab-body { grid-template-columns: 1fr; }
+}
+
+.ab-col .ab-col-label {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.ab-col.develop .ab-col-label { color: var(--forest); }
+.ab-col.explore .ab-col-label { color: var(--sky); }
+
+.ab-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.ab-col ul li {
+  font-size: 14px;
+  font-weight: 300;
+  color: #333;
+  padding-left: 16px;
+  position: relative;
+}
+
+.ab-col ul li::before {
+  content: '·';
+  position: absolute;
+  left: 4px;
+  color: #999;
+  font-weight: 700;
+}
+
+/* ═══════════════════════════════
+   SWAP LIST
+═══════════════════════════════ */
+.swap-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.swap-row {
+  background: white;
+  border-radius: 14px;
+  padding: 18px 22px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+@media (max-width: 540px) {
+  .swap-row { grid-template-columns: 1fr; gap: 8px; }
+  .swap-row .swap-arrow { display: none; }
+}
+
+.swap-row .swap-old,
+.swap-row .swap-new {
+  font-size: 14px;
+}
+
+.swap-row .swap-old {
+  color: #888;
+  font-weight: 300;
+}
+
+.swap-row .swap-old .swap-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #aaa;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.swap-row .swap-new {
+  color: var(--forest);
+  font-weight: 600;
+}
+
+.swap-row .swap-new .swap-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sage);
+  display: block;
+  margin-bottom: 3px;
+}
+
+.swap-row .swap-arrow {
+  font-size: 18px;
+  color: var(--sage);
+}
+
+/* ═══════════════════════════════
+   CALLOUT / SCIENCE NOTE
+═══════════════════════════════ */
+.note {
+  background: var(--amber-bg);
+  border: 1px solid #e5c870;
+  border-radius: 16px;
+  padding: 24px 28px;
+  margin: 12px 0;
+}
+
+.note .note-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 8px;
+}
+
+.note p {
+  font-size: 14.5px;
+  font-weight: 300;
+  color: #444;
+}
+
+.note p strong {
+  color: #8a6610;
+  font-weight: 600;
+}
+
+/* ═══════════════════════════════
+   CLOSING / CTA
+═══════════════════════════════ */
+.closing {
+  background: var(--forest);
+  margin-top: 72px;
+  padding: 64px 24px 56px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.closing::before {
+  content: '🌿';
+  position: absolute;
+  font-size: 220px;
+  bottom: -70px;
+  right: -50px;
+  opacity: 0.05;
+  transform: rotate(12deg);
+}
+
+.closing-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.closing .eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 18px;
+}
+
+.closing h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.closing h2 em {
+  font-style: italic;
+  color: var(--sage);
+}
+
+.closing p {
+  font-size: 14.5px;
+  font-weight: 300;
+  color: rgba(250,247,242,0.7);
+  margin-bottom: 30px;
+}
+
+.closing .handle {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(250,247,242,0.45);
+  letter-spacing: 0.06em;
+}
+
+.footer-space {
+  height: 8px;
+  background: linear-gradient(90deg, var(--sage) 0%, #6b9a52 100%);
+}
+
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">Wise<span>Sprouts</span> 🌱</div>
+  <div class="tag">Blog</div>
+</div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">The Toy Box Guide</div>
+    <h1>A toy box<br>with <em>no ceilings.</em></h1>
+    <p class="lede">A free, science-informed guide to choosing toys by developmental skill — not gender. For parents raising kids ages 2 to 8.</p>
+    <div class="meta-row">
+      <div class="meta-item"><span class="dot"></span>7 min read</div>
+      <div class="meta-item"><span class="dot"></span>Ages 2–8</div>
+      <div class="meta-item"><span class="dot"></span>WiseSprouts Guides</div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="intro">
+    <p>Most toy aisles are still sorted by gender — pink on one side, blue on the other. But child development research doesn't sort that way. Every toy builds a <strong>specific skill</strong>: spatial reasoning, language, fine motor control, empathy, risk assessment. None of those skills belong to one gender.</p>
+    <p>This guide flips the sorting. Instead of "toys for girls" and "toys for boys," you'll find toys organized by <strong>what they actually build</strong> — so you can choose based on what your child needs, not what aisle they're standing in.</p>
+    <div class="pull-quote">The question was never "is this toy appropriate for my child's gender." It was always "is this toy good for my child's growing brain."</div>
+  </div>
+
+  <!-- ════ SECTION 1: BY SKILL ════ -->
+  <div class="section">
+    <div class="section-head">
+      <div class="eyebrow">Part One</div>
+      <h2>Toys, sorted by <em>what they build</em></h2>
+      <div class="desc">Six core developmental skills, and the toys that build each one — regardless of who's playing.</div>
+    </div>
+
+    <div class="skill-grid">
+
+      <div class="skill-card">
+        <div class="sc-top">
+          <div class="sc-icon">🧩</div>
+          <div class="sc-title">Spatial reasoning</div>
+        </div>
+        <div class="sc-builds">Builds: STEM foundations, problem-solving, geometry intuition</div>
+        <div class="sc-toys">
+          <span class="toy-chip">Building blocks</span>
+          <span class="toy-chip">Lego</span>
+          <span class="toy-chip">Puzzles</span>
+          <span class="toy-chip">Construction sets</span>
+          <span class="toy-chip">Magnetic tiles</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="sc-top">
+          <div class="sc-icon">💛</div>
+          <div class="sc-title">Empathy &amp; nurturing</div>
+        </div>
+        <div class="sc-builds">Builds: emotional intelligence, caregiving instinct, theory of mind</div>
+        <div class="sc-toys">
+          <span class="toy-chip">Dolls</span>
+          <span class="toy-chip">Stuffed animals</span>
+          <span class="toy-chip">Pretend vet kits</span>
+          <span class="toy-chip">Baby care sets</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="sc-top">
+          <div class="sc-icon">🎭</div>
+          <div class="sc-title">Imaginative role-play</div>
+        </div>
+        <div class="sc-builds">Builds: storytelling, social scripts, identity exploration</div>
+        <div class="sc-toys">
+          <span class="toy-chip">Kitchen sets</span>
+          <span class="toy-chip">Dress-up clothes</span>
+          <span class="toy-chip">Dollhouses</span>
+          <span class="toy-chip">Puppet sets</span>
+          <span class="toy-chip">Play tools</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="sc-top">
+          <div class="sc-icon">🏁</div>
+          <div class="sc-title">Strategy &amp; competition</div>
+        </div>
+        <div class="sc-builds">Builds: planning, risk assessment, healthy relationship with winning &amp; losing</div>
+        <div class="sc-toys">
+          <span class="toy-chip">Board games</span>
+          <span class="toy-chip">Monopoly</span>
+          <span class="toy-chip">Card games</span>
+          <span class="toy-chip">Chess</span>
+          <span class="toy-chip">Racing sets</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="sc-top">
+          <div class="sc-icon">🏃</div>
+          <div class="sc-title">Gross motor &amp; movement</div>
+        </div>
+        <div class="sc-builds">Builds: coordination, body confidence, physical risk tolerance</div>
+        <div class="sc-toys">
+          <span class="toy-chip">Bikes</span>
+          <span class="toy-chip">Balls</span>
+          <span class="toy-chip">Climbing sets</span>
+          <span class="toy-chip">Scooters</span>
+          <span class="toy-chip">Jump ropes</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="sc-top">
+          <div class="sc-icon">🔬</div>
+          <div class="sc-title">Curiosity &amp; exploration</div>
+        </div>
+        <div class="sc-builds">Builds: scientific thinking, independence, cause-and-effect reasoning</div>
+        <div class="sc-toys">
+          <span class="toy-chip">Science kits</span>
+          <span class="toy-chip">Magnifying glasses</span>
+          <span class="toy-chip">Nature kits</span>
+          <span class="toy-chip">Simple machines</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ════ SECTION 2: BY AGE ════ -->
+  <div class="section">
+    <div class="section-head">
+      <div class="eyebrow">Part Two</div>
+      <h2>Picks by <em>age &amp; stage</em></h2>
+      <div class="desc">What to prioritize as the brain develops — every box should include both columns.</div>
+    </div>
+
+    <div class="age-blocks">
+
+      <div class="age-block">
+        <div class="ab-head">
+          <div class="ab-range">2–4 years</div>
+          <div class="ab-stage">Sensory &amp; foundational play</div>
+        </div>
+        <div class="ab-body">
+          <div class="ab-col develop">
+            <div class="ab-col-label">Give for development</div>
+            <ul>
+              <li>Chunky building blocks</li>
+              <li>Soft dolls or animals</li>
+              <li>Shape sorters</li>
+              <li>Simple puzzles (4–9 pcs)</li>
+            </ul>
+          </div>
+          <div class="ab-col explore">
+            <div class="ab-col-label">Give for exploration</div>
+            <ul>
+              <li>Toy cars &amp; trucks</li>
+              <li>Play kitchen pieces</li>
+              <li>Stacking rings</li>
+              <li>Sensory bins</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="age-block">
+        <div class="ab-head">
+          <div class="ab-range">4–6 years</div>
+          <div class="ab-stage">Imagination &amp; early rules</div>
+        </div>
+        <div class="ab-body">
+          <div class="ab-col develop">
+            <div class="ab-col-label">Give for development</div>
+            <ul>
+              <li>Lego / construction sets</li>
+              <li>Dress-up &amp; puppet kits</li>
+              <li>Simple board games</li>
+              <li>Art &amp; craft supplies</li>
+            </ul>
+          </div>
+          <div class="ab-col explore">
+            <div class="ab-col-label">Give for exploration</div>
+            <ul>
+              <li>Doctor / vet play sets</li>
+              <li>Racing tracks</li>
+              <li>Dollhouse with figures</li>
+              <li>Beginner science kits</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="age-block">
+        <div class="ab-head">
+          <div class="ab-range">6–8 years</div>
+          <div class="ab-stage">Strategy &amp; identity</div>
+        </div>
+        <div class="ab-body">
+          <div class="ab-col develop">
+            <div class="ab-col-label">Give for development</div>
+            <ul>
+              <li>Monopoly / strategy games</li>
+              <li>Advanced Lego / robotics kits</li>
+              <li>Chess or card games</li>
+              <li>Journals &amp; storytelling kits</li>
+            </ul>
+          </div>
+          <div class="ab-col explore">
+            <div class="ab-col-label">Give for exploration</div>
+            <ul>
+              <li>Baking / real cooking kits</li>
+              <li>Sewing or craft kits</li>
+              <li>Bikes &amp; sports gear</li>
+              <li>Nature &amp; exploration kits</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ════ SECTION 3: THE SWAP LIST ════ -->
+  <div class="section">
+    <div class="section-head">
+      <div class="eyebrow">Part Three</div>
+      <h2>The <em>one swap</em> this week</h2>
+      <div class="desc">You don't need to overhaul the toy box overnight. Pick one row and try it.</div>
+    </div>
+
+    <div class="swap-list">
+      <div class="swap-row">
+        <div class="swap-old"><span class="swap-label">Instead of only</span>Dolls for her, cars for him</div>
+        <div class="swap-arrow">→</div>
+        <div class="swap-new"><span class="swap-label">Try</span>One of each, for both</div>
+      </div>
+      <div class="swap-row">
+        <div class="swap-old"><span class="swap-label">Instead of only</span>Kitchen set for her</div>
+        <div class="swap-arrow">→</div>
+        <div class="swap-new"><span class="swap-label">Try</span>A real cooking activity for him too</div>
+      </div>
+      <div class="swap-row">
+        <div class="swap-old"><span class="swap-label">Instead of only</span>Building sets for him</div>
+        <div class="swap-arrow">→</div>
+        <div class="swap-new"><span class="swap-label">Try</span>Let her build — and win</div>
+      </div>
+      <div class="swap-row">
+        <div class="swap-old"><span class="swap-label">Instead of</span>"That's for girls / boys"</div>
+        <div class="swap-arrow">→</div>
+        <div class="swap-new"><span class="swap-label">Try</span>"What do you want to build today?"</div>
+      </div>
+    </div>
+
+    <div class="note">
+      <div class="note-label">⚠️ A note on real differences</div>
+      <p>Some average differences in movement and sensory needs between boys and girls are real and backed by research. But averages describe groups, not the child in front of you. The goal isn't to ignore temperament — it's to <strong>watch your actual child</strong> instead of pre-sorting by gender before you've had the chance to notice who they are.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="closing">
+  <div class="closing-inner">
+    <div class="eyebrow">From WiseSprouts</div>
+    <h2>Small choices.<br><em>Lifelong confidence.</em></h2>
+    <p>This guide is free to share with any parent who needs it. Save it, screenshot it, send it to your group chat.</p>
+    <div class="handle">wisesprouts.in · @wisesprouts.in</div>
+  </div>
+</div>
+<div class="footer-space"></div>
+
+</body>
+</html>
